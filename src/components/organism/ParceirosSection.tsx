@@ -44,7 +44,7 @@ const ParceirosSection = () => {
           </div>
   
           {/* Parte Direita: Texto */}
-          <div className="w-full lg:w-1/2 mt-10 lg:mt-0 text-center lg:text-left">
+          <div className="w-full lg:w-1/2 mt-40 lg:mt-0 text-center lg:text-left">
             <h2 className="text-4xl font-light text-primary mb-4">Nossos parceiros</h2>
             <div className="border-t-4 border-blue-500 w-1/3 mx-auto lg:mx-0 mb-6"></div>
             <p className="text-3xl font-light text-primary mb-4">

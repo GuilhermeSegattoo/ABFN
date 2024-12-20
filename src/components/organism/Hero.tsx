@@ -14,7 +14,7 @@ const Hero: FC<HeroProps> = ({}) => {
       {/* Frase */}
       <p className="text-light font-light text-3xl xl:text-4xl sm:text-xl mt-4 text-center leading-relaxed max-w-lg">
       Conheça a Associação Brasileira
-       das famílias Numerosas
+       das Famílias Numerosas
       </p>
 
       

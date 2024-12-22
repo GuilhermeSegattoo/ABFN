@@ -81,18 +81,14 @@ const SectionWithCatalog: React.FC = () => {
       {/* Título e Descrição */}
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between ">
         {/* Texto - Esquerda */}
-        <div className="text-left text-primary w-full md:w-1/2 mb-8 md:mb-0 lg:ml-28 md:ml-12">
-          <h2 className="text-3xl lg:text-6xl md:text-5xl font-light leading-tight mb-4">
+        <div className="text-left text-dark w-full md:w-1/2 mb-8 md:mb-0 lg:ml-18 md:ml-12">
+          <h2 className="text-3xl lg:text-7xl md:text-5xl font-bold leading-tight mb-4">
             Explore o <span className="text-secondary">Brasil</span> com a <span className="text-third">ABFN</span>!
           </h2>
-          <p className="text-2xl font-light text-primary lg:text-4xl md:text-2xl leading-relaxed">
-            saiba mais sobre as oportunidades e vantagens <span className="text-secondary">exclusivas</span> para
+          <p className="text-2xl font-light text-dark lg:text-4xl md:text-2xl leading-relaxed">
+            saiba mais sobre as oportunidades e vantagens <span className="text-third font-semibold">exclusivas</span> para
             associados
           </p>
-        </div>
-
-        {/* Mapa do Brasil - Direita */}
-        <div className="w-full md:w-1/2 flex justify-center">
           <Image
             src="/mapaBrasil.svg"
             alt="Mapa do Brasil"
@@ -101,10 +97,10 @@ const SectionWithCatalog: React.FC = () => {
             className="object-contain"
           />
         </div>
-      </div>
 
-      {/* Catálogo */}
-      <div className="container mx-auto px-4 mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Mapa do Brasil - Direita */}
+        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="container mx-auto px-4 mt-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3">
         {catalogItems.map((item) => (
           <div
             key={item.id}
@@ -126,6 +122,10 @@ const SectionWithCatalog: React.FC = () => {
           </div>
         ))}
       </div>
+        </div>
+      </div>
+
+      
 
       {/* Popup */}
       {popup && (

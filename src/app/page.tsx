@@ -14,9 +14,10 @@ export default function Home() {
     <main className="">
       <Hero />
       <Sponsorships />
+      <Vantagens />
       <FamilySection />
       <SectionWithCatalog />
-      <Vantagens />
+      
       <NewSection />
       <ParceirosSection />
       <ContatoFooter />

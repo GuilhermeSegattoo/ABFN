@@ -1,6 +1,11 @@
+'use client';
+
 import Image from "next/image";
 import React, { FC } from "react";
-import Marquee from "react-fast-marquee";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+import Slider from "react-slick";
 
 const SecondHome: FC = () => {
   const highlights = [
@@ -16,13 +21,38 @@ const SecondHome: FC = () => {
     { id: 10, title: "Tecnologia", description: "Sugestões de apps e ferramentas úteis para a família.", image: "/app.png" },
   ];
 
+  const sliderSettings = {
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <div className="bg-white">
-      {/* Primeira Parte */}
-<div className="flex flex-col md:flex-row items-center justify-center md:justify-between container mx-auto h-auto md:h-[50vh] px-4 md:px-8 pt-10">
+      {/* Título principal */}
+      <div className="flex flex-col md:flex-row items-center justify-center md:justify-between container mx-auto h-auto md:h-[50vh] px-4 md:px-8 pt-10">
   {/* Título */}
   <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-    <h2 className="text-[32px] sm: md:text-[44px] md:ml-20 font-light text-primary leading-tight mb-4 mt-8 md:mt-0">
+    <h2 className="text-[32px] sm: md:text-[44px] md:ml-20 font-bold text-primary leading-tight mb-4 mt-8 md:mt-0">
       Juntos, criamos o <br /> amanhã
     </h2>
   </div>
@@ -37,47 +67,39 @@ const SecondHome: FC = () => {
   </div>
 </div>
 
+      <hr className="border-t-4 border-orange-500 w-[75%] mx-auto my-8" />
 
-      {/* Linha divisória */}
-      <hr className="border-t-4 border-primary w-[75%] mx-auto my-4" />
-
-      {/* Título */}
-      <div className="text-center mt-8">
-        <h2 className="text-[32px] md:text-[64px] font-light text-gray-800 mb-4">
+      {/* Slider */}
+      <div className="mt-10 px-8 max-w-7xl mx-auto">
+      <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+        <h2 className="text-[32px] sm: md:text-[44px] md:ml-20 font-light text-primary leading-tight mb-4 mt-8 md:mt-0">
           Família ABFN
         </h2>
       </div>
+        <Slider {...sliderSettings}>
+          {highlights.map((highlight) => (
+            <div key={highlight.id} className="p-2">
+              <div className="bg-white shadow-md rounded-md overflow-hidden">
+                {/* Imagem */}
+                <div className="relative h-[200px] w-[200px] mx-auto">
+                  <Image
+                    src={highlight.image}
+                    alt={highlight.title}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
 
-      {/* Marquee com Destaques */}
-      <Marquee loop={0} autoFill className="flex gap-8 mt-10">
-        {highlights.map((highlight) => (
-          <div
-            key={highlight.id}
-            className="bg-white rounded-lg  overflow-hidden w-72 sm:w-80 md:w-96 mx-2 flex-shrink-0"
-          >
-            {/* Header do Card */}
-            <div className="bg-orange-500 p-4 text-white text-center text-xl font-bold">
-              {highlight.title}
+                {/* Texto */}
+                <div className="p-4 text-center">
+                  <h3 className="text-xl font-bold text-orange-500 mb-2">{highlight.title}</h3>
+                  <p className="text-gray-600 text-sm">{highlight.description}</p>
+                </div>
+              </div>
             </div>
-
-            {/* Imagem */}
-            <div className="relative h-[200px]">
-              <Image
-                src={highlight.image}
-                alt={highlight.title}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-t-lg"
-              />
-            </div>
-
-            {/* Descrição */}
-            <div className="p-4 text-gray-700 text-center">
-              <p className="text-sm md:text-base">{highlight.description}</p>
-            </div>
-          </div>
-        ))}
-      </Marquee>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

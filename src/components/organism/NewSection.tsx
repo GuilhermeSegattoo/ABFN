@@ -27,11 +27,11 @@ const NewSection = () => {
     ];
   
     return (
-      <section id="noticias" className="bg-blue-500 py-16 mt-8">
+      <section id="noticias" className="bg-blue-500 py-16 mt-0">
         <div className="container mx-auto px-6">
           {/* Título da seção */}
-          <h2 className="text-white text-4xl font-light mb-6 text-center">Portal de notícias ABFN</h2>
-          <div className="border-t-4 border-white w-1/4 mx-auto mb-10"></div>
+          <h2 className="text-white text-4xl font-light mb-6 text-left">Portal de notícias ABFN</h2>
+          <div className="border-t-4 border-white w-4/4 mx-auto mb-10"></div>
   
           {/* Grid de notícias */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -34,47 +34,51 @@ const Vantagens = () => {
   ];
 
   return (
-    <section className="mt-64 xl:mt-28 relative top-0 flex flex-wrap items-center justify-between">
-      {/* Parte Esquerda */}
-      <div className="xl:w-1/2 lg:w-1/2 md:px-10 py-10">
-        <h4 className="font-light text-5xl text-primary  mb-4 text-center leading-none lg:text-left lg:ml-14">
-          O que fazemos?
-        </h4>
-        <p className="text-primary text-2xl font-light leading-none text-center lg:text-left lg:ml-14 mb-8">
-          Descubra como <span className="font-bold text-primary">ser associado</span> pode ajudar sua família em <span className="font-bold text-secondary">diversos aspectos</span>.
-        </p>
-        <div className="flex flex-col gap-1 lg:ml-14">
-          {cards.map((card) => (
-            <button
-              key={card.id}
-              className={`px-6 py-3 bg-secondary hover:bg-third text-light rounded-lg text-lg font-medium transition-transform hover:scale-105 ${
-                selectedCard === card.id ? "bg-third" : ""
-              }`}
-              onClick={() => setSelectedCard(card.id)}
-            >
-              {card.title}
-            </button>
-          ))}
-        </div>
+    <section className="mt-16 xl:mt-10 md:mx-5 lg:mx-24 relative flex flex-wrap items-center justify-between">
+    {/* Parte Esquerda */}
+    <div className="xl:w-1/2 lg:w-1/2 px-4 md:px-20 py-6">
+    <hr className="border-t-4 border-orange-500 w-[100%] mx-auto my-8" />
+      <h4 className="font-bold text-4xl text-primary md:ml-6 mb-4 text-center lg:text-left">
+        O que fazemos?
+      </h4>
+      <p className="text-dark text-2xl leading-relaxed text-center md:ml-6 lg:text-left mb-6">
+        Descubra como <span className="font-bold text-primary">ser associado</span> pode ajudar sua família em{" "}
+        <span className="font-bold text-secondary">diversos aspectos</span>.
+      </p>
+      <div className="flex flex-col gap-2 lg:ml-0">
+        {cards.map((card) => (
+          <button
+            key={card.id}
+            className={`px-5 py-2 bg-yellow hover:bg-third text-light rounded-none text-md font-medium transition-transform hover:scale-105 ${
+              selectedCard === card.id ? "bg-third" : ""
+            }`}
+            onClick={() => setSelectedCard(card.id)}
+          >
+            {card.title}
+          </button>
+        ))}
       </div>
-
-      {/* Parte Direita */}
-      <div className="xl:w-1/2 lg:w-1/2 flex flex-col items-center">
-  <Image
-    src={
-      cards.find((card) => card.id === selectedCard)?.image ||
-      "/abfn.svg" // Imagem padrão caso o valor seja undefined
-    }
-    alt="Vantagem ilustrativa"
-    width={500}
-    height={500}
-    className="w-full max-w-md rounded-lg mb-6 transition-all duration-300"
-  />
-  <p className="text-center text-xl text-primary font-light ">
-    {cards.find((card) => card.id === selectedCard)?.description || "Selecione uma vantagem para mais detalhes."}
-  </p>
-</div>
-    </section>
+    </div>
+  
+    {/* Parte Direita */}
+    <div className="xl:w-1/2 lg:w-1/2 flex flex-col items-center px-6">
+      <Image
+        src={
+          cards.find((card) => card.id === selectedCard)?.image ||
+          "/abfn.svg" // Imagem padrão
+        }
+        alt="Vantagem ilustrativa"
+        width={350}
+        height={350}
+        className="w-full max-w-xs rounded-lg mb-4 transition-all duration-300"
+      />
+      <p className="text-center text-md text-light bg-primary px-4 py-2 rounded-none font-light">
+        {cards.find((card) => card.id === selectedCard)?.description ||
+          "Selecione uma vantagem para mais detalhes."}
+      </p>
+    </div>
+  </section>
+  
   );
 };
 

@@ -9,15 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'bg-1': "url('/bg-1.png')",
+        'bg-2': "url('/bg-2.png')",
+        'bg-3': "url('/bg-3.png')",
+        'bg-4': "url('/bg-4.png')",
       },
       colors: {
         primary: "#FF914D", // Cor principal personalizada
         secondary: "#18C76E", // Cor secundária
         third: "#009FD2", // Cor terceira
-        yellow: "#FFE865", // Amarelo
+        yellow: "#E4B628", // Amarelo
         dark: "#1E1E1E", // Cor escura
         light: "#FFFFFF", // Branco
         gray: {

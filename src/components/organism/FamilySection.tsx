@@ -4,7 +4,7 @@ const FamilySection = () => {
   return (
     <div id="sobre" className="flex justify-center ">
     <Image
-      src="/familiaVerde.png"
+      src="/familianatal3.svg"
       alt="Mapa do Brasil"
       width={1440}
       height={780}

@@ -4,11 +4,11 @@ const FamilySection = () => {
   return (
     <div id="sobre" className="flex justify-center ">
     <Image
-      src="/familianatal3.svg"
-      alt="Mapa do Brasil"
+      src="/fm.png"
+      alt="familia"
       width={1440}
       height={780}
-      className="object-contain lg:mt-[-180px] mt-[-110px] md:mt-[-260px] w-full max-w-6xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl"
+      className="object-contain lg:mt-[10px] mt-[-110px] md:mt-[-260px] w-full max-w-6xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl"
     />
   </div>
   )

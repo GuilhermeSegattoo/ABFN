@@ -10,9 +10,9 @@ const NavBar: FC<NavBarProps> = ({}) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   return (
     <nav className="w-full bg-primary flex justify-between    py-6 xl:py-10">
-      <div className="md:w-1/2 flex flex-col items-start ml-10">
+      <div className="md:w-1/2 flex flex-row gap-1 items-start ml-10">
               <h1 className="text-4xl font-bold drop-shadow-md  text-light cursor-pointer" >ABFN</h1>
-              <p className="text-2xl text-light">
+              <p className="text-xl mt-3 text-light">
                 Associação Brasileira das Famílias Numerosas
               </p>
       </div>
@@ -23,12 +23,8 @@ const NavBar: FC<NavBarProps> = ({}) => {
         <li className="text-light font-light text-lg hover:border-b-4 hover:border-third hover:text-third">
           <Link href={"#sobre"}>Sobre</Link>
         </li>
-        <li className="text-light font-light text-lg hover:border-b-4 hover:border-third hover:text-third">
-          <Link href={"#parceiros"}>Associados</Link>
-        </li>
-        <li className="text-light font-light text-lg hover:border-b-4 hover:border-third hover:text-third">
-          <Link href={"#noticias"}>Notícias</Link>
-        </li>
+        
+        
         <li className="text-light font-light text-lg hover:border-b-4 hover:border-third hover:text-third">
           <Link href={"#contato"}>Contato</Link>
         </li>

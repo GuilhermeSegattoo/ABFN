@@ -13,13 +13,8 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
-      <Sponsorships />
-      <Vantagens />
+      <Vantagens /> 
       <FamilySection />
-      <SectionWithCatalog />
-      
-      <NewSection />
-      <ParceirosSection />
       <ContatoFooter />
     </main>
   );

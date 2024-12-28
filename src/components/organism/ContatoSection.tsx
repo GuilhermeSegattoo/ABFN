@@ -34,7 +34,7 @@ const ContatoSection = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Substitua pela sua chave Web3Forms
+          access_key: "441c585d-14d4-4cd3-9d72-4aea710e8e57", // Substitua pela sua chave Web3Forms
           ...formData,
         }),
       });

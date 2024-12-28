@@ -62,9 +62,9 @@ const ContatoFooter = () => {
                 </li>
       
                 <li>
-                  <a href="abfnumerosas@gmail.com" className="hover:underline">
-                     abfnumerosas@gmail.com
-                  </a>
+                <a href="mailto:abfnumerosas@gmail.com" className="hover:underline">
+                  abfnumerosas@gmail.com
+                </a>
                 </li>
               </ul>
             </div>

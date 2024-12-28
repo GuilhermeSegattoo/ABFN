@@ -18,11 +18,11 @@ const Hero: FC<HeroProps> = ({}) => {
       </h1>
 
       {/* Frase */}
-      <p className="text-light font-medium text-xl sm:text-2xl xl:text-4xl mt-4 text-center leading-relaxed max-w-2xl">
+      <p className="text-light font-medium text-xl sm:text-xl sm:mb-5 xl:text-4xl mt-4 text-center leading-relaxed max-w-3xl">
          Fortalecendo Famílias Numerosas no Brasil
       </p> 
        {/* Slider */}
-       <div className="mt-[-60px] sm:mt-[-80px] lg:mt-[-200px] w-full max-w-7xl px-4">
+       <div className="mt-[30px] sm:mt-[40px] lg:mt-[-200px] w-full max-w-7xl px-4">
         <FamilySection />
       </div>
       <p className="text-light font-light text-xl sm:text-2xl xl:text-4xl mt-4 text-center leading-relaxed max-w-7xl">

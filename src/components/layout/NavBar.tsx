@@ -52,19 +52,14 @@ const NavBar: FC<NavBarProps> = ({}) => {
         </div>
         <ul className="flex flex-col gap-10 items-center px-20 mt-20">
         <li className="text-dark font-medium text-lg hover:border-b-4 hover:border-third hover:text-third">
-          <Link href={"#"}>Home</Link>
+          <Link href={"#home"}>Home</Link>
         </li>
         <li className="text-dark font-light text-lg hover:border-b-4 hover:border-third hover:text-third">
-          <Link href={"#"}>Sobre</Link>
+          <Link href={"#sobre"}>Sobre</Link>
         </li>
+      
         <li className="text-dark font-light text-lg hover:border-b-4 hover:border-third hover:text-third">
-          <Link href={"#"}>Associados</Link>
-        </li>
-        <li className="text-dark font-light text-lg hover:border-b-4 hover:border-third hover:text-third">
-          <Link href={"#"}>Notícias</Link>
-        </li>
-        <li className="text-dark font-light text-lg hover:border-b-4 hover:border-third hover:text-third">
-          <Link href={"#"}>Contato</Link>
+          <Link href={"#contato"}>Contato</Link>
         </li>
         <li className="text-light  text-lg">
         <a href="/login" className="inline-block px-6 py-2 text-white bg-third rounded-lg hover:bg-secondary font-semibold transition duration-300 ease-in-out">

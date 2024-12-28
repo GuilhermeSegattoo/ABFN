@@ -10,7 +10,7 @@ const Vantagens = () => {
       id: 1,
       title: "Bem-estar e Saúde",
       description:
-        "Promovemos a saúde integral das famílias numerosas, com iniciativas que vão além do cuidado físico, abrangendo também o bem-estar emocional e social.",
+        "Promovermos o cuidado com a saúde das famílias, com iniciativas que vão além do cuidado físico, abrangendo também o bem-estar emocional e social.",
     },
     {
       id: 2,

@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const FamilySection = () => {
   return (
-    <div id="sobre" className="flex justify-center ">
+    <div  className="flex justify-center ">
     <Image
       src="/fm.png"
       alt="familia"

@@ -7,6 +7,8 @@ import Sponsorships from "@/components/organism/Sponsorship";
 import Vantagens from "@/components/organism/Subscription";
 import ParceirosSection from "@/components/organism/ParceirosSection";
 import ContatoFooter from "@/components/organism/ContatoFooter";
+import ContatoSection from "@/components/organism/ContatoSection";
+import Defendendo from "@/components/organism/Defendendo";
 
 
 export default function Home() {
@@ -14,7 +16,8 @@ export default function Home() {
     <main className="">
       <Hero />
       <Vantagens /> 
-      <FamilySection />
+      <Defendendo />
+      <ContatoSection />
       <ContatoFooter />
     </main>
   );

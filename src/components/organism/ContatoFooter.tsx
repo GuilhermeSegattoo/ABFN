@@ -7,15 +7,13 @@ const ContatoFooter = () => {
             {/* Texto e Botão */}
             <div className="w-full lg:w-1/2 text-center lg:text-left">
               <h2 className="text-3xl font-bold mb-4">
-                Quer saber como podemos ajudar a sua família
-                <br />
-                fazendo parte dessa rede de apoio incrível?
+                Seja o primeiro a saber das novidades!
               </h2>
               <a
                 href="#contato"
                 className="inline-block bg-white text-orange-500 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-100 transition-all mt-4"
               >
-                Entre em contato →
+                Nossa Newsletter →
               </a>
             </div>
             {/* Logo */}
@@ -42,14 +40,10 @@ const ContatoFooter = () => {
                     Sobre
                   </a>
                 </li>
+                
                 <li>
-                  <a href="#parceiros" className="hover:underline">
-                    Associados
-                  </a>
-                </li>
-                <li>
-                  <a href="#noticias" className="hover:underline">
-                    Notícias
+                  <a href="#contato" className="hover:underline">
+                    Contato
                   </a>
                 </li>
                 <li>
@@ -66,12 +60,10 @@ const ContatoFooter = () => {
                 <li>
                   <span className="font-semibold">Contato:</span>
                 </li>
+      
                 <li>
-                  <span>(61) 9 xxxx-xxxx</span>
-                </li>
-                <li>
-                  <a href="mailto:contato@abfn.com" className="hover:underline">
-                    contato@abfn.com
+                  <a href="abfnumerosas@gmail.com" className="hover:underline">
+                     abfnumerosas@gmail.com
                   </a>
                 </li>
               </ul>
@@ -90,11 +82,7 @@ const ContatoFooter = () => {
                     Política e Privacidade
                   </a>
                 </li>
-                <li>
-                  <a href="/missao" className="hover:underline">
-                    Missão e Valor
-                  </a>
-                </li>
+               
               </ul>
             </div>
   
@@ -113,8 +101,8 @@ const ContatoFooter = () => {
   
           {/* Desenvolvedor */}
           <div className="mt-6 text-center text-sm">
-            Desenvolvedor Guilherme Segatto
-            <p>2025 ABFN | Todos os direitos reservados.</p>
+          <p>2025 ABFN | Todos os direitos reservados.</p>
+          <a href="https://www.devsegatto.com">Desenvolvedor Guilherme Segatto</a>
           </div>
         </div>
       </footer>

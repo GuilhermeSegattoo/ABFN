@@ -27,10 +27,13 @@ const Politica = () => {
               <strong>Nome:</strong> Para identificação de associados e dependentes.
             </li>
             <li>
-              <strong>CPF:</strong> Documento oficial de identificação.
+              <strong>Email:</strong> Para identificação.
             </li>
             <li>
-              <strong>Endereço:</strong> Para localização e comunicação.
+              <strong>Telefone:</strong> Para contato e comunicação.
+            </li>
+            <li>
+              <strong>Dados da família:</strong> Coletados para identificação de dependentes.
             </li>
             <li>
               <strong>Dados de navegação:</strong> Coletados automaticamente, como IP, dispositivo utilizado e cookies.
@@ -67,11 +70,9 @@ const Politica = () => {
           </p>
           <ul className="list-disc list-inside mb-4">
             <li>
-              <strong>E-mail:</strong> privacidade@abfn.com.br
+              <strong>E-mail:</strong> abfnumerosas@gmail.com
             </li>
-            <li>
-              <strong>Telefone:</strong> (61) 9 XXXX-XXXX
-            </li>
+            
           </ul>
         </div>
       </section>

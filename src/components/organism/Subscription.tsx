@@ -33,34 +33,34 @@ const Vantagens = () => {
   ];
 
   return (
-    <section id="sobre" className="mt-16 xl:mt-10 md:mx-5 lg:mx-24 relative flex flex-wrap items-center justify-between">
+    <section id="sobre" className="mt-16 xl:mt-10 md:mx-5 lg:mx-24 relative flex flex-wrap items-center  justify-between">
       {/* Parte Esquerda */}
-      <div className="xl:w-1/2 lg:w-1/2 px-4 md:px-20 py-6">
-        <h4 className="font-bold text-4xl text-primary md:ml-6 mb-4 text-center lg:text-left">
+      <div className="xl:w-1/2 lg:w-1/2 px-4 md:px-20 py-16 bg-gray-50">
+        <h4 className="font-bold text-4xl text-third md:ml-6 mb-4 text-center lg:text-left">
           Sobre nós?
         </h4>
-        <p className="text-dark text-2xl leading-relaxed text-center md:ml-6 lg:text-left mb-6">
+        <p className="text-dark text-2xl font-light leading-relaxed text-center md:ml-6 lg:text-left mb-6">
         Nosso objetivo é apoiar e transformar a vida das famílias, promovendo bem-estar, desenvolvimento e união.
         </p>
         <div className="grid grid-cols-2 gap-6">
           {cards.map((card) => (
             <button
               key={card.id}
-              className={`flex flex-col justify-center items-center w-full h-32 bg-gray-100 ${
-                selectedCard === card.id ? "bg-third text-third" : "text-gray-500"
-              } hover:bg-third hover:text-white text-center font-medium transition-all duration-300`}
+              className={`flex flex-col justify-center items-center w-full h-32 bg-third ${
+                selectedCard === card.id ? "bg-primary text-primary" : "text-white"
+              } hover:bg-primary hover:text-white text-center font-medium transition-all duration-300`}
               onClick={() => setSelectedCard(card.id)}
             >
               <span
                 className={`text-5xl font-bold ${
-                  selectedCard === card.id ? "text-white" : "text-gray-400"
+                  selectedCard === card.id ? "text-white" : "text-white"
                 }`}
               >
                 {card.id}
               </span>
               <span
                 className={`mt-2 text-lg ${
-                  selectedCard === card.id ? "text-white" : "text-gray-500"
+                  selectedCard === card.id ? "text-white" : "text-white"
                 }`}
               >
                 {card.title}
@@ -72,10 +72,10 @@ const Vantagens = () => {
 
       {/* Parte Direita */}
       <div className="xl:w-1/2 lg:w-1/2 flex flex-col items-center px-6">
-        <h5 className="text-2xl font-bold text-primary mb-4">
+        <h5 className="text-4xl font-bold text-primary mb-4">
           {cards.find((card) => card.id === selectedCard)?.title}
         </h5>
-        <p className="text-dark text-2xl text-center leading-relaxed px-4">
+        <p className="text-dark text-2xl font-light text-center leading-relaxed px-4">
           {cards.find((card) => card.id === selectedCard)?.description}
         </p>
       </div>

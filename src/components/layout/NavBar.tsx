@@ -11,7 +11,7 @@ const NavBar: FC<NavBarProps> = ({}) => {
   return (
     <nav className="w-full bg-primary flex justify-between    py-6 xl:py-10">
       <div className="md:w-1/2 flex flex-row gap-1 items-start ml-10">
-              <h1 className="text-4xl font-bold drop-shadow-md  text-light cursor-pointer" >ABFN</h1>
+              <h1 className="text-4xl font-bold drop-shadow-md  text-light cursor-pointer" ><a href="/">ABFN</a></h1>
               <p className="text-xl mt-3 text-light">
                 Associação Brasileira das Famílias Numerosas
               </p>

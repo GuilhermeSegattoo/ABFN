@@ -18,7 +18,7 @@ const ContatoFooter = () => {
             </div>
             {/* Logo */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-6 lg:mt-0">
-              <h3 className="text-4xl font-bold">ABFN</h3>
+              <h3 className="text-4xl font-bold"><a href="/">ABFN</a></h3>
             </div>
           </div>
   

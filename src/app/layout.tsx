@@ -1,6 +1,6 @@
 import "./globals.css";
 import NavBar from "@/components/layout/NavBar";
-
+import { Analytics } from "@vercel/analytics/react"
 export const metadata = {
   title: "ABFN",
   description: "Associação Brasileira de Famílias Numerosas",

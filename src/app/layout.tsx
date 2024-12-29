@@ -18,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-poppins">
         <NavBar />
         {children}
+        <Analytics />
       </body>
     </html>
   );

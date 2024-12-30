@@ -32,4 +32,26 @@ const Defendendo = () => {
   );
 };
 
-export default Defendendo;
+const Section = () => {
+  return (
+    <section className="w-full px-4 py-16 flex flex-col items-center">
+      {/* Linha horizontal */}
+      <hr className="w-[70%] border-t-2 border-third mb-8" />
+
+      {/* Conteúdo da Section */}
+      <div className="flex justify-between items-center w-full max-w-7xl px-4">
+        {/* Título à esquerda */}
+        <h2 className="font-bold text-3xl lg:text-5xl text-primary leading-tight text-center lg:text-left">
+          Juntos, <br /> criamos o amanhã
+        </h2>
+
+        {/* Frase à direita */}
+        <p className="text-xl sm:text-2xl text-right font-light text-gray-700 max-w-lg">
+          Vamos nos unir junto a ABFN e fortalecer a vida das famílias numerosas.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+export { Defendendo, Section };

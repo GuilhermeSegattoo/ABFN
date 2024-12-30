@@ -41,7 +41,7 @@ const Section = () => {
       {/* Conteúdo da Section */}
       <div className="flex justify-between items-center w-full max-w-7xl px-4">
         {/* Título à esquerda */}
-        <h2 className="font-bold text-3xl lg:text-5xl text-primary leading-tight text-center lg:text-left">
+        <h2 className="font-bold text-2xl lg:text-5xl text-primary leading-tight text-center lg:text-left">
           Juntos, <br /> criamos o amanhã
         </h2>
 

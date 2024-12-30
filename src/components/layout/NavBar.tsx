@@ -59,7 +59,9 @@ const NavBar: FC<NavBarProps> = ({}) => {
         <li className="text-dark font-light text-lg hover:border-b-4 hover:border-third hover:text-third">
           <Link href={"#sobre"}>Sobre</Link>
         </li>
-      
+        <li className="text-light font-light text-lg hover:border-b-4 hover:border-third hover:text-third">
+          <Link href="/news">Notícias</Link>
+        </li>
         <li className="text-dark font-light text-lg hover:border-b-4 hover:border-third hover:text-third">
           <Link href={"#contato"}>Contato</Link>
         </li>

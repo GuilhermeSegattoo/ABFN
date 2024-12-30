@@ -19,7 +19,7 @@ const Hero: FC<HeroProps> = ({}) => {
 
       {/* Frase */}
       <p className="text-light font-medium text-xl sm:text-xl sm:mb-5 xl:text-4xl mt-4 text-center leading-relaxed max-w-3xl">
-        Fortalecendo Famílias Numerosas no Brasil
+        Fortalecendo as Famílias Numerosas no Brasil
       </p> 
 
      

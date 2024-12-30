@@ -13,7 +13,7 @@ const Defendendo = () => {
           </h2>
           <p className="text-dark text-xl lg:text-2xl leading-relaxed font-light text-center lg:text-left mt-6">
             Promovendo políticas e ações que valorizem sua dignidade, assegurando seus direitos e fortalecendo sua
-            contribuição como pilar essencial da sociedade, com base no respeito à vida e à pessoa humana.
+            contribuição como pilar essencial da sociedade, com base no respeito a vida e a pessoa humana.
           </p>
         </div>
 

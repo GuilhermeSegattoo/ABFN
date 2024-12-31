@@ -10,14 +10,14 @@ export const metadata = {
   og: {
     title: "Associação Brasileira de Famílias Numerosas | ABFN",
     description: "A ABFN oferece apoio jurídico e social para famílias numerosas, com ações e políticas públicas para melhorar a qualidade de vida dessas famílias.",
-    image: "/og-image.jpg", // Substitua por uma imagem representativa do seu site
+    image: "/lg.svg", // Substitua por uma imagem representativa do seu site
     url: "https://www.abfnumerosas.org",
   },
   twitter: {
     card: "summary_large_image",
     title: "Associação Brasileira de Famílias Numerosas | ABFN",
     description: "A ABFN defende os direitos das famílias numerosas, oferecendo apoio jurídico e promovendo políticas públicas.",
-    image: "/twitter-image.jpg", // Substitua por uma imagem otimizada para Twitter
+    image: "/lg.svg", // Substitua por uma imagem otimizada para Twitter
   },
   icons: {
     icon: "/lg.svg", // Caminho do arquivo favicon

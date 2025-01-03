@@ -8,7 +8,7 @@ const FamilySection = () => {
       alt="familia"
       width={1440}
       height={780}
-      className="object-contain lg:mt-[10px] mt-[-110px] md:mt-[-260px] w-full max-w-6xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl"
+      className="object-contain mt-[-300px] mb-[-300px] w-full max-w-6xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl"
     />
   </div>
   )

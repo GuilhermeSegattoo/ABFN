@@ -37,7 +37,7 @@ const Vantagens = () => {
       {/* Parte Esquerda */}
       <div className="xl:w-1/2 lg:w-1/2 px-4 md:px-20 py-16 bg-gray-50">
         <h4 className="font-bold text-4xl text-third md:ml-6 mb-4 text-center lg:text-left">
-          Sobre nós?
+          Sobre nós
         </h4>
         <p className="text-dark text-2xl font-light leading-relaxed text-center md:ml-6 lg:text-left mb-6">
         Nosso objetivo é apoiar e transformar a vida das famílias, promovendo bem-estar, desenvolvimento e união.

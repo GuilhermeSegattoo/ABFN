@@ -95,8 +95,8 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative flex items-center justify-center h-screen bg-primary">
-        <div className="text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 mt-56">
+        <div className="text-center text-white px-4 max-w-4xl mt-96">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 xs:mt-[-100px]">
             Vamos nos unir à ABFN e fortalecer a vida das famílias numerosas
           </h1>
           <p className="text-xl mb-4">
@@ -112,7 +112,7 @@ export default function Home() {
             </button>
            
           </Link>
-          <div className="mt-4">
+          <div className="lg:mt-[-200px] xs:mt-[-100px]">
             <Image
               src="/fm.png"
               alt="ABFN Family"
@@ -121,7 +121,7 @@ export default function Home() {
               className="object-contain w-full max-w-[90%] md:max-w-4xl lg:max-w-5xl mx-auto mt-[-100px]"
             />
           </div>
-          <p className="text-lg mb-32">
+          <p className="text-lg mb-32 xs:text-[13px] tracking-tight leading-none">
             A ABFN valoriza a vida desde a concepção até a morte natural, apoiando famílias numerosas que vivem a generosidade do amor e a paternidade responsável.
           </p>
         </div>

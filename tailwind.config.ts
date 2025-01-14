@@ -9,6 +9,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: '300px', // Faixa entre 300px e 400px
+        sm: '400px', // Faixa entre 400px e 700px
+        md: '700px', // Faixa entre 700px e 1000px
+        lg: '1000px', // Acima de 1000px
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

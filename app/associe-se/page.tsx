@@ -113,7 +113,7 @@ export default function AssociePage() {
           />
         </div>
         <div className="relative z-10 container mx-auto px-4 text-white">
-          <h1 className="text-5xl font-bold mb-6 max-w-2xl">
+          <h1 className="text-5xl font-bold mb-6 max-w-2xl xs:mt-20">
             Junte-se à Nossa Comunidade de Famílias Numerosas
           </h1>
           <p className="text-xl mb-8 max-w-xl">
@@ -205,7 +205,7 @@ export default function AssociePage() {
                       </li>
                     ))}
                   </ul>
-                  <a href="/cadastro">
+                  <a href="#cadastro">
                     <button className="w-full mt-6 bg-primary text-white py-2 rounded-lg">
                       Selecionar
                     </button>

@@ -21,9 +21,9 @@ export default function Navbar() {
     <nav className="bg-primary shadow-sm fixed w-full h-28 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mt-8 h-16">
-          <Link href="/" className="font-bold text-2xl text-white">
+          <Link href="/" className="font-bold text-2xl text-white mr-5">
             ABFN
-            <span className=" font-medium text-lg"> Associação Brasileira de Famílias Numerosas</span>
+            <span className="hidden lg:block font-medium text-lg"> Associação Brasileira de Famílias Numerosas</span>
           </Link>
 
 
@@ -41,16 +41,16 @@ export default function Navbar() {
           </div>
 
           {/* Login Button */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center ml-6 space-x-4 gap-4 mr-2">
             <Link
               href="/associado"
               className="bg-secondary text-white px-4 py-2 rounded-md hover:bg-accent/90 transition-colors"
             >
               Área do Associado
             </Link>
-            <a href=""><Image src="/face-icon.svg" alt="Icon ABFN" width={30} height={30}></Image></a>
-            <a href=""><Image src="/insta-icon.svg" alt="Icon ABFN" width={30} height={30}></Image></a>
-            <a href=""><Image src="/wpp-icon.svg" alt="Icon ABFN" width={30} height={30}></Image></a>
+            <a href=""><Image src="/face-icon.svg" alt="Icon ABFN" width={30} height={30} className="hidden lg:block fixed  w-30 h-30"></Image></a>
+            <a href=""><Image src="/insta-icon.svg" alt="Icon ABFN" width={30} height={30} className="hidden lg:block fixed  w-30 h-30"></Image></a>
+            <a href=""><Image src="/wpp-icon.svg" alt="Icon ABFN" width={30} height={30} className="hidden lg:block fixed  w-30 h-30"></Image></a>
           </div>
 
           {/* Mobile Menu Button */}

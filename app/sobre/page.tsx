@@ -56,24 +56,26 @@ export default function SobrePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="text-center p-6 bg-primary/5 rounded-lg">
+            <div className="text-center p-6 bg-accent/5 rounded-lg">
               <h2 className="text-xl font-semibold mb-3">Missão</h2>
               <p className="text-muted-foreground">
-                Fortalecer e defender os interesses das famílias numerosas,
-                promovendo seu reconhecimento e valorização na sociedade.
+              Defender os interesses das famílias numerosas, promovendo políticas e ações que valorizem sua dignidade,
+              assegurando seus direitos e fortaleçendo sua contribuição como pilar essencial da sociedade, com base no 
+              respeito a vida e a pessoa humana.
               </p>
             </div>
             <div className="text-center p-6 bg-primary/5 rounded-lg">
               <h2 className="text-xl font-semibold mb-3">Visão</h2>
               <p className="text-muted-foreground">
-                Ser referência nacional na defesa e promoção das famílias numerosas,
-                contribuindo para uma sociedade mais acolhedora e justa.
+              Ser reconhecida como a principal representante e parceira das famílias numerosas no Brasil, 
+              promovendo uma cultura que valorize a vida, a solidariedade e o papel fundamental da família no desenvolvimento da sociedade.
               </p>
             </div>
-            <div className="text-center p-6 bg-primary/5 rounded-lg">
+            <div className="text-center p-6 bg-secondary/5 rounded-lg">
               <h2 className="text-xl font-semibold mb-3">Valores</h2>
               <p className="text-muted-foreground">
-                Família, Solidariedade, Respeito, Compromisso e Transparência.
+               Respeitar a vida, dignificar a pessoa, 
+               fortalecer a família e promover a solidariedade e cidadania ativa para um bem-estar social duradouro.
               </p>
             </div>
           </div>

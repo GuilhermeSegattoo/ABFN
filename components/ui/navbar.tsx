@@ -69,15 +69,15 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block py-2 text-primary bg-white text-center mx-10 rounded-md mb-2 hover:text-primary transition-colors"
+                className="block py-4 text-white bg-accent text-center font-semibold  hover:text-primary transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
             <Link
-              href="/login"
-              className="block py-2 text-primary mx-10 bg-white rounded-md text-center font-semibold"
+              href="/associado"
+              className="block py-2 text-primary  bg-secondary text-white hover:text-primary text-center font-semibold"
               onClick={() => setIsOpen(false)}
             >
               Área do Associado

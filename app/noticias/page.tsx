@@ -73,7 +73,7 @@ export default function NoticiasPage() {
   return (
     <main className="pt-16">
       {/* Hero Section */}
-      <section className="relative h-[40vh] flex items-center">
+      <section className="relative h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80"

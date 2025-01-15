@@ -59,7 +59,7 @@ export default function Home() {
       description:
         "Acordos negociados com empresas para obter descontos vantajosos.",
       imageUrl:
-        "https://cdn.pixabay.com/photo/2022/08/07/09/37/sale-7370239_960_720.png",
+        "https://i.pinimg.com/736x/64/fd/00/64fd0021d0c219010040c8a7a5972265.jpg",
     },
     {
       id: 4,
@@ -96,23 +96,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative flex items-center justify-center h-screen bg-primary">
         <div className="text-center text-white px-4 max-w-4xl mt-96">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 xs:mt-[-100px]">
-            Vamos nos unir à ABFN e fortalecer a vida das famílias numerosas
-          </h1>
-          <p className="text-xl mb-4">
-            Juntos construímos um futuro melhor para nossas famílias
-          </p>
-
-          <Link
-            href="/associe-se"
-            
-          >
-            <button className="bg-secondary hover:bg-accent/90 text-white px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center gap-2 mb-8 transition-all">
-            Associe-se Agora <ArrowRight className="w-5 h-5" />
-            </button>
-           
-          </Link>
-          <div className="lg:mt-[-200px] xs:mt-[-100px]">
+        <div className="lg:mt-[-500px] md:mt-[-300px] xs:mt-[-400px]">
             <Image
               src="/fm.png"
               alt="ABFN Family"
@@ -121,9 +105,25 @@ export default function Home() {
               className="object-contain w-full max-w-[90%] md:max-w-4xl lg:max-w-5xl mx-auto mt-[-100px]"
             />
           </div>
-          <p className="text-lg mb-32 xs:text-[13px] tracking-tight leading-none">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 xs:mt[-100px]">
+            Vamos nos unir à ABFN e fortalecer a vida das famílias numerosas
+          </h1>
+          <p className="text-xl mb-4">
+            Juntos construímos um futuro melhor para nossas famílias
+          </p>
+
+          <Link
+            href="/associe-se"
+          >
+            <button className="bg-secondary hover:bg-accent/90 text-white px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center gap-2 mb-8 transition-all">
+              Associe-se Agora <ArrowRight className="w-5 h-5" />
+            </button>
+          </Link>
+          
+          <p className="text-lg mb-4 xs:text-[13px] tracking-tight leading-none">
             A ABFN valoriza a vida desde a concepção até a morte natural, apoiando famílias numerosas que vivem a generosidade do amor e a paternidade responsável.
           </p>
+         
         </div>
       </section>
 
@@ -264,60 +264,57 @@ export default function Home() {
         </div>
       </section>
 
-      {/* vantagens Section */}
       <section className="w-full px-4 py-16 bg-white">
-  <h2 className="font-bold text-2xl lg:text-4xl text-center mb-8">
-    Vantagens de ser parte da ABFN
-  </h2>
+        <h2 className="font-bold text-2xl lg:text-4xl text-center mb-12">
+          Vantagens de ser parte da ABFN
+        </h2>
 
-  {/* Grade de cartões */}
-  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-    {vantagens.map((vantagem) => (
-      <div
-        key={vantagem.id}
-        className={`relative flex flex-col items-center justify-center h-40 w-full bg-blue-500 text-white rounded-lg shadow transition-all duration-300 cursor-pointer ${
-          selectedCard === vantagem.id ? "bg-accent" : "bg-blue-500"
-        }`}
-        onClick={() => {
-          setSelectedCard(vantagem.id);
-          setProgress(0);
-        }}
-      >
-        
-        <span className="mt-2 text-lg font-semibold text-center">{vantagem.title}</span>
-        {selectedCard === vantagem.id && (
-          <div
-            className="absolute bottom-0 left-0 h-1 bg-orange-500"
-            style={{ width: `${progress}%` }}
-          ></div>
-        )}
-      </div>
-    ))}
-  </div>
+        {/* Grade de Cartões */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {vantagens.map((vantagem) => (
+            <div
+              key={vantagem.id}
+              className={`relative flex flex-col items-center justify-center h-40 w-full rounded-lg shadow-lg cursor-pointer transition-all duration-300 ${selectedCard === vantagem.id ? "bg-primary text-white" : "bg-gray-100 text-gray-800"
+                }`}
+              onClick={() => {
+                setSelectedCard(vantagem.id);
+                setProgress(0);
+              }}
+            >
+              <span className="text-xl font-semibold text-center">{vantagem.title}</span>
+             
+            </div>
+          ))}
+        </div>
 
-  {/* Conteúdo dividido: Texto à esquerda, Imagem à direita */}
-  <div className="mt-12 max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8">
-    {/* Texto de descrição */}
-    <div className="lg:w-1/2 text-center lg:text-left">
-      <p className="text-3xl font-bold text-center mt-28 text-gray-700">
-        {selectedVantagem?.description}
-      </p>
-    </div>
+        {/* Conteúdo Dinâmico */}
+        <div className="mt-16 max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+          {/* Texto à esquerda */}
+          <div className="lg:w-1/2 text-center lg:text-left">
+            <h3 className="text-3xl font-bold text-primary mb-4">
+              {selectedVantagem?.title || "Descubra as Vantagens"}
+            </h3>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              {selectedVantagem?.description ||
+                "Escolha uma das vantagens acima para saber mais sobre como a ABFN pode apoiar você e sua família."}
+            </p>
+          </div>
 
-    {/* Imagem */}
-    {selectedVantagem?.imageUrl && (
-      <div className="lg:w-1/2 flex justify-center">
-        <Image
-          src={selectedVantagem.imageUrl}
-          alt={selectedVantagem.title}
-          width={400}
-          height={400}
-          className="object-cover rounded-lg shadow-lg"
-        />
-      </div>
-    )}
-  </div>
-</section>
+          {/* Imagem à direita */}
+          {selectedVantagem?.imageUrl && (
+            <div className="lg:w-1/2 flex justify-center">
+              <Image
+                src={selectedVantagem.imageUrl}
+                alt={selectedVantagem.title}
+                width={500}
+                height={500}
+                className="object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          )}
+        </div>
+      </section>
+
 
     </main>
 

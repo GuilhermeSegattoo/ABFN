@@ -48,7 +48,7 @@ export default function AssociePage() {
       benefits: ["Acesso à rede de apoio", "Associados aspirantes não possuem direito de votar ou ser votados", "Descontos selecionados"],
     },
     {
-      title: "Associados",
+      title: "Afiliados",
       description: "São as famílias numerosas que atingiram o número mínimo de seis membros, que de forma espontânea solicitam sua associação.",
       benefits: ["Acesso à rede de apoio", "não possuem direito de votar ou ser votados", "Descontos selecionados"],
     },

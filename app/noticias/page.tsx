@@ -84,7 +84,7 @@ export default function NoticiasPage() {
         </div>
         <div className="relative z-10 container mx-auto px-4 text-white">
           <h1 className="text-5xl font-bold mb-6">
-            Notícias e Atualizações
+            Notícias e Destaques
           </h1>
           <p className="text-xl max-w-2xl">
             Mantenha-se informado sobre as últimas novidades, eventos e conquistas da ABFN

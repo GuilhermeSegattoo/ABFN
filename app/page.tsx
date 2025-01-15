@@ -1,96 +1,63 @@
 "use client";
 
-import { ArrowRight, Users, Heart, Shield, Gift } from "lucide-react";
+import { ArrowRight, Users, Heart, Shield, Gift,
+   HandshakeIcon, Target, BadgePercent, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
-  const [selectedCard, setSelectedCard] = useState(1);
-  const [progress, setProgress] = useState(0);
+   
+  const [selectedAdvantage, setSelectedAdvantage] = useState(0);
 
-  const cards = [
+  const advantages = [
     {
-      id: 1,
-      title: "Bem-estar e Saúde",
-      description:
-        "Promovermos o cuidado com a saúde das famílias, com iniciativas que vão além do cuidado físico, abrangendo também o bem-estar emocional e social",
+      title: "Comunidade Unida",
+      description: "Faça parte de uma rede de apoio com famílias que compartilham os mesmos valores e desafios.",
+      image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80",
     },
     {
-      id: 2,
-      title: "Serviços e Produtos",
-      description:
-        "Conectamos famílias numerosas a soluções acessíveis e exclusivas, garantindo suporte prático para o dia a dia",
+      title: "Benefícios Exclusivos",
+      description: "Acesse descontos especiais e vantagens únicas com nossa rede de parceiros em todo o Brasil.",
+      image: "https://images.unsplash.com/photo-1607863680198-23d4b2565df0?auto=format&fit=crop&q=80",
     },
     {
-      id: 3,
-      title: "Educação e Desenvolvimento",
-      description:
-        "Oferecemos oportunidades educacionais e de formação, investindo no crescimento das famílias e no futuro de seus filhos",
+      title: "Suporte Jurídico",
+      description: "Conte com orientação especializada para defender os direitos da sua família.",
+      image: "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&q=80",
     },
     {
-      id: 4,
-      title: "Alimentação",
-      description:
-        "Apoiamos a segurança alimentar com ações que promovem nutrição adequada e acessível para quem mais precisa",
+      title: "Eventos Especiais",
+      description: "Participe de encontros, workshops e atividades exclusivas para associados.",
+      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80",
     },
   ];
 
-  const vantagens = [
+  const benefits = [
     {
-      id: 1,
-      title: "Defesa dos direitos familiares",
-      description:
-        "Garantia de maior equidade no tratamento social, fiscal e de consumo.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1718931161119-f4207c149111?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      icon: Users,
+      title: "Comunidade",
+      description: "Faça parte de uma rede de apoio com famílias que compartilham os mesmos valores",
     },
     {
-      id: 2,
-      title: "Rede de compartilhamento",
-      description:
-        "Plataforma online 'Ambiente restrito' para apoio mútuo e troca de informações úteis entre famílias numerosas.",
-      imageUrl:
-        "https://img.freepik.com/premium-photo/map-brazil_698953-10978.jpg",
+      icon: Heart,
+      title: "Suporte",
+      description: "Acesso a recursos e orientação para fortalecer sua família",
     },
     {
-      id: 3,
-      title: "Descontos exclusivos",
-      description:
-        "Acordos negociados com empresas para obter descontos vantajosos.",
-      imageUrl:
-        "https://i.pinimg.com/736x/64/fd/00/64fd0021d0c219010040c8a7a5972265.jpg",
+      icon: Shield,
+      title: "Proteção",
+      description: "Defesa dos direitos e interesses das famílias numerosas",
     },
     {
-      id: 4,
-      title: "Sustentabilidade",
-      description: "Espaço 'trocas & doações' para reutilização de bens.",
-      imageUrl:
-        "https://www.intra-teka.com/data/imagelibrary/getimage?imageID=585&maxw=600&maxh=600",
+      icon: Gift,
+      title: "Benefícios",
+      description: "Descontos exclusivos e vantagens com nossos parceiros",
     },
   ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSelectedCard((prev) => (prev === cards.length ? 1 : prev + 1));
-      setProgress(0);
-    }, 5000);
-
-    const progressInterval = setInterval(() => {
-      setProgress((prev) => (prev >= 100 ? 0 : prev + 2));
-    }, 100);
-
-    return () => {
-      clearInterval(interval);
-      clearInterval(progressInterval);
-    };
-  }, [cards.length]);
-
-
-  const selectedVantagem = vantagens.find(
-    (vantagem) => vantagem.id === selectedCard
-  );
-
+   
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -112,13 +79,14 @@ export default function Home() {
             Juntos construímos um futuro melhor para nossas famílias
           </p>
 
-          <Link
-            href="/associe-se"
-          >
-            <button className="bg-secondary hover:bg-accent/90 text-white px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center gap-2 mb-8 transition-all">
-              Associe-se Agora <ArrowRight className="w-5 h-5" />
-            </button>
-          </Link>
+       
+              <Link href="/associe-se">
+                <Button size="lg" className="bg-accent hover:bg-secondary text-white px-8 py-6 rounded-full text-lg font-semibold inline-flex items-center mb-3 gap-2">
+                  Associe-se Agora <ArrowRight className="w-5 h-5" />
+                </Button>
+              </Link>
+             
+            
           
           <p className="text-lg mb-4 xs:text-[13px] tracking-tight leading-none">
             A ABFN valoriza a vida desde a concepção até a morte natural, apoiando famílias numerosas que vivem a generosidade do amor e a paternidade responsável.
@@ -173,145 +141,132 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="mt-12 lg:mx-40 mx-7 grid grid-cols-2 md:grid-cols-4 gap-8">
+              <Link href="/associe-se" className="group">
+                <div className="bg-accent backdrop-blur-sm p-6 rounded-lg hover:bg-primary transition-all">
+                  <h3 className="text-white font-semibold mb-2">Categorias</h3>
+                  <p className="text-white/80 text-sm">Escolha o plano ideal para sua família</p>
+                  <ChevronRight className="w-5 h-5 text-white mt-4 group-hover:translate-x-2 transition-transform" />
+                </div>
+              </Link>
+              <Link href="/parcerias" className="group">
+                <div className="bg-accent backdrop-blur-sm p-6 rounded-lg hover:bg-primary transition-all">
+                  <h3 className="text-white font-semibold mb-2">Seja Parceiro</h3>
+                  <p className="text-white/80 text-sm">Una-se à nossa rede de parceiros</p>
+                  <ChevronRight className="w-5 h-5 text-white mt-4 group-hover:translate-x-2 transition-transform" />
+                </div>
+              </Link>
+              <Link href="/sobre" className="group">
+                <div className="bg-accent backdrop-blur-sm p-6 rounded-lg hover:bg-primary transition-all">
+                  <h3 className="text-white font-semibold mb-2">Sobre Nós</h3>
+                  <p className="text-white text-sm">Conheça nossa história e missão</p>
+                  <ChevronRight className="w-5 h-5 text-white mt-4 group-hover:translate-x-2 transition-transform" />
+                </div>
+              </Link>
+              <Link href="/noticias" className="group">
+                <div className="bg-accent backdrop-blur-sm p-6 rounded-lg hover:bg-primary transition-all">
+                  <h3 className="text-white font-semibold mb-2">Notícias</h3>
+                  <p className="text-white/80 text-sm">Fique por dentro das novidades</p>
+                  <ChevronRight className="w-5 h-5 text-white mt-4 group-hover:translate-x-2 transition-transform" />
+                </div>
+              </Link>
+            </div>
       </section>
+
+      
+
+    
 
       {/* CTA Section */}
-      <section className="w-full px-4 py-16 flex flex-col items-center">
-        {/* Linha horizontal */}
-        <hr className="w-[70%] border-t-2 border-third mb-8" />
-
-        {/* Conteúdo da Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-center w-full max-w-7xl px-4 space-y-6 lg:space-y-0 lg:space-x-8">
-          {/* Título à esquerda */}
-          <h2 className="font-bold text-2xl lg:text-5xl leading-tight text-center lg:text-left">
-            Juntos, <br /> criamos o amanhã
-          </h2>
-
-          {/* Frase à direita */}
-          <p className="text-xl text-center lg:text-right font-light text-gray-700 max-w-lg">
-            Podemos transformar nossas comunidades e construir um futuro mais justo e solidário para todas as famílias
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 text-center">
+          <div className="w-24 h-1 bg-secondary mx-auto mb-8" />
+          <h2 className="text-4xl font-bold mb-6">Juntos, criamos o amanhã</h2>
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Transformamos comunidades através do fortalecimento das famílias numerosas,
+            construindo um futuro mais solidário e acolhedor.
           </p>
+          <Link href="/associe-se">
+            <Button size="lg" className="bg-secondary hover:bg-primary">
+              Faça Parte dessa História
+            </Button>
+          </Link>
         </div>
       </section>
 
-      {/* vantagens Section */}
-
-      <section className="mt-16 xl:mt-10 md:mx-5 lg:mx-24 relative flex flex-wrap items-center justify-between">
-        {/* Parte Esquerda */}
-        <div className="xl:w-1/2 lg:w-1/2 px-4 md:px-20 py-16 bg-gray-50 rounded-sm">
-          <p className="text-dark text-xl font-light leading-relaxed text-center md:ml-6 lg:text-left mb-6">
-            Nosso objetivo é apoiar e transformar a vida das famílias, promovendo bem-estar, desenvolvimento e união
-          </p>
-          <div className="grid grid-cols-2 gap-6">
-            {cards.map((card) => (
-              <button
-                key={card.id}
-                className={`relative flex flex-col justify-center items-center w-full h-32 ${selectedCard === card.id ? "bg-secondary text-dark" : "bg-accent text-white"
-                  } hover:bg-primary hover:text-white text-center font-medium transition-all duration-300`}
-                onClick={() => {
-                  setSelectedCard(card.id);
-                  setProgress(0);
-                }}
-              >
-                <span className="text-5xl font-bold">{card.id}</span>
-                <span className="mt-2 text-lg">{card.title}</span>
-                {selectedCard === card.id && (
-                  <div
-                    className="absolute bottom-0 left-0 h-1 bg-primary"
-                    style={{ width: `${progress}%` }}
-                  />
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Parte Direita */}
-        <div className="xl:w-1/2 lg:w-1/2 flex flex-col items-center px-6">
-          <h5 className="text-4xl font-bold text-primary mb-4">
-            {cards.find((card) => card.id === selectedCard)?.title}
-          </h5>
-          <p className="text-dark text-xl font-light text-center leading-relaxed px-4">
-            {cards.find((card) => card.id === selectedCard)?.description}
-          </p>
-        </div>
-      </section>
-
-      {/* Defendendo Section */}
-      <section className="w-full py-16 px-4 md:px-20 lg:px-32 bg-white">
-        <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-          {/* Parte Esquerda - Texto */}
-          <div className="lg:w-1/2">
-            <h2 className="font-bold text-3xl lg:text-5xl text-third leading-tight text-center lg:text-left">
-              Defendendo os interesses das famílias numerosas
-            </h2>
-            <p className="text-dark text-xl lg:text-xl leading-relaxed font-light text-center lg:text-left mt-6">
-              Promovendo políticas e ações que valorizem sua dignidade, assegurando seus direitos e fortalecendo sua
-              contribuição como pilar essencial da sociedade, com base no respeito a vida e a pessoa humana
-            </p>
-          </div>
-
-          {/* Parte Direita - Imagem */}
-          <div className="lg:w-1/2 flex justify-center">
-            <Image
-              src="/plantando.jpg"
-              alt="Mãos plantando"
-              width={650}
-              height={400}
-              className="rounded-lg shadow-lg"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="w-full px-4 py-16 bg-white">
-        <h2 className="font-bold text-2xl lg:text-4xl text-center mb-12">
-          Vantagens de ser parte da ABFN
-        </h2>
-
-        {/* Grade de Cartões */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {vantagens.map((vantagem) => (
-            <div
-              key={vantagem.id}
-              className={`relative flex flex-col items-center justify-center h-40 w-full rounded-lg shadow-lg cursor-pointer transition-all duration-300 ${selectedCard === vantagem.id ? "bg-primary text-white" : "bg-gray-100 text-gray-800"
-                }`}
-              onClick={() => {
-                setSelectedCard(vantagem.id);
-                setProgress(0);
-              }}
-            >
-              <span className="text-xl font-semibold text-center">{vantagem.title}</span>
-             
+      {/* Defending Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-6">Defendendo seus Interesses</h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                A ABFN atua ativamente na defesa dos direitos das famílias numerosas,
+                trabalhando junto a órgãos públicos e privados para garantir políticas
+                justas e benefícios adequados.
+              </p>
+              <Link href="/sobre">
+                <Button className="bg-secondary hover:bg-primary">
+                  Saiba Mais <ChevronRight className="ml-2" />
+                </Button>
+              </Link>
             </div>
-          ))}
-        </div>
-
-        {/* Conteúdo Dinâmico */}
-        <div className="mt-16 max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-          {/* Texto à esquerda */}
-          <div className="lg:w-1/2 text-center lg:text-left">
-            <h3 className="text-3xl font-bold text-primary mb-4">
-              {selectedVantagem?.title || "Descubra as Vantagens"}
-            </h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              {selectedVantagem?.description ||
-                "Escolha uma das vantagens acima para saber mais sobre como a ABFN pode apoiar você e sua família."}
-            </p>
-          </div>
-
-          {/* Imagem à direita */}
-          {selectedVantagem?.imageUrl && (
-            <div className="lg:w-1/2 flex justify-center">
+            <div className="relative h-[400px]">
               <Image
-                src={selectedVantagem.imageUrl}
-                alt={selectedVantagem.title}
-                width={500}
-                height={500}
-                className="object-cover rounded-lg shadow-lg"
+                src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&q=80"
+                alt="Defesa de direitos"
+                fill
+                className="object-cover rounded-lg"
               />
             </div>
-          )}
+          </div>
+        </div>
+      </section>
+
+      {/* Advantages Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-16">Vantagens ABFN</h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-4">
+              {advantages.map((advantage, index) => (
+                <Card
+                  key={advantage.title}
+                  className={`cursor-pointer transition-all ${
+                    selectedAdvantage === index
+                      ? "border-secondary shadow-lg"
+                      : "hover:border-primary/50"
+                  }`}
+                  onClick={() => setSelectedAdvantage(index)}
+                >
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-2">{advantage.title}</h3>
+                    <p className="text-muted-foreground">{advantage.description}</p>
+                    {selectedAdvantage === index && (
+                      <div className="h-1 bg-secondary mt-4 rounded-full" />
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <div className="relative h-[500px] rounded-lg overflow-hidden">
+              <Image
+                src={advantages[selectedAdvantage].image}
+                alt={advantages[selectedAdvantage].title}
+                fill
+                className="object-cover transition-all duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  {advantages[selectedAdvantage].title}
+                </h3>
+                <p className="text-white/90">
+                  {advantages[selectedAdvantage].description}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

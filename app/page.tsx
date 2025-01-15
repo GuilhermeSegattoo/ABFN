@@ -25,7 +25,7 @@ export default function Home() {
     },
     {
       title: "Suporte Jurídico",
-      description: "Conte com orientação especializada para defender os direitos da sua família.",
+      description: "Juntos, fortalecemos os direitos da sua família em todas as etapas da vida.",
       image: "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&q=80",
     },
     {
@@ -84,14 +84,7 @@ export default function Home() {
                 <Button size="lg" className="bg-accent hover:bg-secondary text-white px-8 py-6 rounded-full text-lg font-semibold inline-flex items-center mb-3 gap-2">
                   Associe-se Agora <ArrowRight className="w-5 h-5" />
                 </Button>
-              </Link>
-             
-            
-          
-          <p className="text-lg mb-4 xs:text-[13px] tracking-tight leading-none">
-            A ABFN valoriza a vida desde a concepção até a morte natural, apoiando famílias numerosas que vivem a generosidade do amor e a paternidade responsável.
-          </p>
-         
+              </Link> 
         </div>
       </section>
 
@@ -183,8 +176,8 @@ export default function Home() {
           <div className="w-24 h-1 bg-secondary mx-auto mb-8" />
           <h2 className="text-4xl font-bold mb-6">Juntos, criamos o amanhã</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Transformamos comunidades através do fortalecimento das famílias numerosas,
-            construindo um futuro mais solidário e acolhedor.
+          A ABFN valoriza a vida desde a concepção até a morte natural, apoiando famílias
+           numerosas que vivem a generosidade do amor e a paternidade responsável.
           </p>
           <Link href="/associe-se">
             <Button size="lg" className="bg-secondary hover:bg-primary">

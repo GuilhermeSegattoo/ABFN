@@ -14,23 +14,23 @@ export default function Home() {
 
   const advantages = [
     {
-      title: "Comunidade Unida",
+      title: "Defesa dos direitos familiares",
       description: "Faça parte de uma rede de apoio com famílias que compartilham os mesmos valores e desafios.",
       image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80",
     },
     {
-      title: "Benefícios Exclusivos",
+      title: "Descontos exclusivos",
       description: "Acesse descontos especiais e vantagens únicas com nossa rede de parceiros em todo o Brasil.",
       image: "https://images.unsplash.com/photo-1607863680198-23d4b2565df0?auto=format&fit=crop&q=80",
     },
     {
-      title: "Suporte Jurídico",
+      title: "Rede de compartilhamento",
       description: "Juntos, fortalecemos os direitos da sua família em todas as etapas da vida.",
       image: "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&q=80",
     },
     {
-      title: "Eventos Especiais",
-      description: "Participe de encontros, workshops e atividades exclusivas para associados.",
+      title: "Sustentabilidade",
+      description: "Trocar e doar, uma forma simples de cuidar do meio ambiente e apoiar famílias.",
       image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80",
     },
   ];

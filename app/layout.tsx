@@ -10,8 +10,8 @@ import { getSEOTags } from '@/lib/seo';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = getSEOTags({
- appName: "ABFN - Associação Brasileira de Famílias Numerosas",
- appDescription: "Defesa dos direitos e interesses das famílias numerosas",
+ appName: "Associação Brasileira das Famílias Numerosas",
+ appDescription: "Vamos nos unir à ABFN e fortalecer a vida das famílias numerosas",
  keywords: ["familia", "direitos", "justicia", "associados", "abfn"],
  appDomain: "https://abfnumerosas.org",
  canonicalUrlRelative: "/",

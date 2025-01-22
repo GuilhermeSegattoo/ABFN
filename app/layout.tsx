@@ -5,16 +5,19 @@ import { Toaster } from 'react-hot-toast';
 import Navbar from '@/components/ui/navbar';
 import Footer from '@/components/ui/footer';
 import { Analytics } from "@vercel/analytics/react";
+import { getSEOTags } from '@/lib/seo';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: 'ABFN - Associação Brasileira de Famílias Numerosas',
-  description: 'Fortalecendo e apoiando famílias numerosas no Brasil',
-  icons: {
-    icon: '/lg.svg',
-  }
-};
+export const metadata: Metadata = getSEOTags({
+ appName: "ABFN - Associação Brasileira de Famílias Numerosas",
+ appDescription: "Defesa dos direitos e interesses das famílias numerosas",
+ keywords: ["familia", "direitos", "justicia", "associados", "abfn"],
+ appDomain: "https://abfnumerosas.org",
+ canonicalUrlRelative: "/",
+ locale: "pt-BR",
+});
+
 
 export default function RootLayout({
   children,

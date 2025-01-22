@@ -1,13 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://www.abfnumerosas.org/login</loc><lastmod>2025-01-22T16:52:05.264Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/login"/><xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/login"/><xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/login"/></url>
-<url><loc>https://www.abfnumerosas.org/sobre</loc><lastmod>2025-01-22T16:52:05.264Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/sobre"/><xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/sobre"/><xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/sobre"/></url>
-<url><loc>https://www.abfnumerosas.org/beneficios</loc><lastmod>2025-01-22T16:52:05.264Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/beneficios"/><xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/beneficios"/><xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/beneficios"/></url>
-<url><loc>https://www.abfnumerosas.org/parcerias</loc><lastmod>2025-01-22T16:52:05.264Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/parcerias"/><xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/parcerias"/><xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/parcerias"/></url>
-<url><loc>https://www.abfnumerosas.org/noticias</loc><lastmod>2025-01-22T16:52:05.264Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/noticias"/><xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/noticias"/><xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/noticias"/></url>
-<url><loc>https://www.abfnumerosas.org</loc><lastmod>2025-01-22T16:52:05.264Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en"/><xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt"/><xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es"/></url>
-<url><loc>https://www.abfnumerosas.org/associe-se</loc><lastmod>2025-01-22T16:52:05.264Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/associe-se"/><xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/associe-se"/><xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/associe-se"/></url>
-<url><loc>https://www.abfnumerosas.org/termos</loc><lastmod>2025-01-22T16:52:05.264Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/termos"/><xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/termos"/><xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/termos"/></url>
-<url><loc>https://www.abfnumerosas.org/politica</loc><lastmod>2025-01-22T16:52:05.264Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/politica"/><xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/politica"/><xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/politica"/></url>
-<url><loc>https://www.abfnumerosas.org/associado</loc><lastmod>2025-01-22T16:52:05.264Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/associado"/><xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/associado"/><xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/associado"/></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://www.abfnumerosas.org/login</loc>
+    <lastmod>2025-01-22T16:52:05.264Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/login" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/login" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/login" />
+  </url>
+  <url>
+    <loc>https://www.abfnumerosas.org/sobre</loc>
+    <lastmod>2025-01-22T16:52:05.264Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/sobre" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/sobre" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/sobre" />
+  </url>
+  <url>
+    <loc>https://www.abfnumerosas.org/beneficios</loc>
+    <lastmod>2025-01-22T16:52:05.264Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/beneficios" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/beneficios" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/beneficios" />
+  </url>
+  <url>
+    <loc>https://www.abfnumerosas.org/parcerias</loc>
+    <lastmod>2025-01-22T16:52:05.264Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/parcerias" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/parcerias" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/parcerias" />
+  </url>
+  <url>
+    <loc>https://www.abfnumerosas.org/noticias</loc>
+    <lastmod>2025-01-22T16:52:05.264Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/noticias" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/noticias" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/noticias" />
+  </url>
+  <url>
+    <loc>https://www.abfnumerosas.org</loc>
+    <lastmod>2025-01-22T16:52:05.264Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es" />
+  </url>
+  <url>
+    <loc>https://www.abfnumerosas.org/associe-se</loc>
+    <lastmod>2025-01-22T16:52:05.264Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/associe-se" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/associe-se" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/associe-se" />
+  </url>
+  <url>
+    <loc>https://www.abfnumerosas.org/termos</loc>
+    <lastmod>2025-01-22T16:52:05.264Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/termos" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/termos" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/termos" />
+  </url>
+  <url>
+    <loc>https://www.abfnumerosas.org/politica</loc>
+    <lastmod>2025-01-22T16:52:05.264Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/politica" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/politica" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/politica" />
+  </url>
+  <url>
+    <loc>https://www.abfnumerosas.org/associado</loc>
+    <lastmod>2025-01-22T16:52:05.264Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.abfnumerosas.org/en/associado" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.abfnumerosas.org/pt/associado" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.abfnumerosas.org/es/associado" />
+  </url>
 </urlset>

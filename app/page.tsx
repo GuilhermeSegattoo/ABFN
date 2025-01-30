@@ -38,7 +38,7 @@ export default function Home() {
       "bg-blue-600",
       "bg-green-600",
       "bg-primary",
-      "bg-purple-600"
+      "bg-accent",
     ];
     return colors[index % colors.length]; // Alterna entre as cores
   };

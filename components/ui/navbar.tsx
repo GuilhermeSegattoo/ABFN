@@ -24,7 +24,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link href="/" className="flex flex-col items-start">
             <Image
-              src="/Logofm.svg"
+              src="/logofamilia.png"
               alt="Logo ABFN"
               width={200}
               height={60}

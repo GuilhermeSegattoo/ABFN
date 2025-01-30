@@ -12,7 +12,7 @@ export default function Navbar() {
     { label: "Início", href: "/" },
     { label: "Sobre", href: "/sobre" },
     { label: "Benefícios", href: "/beneficios" },
-    { label: "Associe-se", href: "associe-se" },
+    { label: "Associado", href: "associe-se" },
     { label: "Parcerias", href: "/parcerias" },
     { label: "Notícias", href: "/noticias" },
   ];

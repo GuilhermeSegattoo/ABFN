@@ -28,10 +28,10 @@ export default function Navbar() {
               alt="Logo ABFN"
               width={200}
               height={60}
-              className="w-48 h-auto"
+              className="w-28 h-auto"
             />
             <span className="text-white text-xl font-semibold">
-              Associação Brasileira das Famílias Numerosas
+              ABFN
             </span>
           </Link>
         </div>

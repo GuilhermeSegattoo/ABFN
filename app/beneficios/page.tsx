@@ -1,6 +1,7 @@
 "use client";
 
-import { ShoppingBag, Users, Recycle, Shield, Building, Gift } from "lucide-react";
+import { ShoppingBag, Users, Recycle, Shield, Building, Gift,  CheckCircle,  GraduationCap, Heart, UtensilsCrossed, Shirt } from "lucide-react";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -52,23 +53,35 @@ export default function BeneficiosPage() {
     },
   ];
 
-  const partners = [
+  const benefitsPlus = [
     {
-      category: "Educação",
-      discounts: ["20% em mensalidades escolares", "30% em material didático"],
+      title: 'Educação',
+      icon: <GraduationCap className="w-16 h-16 text-blue-600" />,
+      description: 'Descontos exclusivos em escolas parceiras',
+      details: ['Até 30% em mensalidades escolares', 'Material didático com preço reduzido', 'Cursos extracurriculares'],
+      bgColor: 'bg-blue-50'
     },
     {
-      category: "Saúde",
-      discounts: ["15% em consultas médicas", "25% em exames laboratoriais"],
+      title: 'Saúde',
+      icon: <Heart className="w-16 h-16 text-red-600" />,
+      description: 'Benefícios em serviços de saúde',
+      details: ['Desconto em consultas médicas', 'Preços especiais em exames', 'Convênios odontológicos'],
+      bgColor: 'bg-green-50'
     },
     {
-      category: "Alimentação",
-      discounts: ["10% em supermercados parceiros", "15% em hortifruti"],
+      title: 'Alimentação',
+      icon: <UtensilsCrossed className="w-16 h-16 text-green-600" />,
+      description: 'Vantagens em estabelecimentos parceiros',
+      details: ['Descontos em restaurantes', 'Cashback em supermercados', 'Clube de benefícios alimentares'],
+      bgColor: 'bg-orange-50'
     },
     {
-      category: "Vestuário",
-      discounts: ["20% em roupas infantis", "15% em calçados"],
-    },
+      title: 'Doação de Roupas',
+      icon: <Shirt className="w-16 h-16 text-primary" />,
+      description: 'Programa de doação e trocas',
+      details: ['Rede de trocas solidárias', 'Bazar beneficente', 'Pontos por doações'],
+      bgColor: 'bg-accent/50'
+    }
   ];
 
   return (
@@ -94,6 +107,41 @@ export default function BeneficiosPage() {
         </div>
       </section>
 
+       {/* Benefits Section */}
+       <div className="py-20 px-4 bg-white" id="benefits">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Benefícios Exclusivos</h2>
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+            Desfrute de uma ampla rede de vantagens e descontos especiais em diversos setores
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {benefitsPlus.map((benefit) => (
+
+              <div 
+                key={benefit.title}
+                className={`${benefit.bgColor} rounded-2xl p-8 transform hover:scale-105 transition duration-300`}
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="mb-6">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3">{benefit.title}</h3>
+                  <p className="text-gray-700 mb-6">{benefit.description}</p>
+                  <ul className="space-y-3 text-left w-full">
+                    {benefit.details.map((detail, index) => (
+                      <li key={index} className="flex items-center">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
+                        <span className="text-gray-700">{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Main Benefits */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -116,33 +164,7 @@ export default function BeneficiosPage() {
         </div>
       </section>
 
-      {/* Partner Discounts */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Descontos com Parceiros
-          </h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {partners.map((partner) => (
-              <Card key={partner.category}>
-                <CardHeader>
-                  <CardTitle className="text-xl">{partner.category}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {partner.discounts.map((discount, index) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                        <span className="text-sm text-muted-foreground">{discount}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Sustainability Section */}
       <section className="py-20 bg-white">

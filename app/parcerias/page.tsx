@@ -1,6 +1,6 @@
 "use client";
 
-import { Building, HandshakeIcon, Target, Users2, BadgePercent, ArrowRight } from "lucide-react";
+import { Building, CheckCircle, Phone, Target, Users2, BadgePercent, } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -14,24 +14,28 @@ import {
 import emailjs from 'emailjs-com';
 import { Toaster } from 'react-hot-toast';
 import toast from 'react-hot-toast';
-
+import { useState } from "react";
 const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
   emailjs.sendForm('service_pjr1ols', 'template_h9syqx6', e.target as HTMLFormElement, 'vd1F3fnBN3iSnypux')
   .then(
     (result) => {
-      toast.success('E-mail enviado com sucesso!'); // Toast de sucesso
-      console.log('E-mail enviado:', result.text);
+      toast.success('Número enviado com sucesso!'); // Toast de sucesso
+      console.log('Número enviado:', result.text);
     },
     (error) => {
-      toast.error('Erro ao enviar o e-mail. Tente novamente.'); // Toast de erro
-      console.error('Erro ao enviar e-mail:', error.text);
+      toast.error('Erro ao enviar o Número. Tente novamente.'); // Toast de erro
+      console.error('Erro ao enviar Número:', error.text);
     }
   );
 };
 
 export default function ParceriasPage() {
+
+   const [phoneNumber, setPhoneNumber] = useState('');
+   const [submitted, setSubmitted] = useState(false);
+
   const benefits = [
     {
       icon: Users2,
@@ -179,29 +183,29 @@ export default function ParceriasPage() {
           <div className="max-w-3xl mx-auto">
             <div className="space-y-8">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center">
                   1
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Contato Inicial</h3>
                   <p className="text-muted-foreground">
-                    Preencha o formulário de interesse ou entre em contato direto conosco
+                    Preencha o seu número de telefone para nossa equipe entrar em contato
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center">
                   2
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Proposta</h3>
+                  <h3 className="text-xl font-semibold mb-2">Contato da Equipe</h3>
                   <p className="text-muted-foreground">
-                    Apresente sua proposta de parceria e benefícios para os associados
+                  Nossa equipe entrará em contato para verificar suas informações e avaliar sua proposta
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center">
                   3
                 </div>
                 <div>
@@ -212,13 +216,13 @@ export default function ParceriasPage() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center">
                   4
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Integração</h3>
                   <p className="text-muted-foreground">
-                    Início da divulgação e disponibilização dos benefícios aos associados
+                  Se aprovado, você será orientado sobre o processo final e poderá começar a aproveitar os benefícios e o início da divulgação e disponibilização dos benefícios aos associados 
                   </p>
                 </div>
               </div>
@@ -229,160 +233,50 @@ export default function ParceriasPage() {
       </section>
 
       <Toaster position="top-right" reverseOrder={false} />
-      {/* Registration Form for Partners */}
-      <Card id="registroParceiro" className="mt-12 mx-auto max-w-3xl">
-  <CardHeader>
-    <CardTitle>Formulário de Cadastro de Parceiros</CardTitle>
-    <CardDescription>
-      Preencha os dados da sua empresa para iniciar o processo de parceria.
-    </CardDescription>
-  </CardHeader>
-  <CardContent>
-    <form className="space-y-6" onSubmit={sendEmail}>
-      <div className="grid md:grid-cols-2 gap-6">
-        {/* Nome da Empresa */}
-        <div className="space-y-2">
-          <label htmlFor="companyName" className="text-sm font-medium">
-            Nome da Empresa
-          </label>
-          <input
-            type="text"
-            id="companyName"
-            name="companyName" 
-            className="w-full p-2 border rounded-md"
-            required
-          />
-        </div>
-
-        {/* CNPJ */}
-        <div className="space-y-2">
-          <label htmlFor="cnpj" className="text-sm font-medium">
-            CNPJ
-          </label>
-          <input
-            type="text"
-            id="cnpj"
-            name="cnpj" 
-            className="w-full p-2 border rounded-md"
-            placeholder="00.000.000/0000-00"
-            required
-          />
-        </div>
-
-        {/* Ramo de Atuação */}
-        <div className="space-y-2">
-          <label htmlFor="businessField" className="text-sm font-medium">
-            Ramo de Atuação
-          </label>
-          <select
-            id="businessField"
-            name="businessField" 
-            className="w-full p-2 border rounded-md"
-            required
-          >
-            <option value="">Selecione o ramo</option>
-            <option value="Alimentação">Alimentação</option>
-            <option value="Educação">Educação</option>
-            <option value="Saúde">Saúde</option>
-            <option value="Serviços">Serviços</option>
-            <option value="Outros">Outros</option>
-          </select>
-        </div>
-
-        {/* Endereço Comercial */}
-        <div className="space-y-2">
-          <label htmlFor="address" className="text-sm font-medium">
-            Endereço Comercial
-          </label>
-          <input
-            type="text"
-            id="address"
-            name="address" 
-            className="w-full p-2 border rounded-md"
-            placeholder="Rua, número, complemento"
-            required
-          />
-        </div>
-
-        {/* Telefone Comercial */}
-        <div className="space-y-2">
-          <label htmlFor="phone" className="text-sm font-medium">
-            Telefone Comercial
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone" 
-            className="w-full p-2 border rounded-md"
-            placeholder="(00) 0000-0000"
-            required
-          />
-        </div>
-
-        {/* E-mail Comercial */}
-        <div className="space-y-2">
-          <label htmlFor="email" className="text-sm font-medium">
-            E-mail Comercial
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email" 
-            className="w-full p-2 border rounded-md"
-            required
-          />
-        </div>
-
-        {/* Nome do Responsável */}
-        <div className="space-y-2">
-          <label htmlFor="responsibleName" className="text-sm font-medium">
-            Nome do Responsável
-          </label>
-          <input
-            type="text"
-            id="responsibleName"
-            name="responsibleName" 
-            className="w-full p-2 border rounded-md"
-            required
-          />
-        </div>
-
-        {/* Cargo do Responsável */}
-        <div className="space-y-2">
-          <label htmlFor="responsiblePosition" className="text-sm font-medium">
-            Cargo do Responsável
-          </label>
-          <input
-            type="text"
-            id="responsiblePosition"
-            name="responsiblePosition" 
-            className="w-full p-2 border rounded-md"
-            required
-          />
+     
+        {/* Contact Form Section */}
+        <div className="py-20 px-4 bg-white" id="contact">
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Candidate-se à ser um Parceiro</h2>
+          <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
+            Deixe seu número de telefone e nossa equipe entrará em contato para avaliar sua candidatura
+          </p>
+          
+          {submitted ? (
+            <div className="bg-green-50 p-6 rounded-lg">
+              <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-green-800 mb-2">
+                Recebemos sua solicitação!
+              </h3>
+              <p className="text-green-700">
+                Em breve, nossa equipe entrará em contato para dar continuidade ao processo.
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={sendEmail} className="space-y-6">
+              <div className="flex items-center bg-gray-50 rounded-lg p-2">
+                <Phone className="w-6 h-6 text-gray-400 ml-2" />
+                <input
+                  type="tel"
+                  name="phone"  
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  placeholder="Seu número de telefone"
+                  className="flex-1 p-2 bg-transparent outline-none text-lg"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-primary text-white py-4 px-8 rounded-lg text-lg font-semibold hover:bg-accent transition duration-300"
+              >
+                Enviar Solicitação
+              </button>
+            </form>
+          )}
         </div>
       </div>
-
-      {/* Descrição da Empresa */}
-      <div className="space-y-2">
-        <label htmlFor="companyDescription" className="text-sm font-medium">
-          Descrição da Empresa (opcional)
-        </label>
-        <textarea
-          id="companyDescription"
-          name="companyDescription" 
-          rows={4}
-          className="w-full p-2 border rounded-md"
-          placeholder="Compartilhe mais informações sobre sua empresa ou a parceria desejada."
-        ></textarea>
-      </div>
-
-      {/* Botão de Envio */}
-      <Button type="submit" className="w-full">
-        Enviar Cadastro de Parceiro
-      </Button>
-    </form>
-  </CardContent>
-</Card>
+    
 
     </main>
   );

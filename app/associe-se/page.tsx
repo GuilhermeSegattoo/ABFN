@@ -1,6 +1,6 @@
 "use client";
 
-import { Shield, Users, Gift, HeartHandshake } from "lucide-react";
+import { Shield, Users, Gift, HeartHandshake, Target, Heart, HandshakeIcon, Check,  CheckCircle, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -22,60 +22,67 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
   emailjs.sendForm('service_pjr1ols', 'template_524tjbo', e.target as HTMLFormElement, 'vd1F3fnBN3iSnypux')
     .then(
       (result) => {
-        toast.success('E-mail enviado com sucesso!'); // Toast de sucesso
-        console.log('E-mail enviado:', result.text);
+        toast.success('Número de telefone enviado com sucesso!'); // Toast de sucesso
+        console.log('Número de telefone enviado:', result.text);
       },
       (error) => {
-        toast.error('Erro ao enviar o e-mail. Tente novamente.'); // Toast de erro
-        console.error('Erro ao enviar e-mail:', error.text);
+        toast.error('Erro ao enviar o Número de telefone. Tente novamente.'); // Toast de erro
+        console.error('Erro ao enviar Número de telefone:', error.text);
       }
     );
 };
 
 export default function AssociePage() {
-  const [selectedType, setSelectedType] = useState("");
+  
+
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+ 
+
+
+  const getCardColor = (index: number): string => {
+    const colors = [
+      "bg-blue-600",
+      "bg-green-600",
+      "bg-primary",
+      "bg-accent",
+    ];
+    return colors[index % colors.length]; // Alterna entre as cores
+  };
+
   const membershipTypes = [
 
     {
       title: "Efetivos",
-      description: "São as famílias numerosas que atendem aos requisitos de admissão e se comprometem com o pagamento de uma joia e da quota anual",
-      benefits: ["Descontos exclusivos", "Rede de apoio", "Participação em eventos"],
+      description: "Famílias com minimo de 6 filhos e se comprometem com o pagamento de uma joia e da quota anual",
+      benefits: ["Apenas por indicação", "Descontos exclusivos", "Rede de apoio", "Participação em eventos"],
       highlighted: true,
+      icon: Users,
     },
     {
       title: "Aspirantes",
-      description: "São as famílias numerosas que ainda não atingiram o número mínimo de seis membros ou quatro filhos. Mesmo assim, podem se associar, desde que atendam aos requisitos de admissão e se comprometam com o pagamento de uma joia e da quota anual. ",
-      benefits: ["Acesso à rede de apoio", "Associados aspirantes não possuem direito de votar ou ser votados", "Descontos selecionados"],
+      description: "Famílias com minimo de 4 filhos e se comprometem com o pagamento de uma joia e da quota anual",
+      benefits: ["Apenas por indicação", "Acesso à rede de apoio", "Participação em eventos", "Descontos selecionados"],
+      icon: Heart,
     },
     {
       title: "Afiliados",
       description: "São as famílias numerosas que atingiram o número mínimo de seis membros, que de forma espontânea solicitam sua associação.",
       benefits: ["Acesso à rede de apoio", "não possuem direito de votar ou ser votados", "Descontos selecionados"],
+      icon: Target,
     },
     {
       title: "Beneméritos",
-      description: "Serão reconhecidos como associados beneméritos aquelas pessoas ou instituições que prestarem serviços ou realizarem contribuições significativas para a ABFN, como doações ou ações de relevância social. O reconhecimento será feito pelo Conselho de Administração da ABFN.",
+      description: "Assoam-se reconhecidos como associados beneméritos aquelas pessoas ou instituições que prestarem serviços ou realizarem contribuições significativas para a ABFN, como doações ou ações de relevância social. O reconhecimento será feito pelo Conselho de Administração da ABFN.",
       benefits: ["Reconhecimento especial", "Participação em eventos", "Networking"],
+      icon: HandshakeIcon,
     },
+
+
   ];
 
-  const founders = [
-    {
-      name: "Richard",
-      description: "Família com 9 filhos",
-      image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80",
-    },
-    {
-      name: "Pedro e Ana Santos",
-      description: "Família com 5 filhos",
-      image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80",
-    },
-    {
-      name: "Carlos e Lucia Oliveira",
-      description: "Família com 7 filhos",
-      image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80",
-    },
-  ];
+
 
   const benefits = [
     {
@@ -101,31 +108,31 @@ export default function AssociePage() {
   ];
 
   return (
-    <main className="pt-16">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/familyBG.png"
-            alt="Família feliz"
-            fill
-            className="object-cover brightness-50"
-          />
-        </div>
-        <div className="relative z-10 container mx-auto px-4 text-white">
-          <h1 className="text-5xl font-bold mb-6 max-w-2xl xs:mt-20">
-            Junte-se à Nossa Comunidade de Famílias Numerosas
-          </h1>
-          <p className="text-xl mb-8 max-w-xl">
+      <div 
+        className="relative bg-cover bg-center h-[600px]"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80")'
+        }}
+      >
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center px-4">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Junte-se à Nossa Comunidade <br /> de Famílias Numerosas
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">
             Faça parte de uma rede de apoio que entende e valoriza as famílias numerosas
-          </p>
-          <Link href="#cadastro" >
-            <Button size="lg" className="bg-white text-black hover:bg-white/90">
-              Comece Agora
-            </Button>
-          </Link>
+            </p>
+            <a 
+              href="#contact"
+              className="bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-secondary transition duration-300"
+            >
+              Candidate-se Agora
+            </a>
+          </div>
         </div>
-      </section>
+      </div>
 
       {/* About Section */}
       <section className="bg-gray-100 py-12 px-6">
@@ -173,259 +180,95 @@ export default function AssociePage() {
         </div>
       </section>
 
-      {/* Membership Types */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">
-            Categorias de Associação
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Escolha a categoria que melhor se adapta à sua família e comece a
-            desfrutar dos benefícios da ABFN
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {membershipTypes.map((type) => (
-              <Card
-                key={type.title}
-                className={`relative ${type.highlighted
-                  ? "border-primary shadow-lg scale-105"
-                  : ""
-                  }`}
-              >
-                <CardHeader>
-                  <CardTitle>{type.title}</CardTitle>
-                  <CardDescription>{type.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {type.benefits.map((benefit) => (
-                      <li key={benefit} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span className="text-sm">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <a href="#cadastro">
-                    <button className="w-full mt-6 bg-primary text-white py-2 rounded-lg">
-                      Selecionar
-                    </button>
-                  </a>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+     {/* Membership Categories */}
+           <section className="py-20 bg-white">
+             <div className="container mx-auto px-4">
+               <h2 className="text-4xl font-bold text-center mb-4  tracking-wide">
+                 Seja um Associado
+               </h2>
+               <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
+                 Escolha a categoria que melhor se adapta à sua família e comece a desfrutar dos benefícios da ABFN.
+               </p>
+     
+               <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mx-10">
+                 {membershipTypes.map((type, index) => (
+                   <div
+                     key={type.title}
+                     className={`relative overflow-hidden transition-transform duration-300 transform hover:scale-105 shadow-lg p-8 ${getCardColor(index)}`}
+                   >
+                     <div className="absolute top-0 right-0 w-24 h-24 bg-black opacity-10 transform rotate-45 translate-x-8 -translate-y-8"></div>
+     
+                     {/* Ícone */}
+                     <type.icon className="w-14 h-14 text-white mb-6" />
+     
+                     {/* Título do Plano */}
+                     <h3 className="text-2xl font-extrabold text-white mb-3 uppercase">{type.title}</h3>
+     
+                     {/* Descrição */}
+                     <p className="text-white font-medium mb-6">{type.description}</p>
+     
+                     {/* Benefícios */}
+                     <ul className="space-y-3 text-white">
+                       {type.benefits.map((benefit) => (
+                         <li key={benefit} className="flex items-center gap-2">
+                           <Check className="w-6 h-6 text-white" />
+                           <span className="text-lg font-semibold">{benefit}</span>
+                         </li>
+                       ))}
+                     </ul>
+                   </div>
+                 ))}
+               </div>
+             </div>
+           </section>
 
 
-      {/* Founders Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">
-            Nossos Fundadores
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Conheça as famílias que iniciaram este movimento e construíram as bases da ABFN
-          </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {founders.map((founder) => (
-              <Card key={founder.name} className="overflow-hidden">
-                <div className="relative h-48">
-                  <Image
-                    src={founder.image}
-                    alt={founder.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl">{founder.name}</CardTitle>
-                  <CardDescription>{founder.description}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* Process Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Como Funciona
-          </h2>
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-8">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
-                  1
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Cadastro</h3>
-                  <p className="text-muted-foreground">
-                    Preencha o formulário com seus dados e informações familiares
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
-                  2
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Análise</h3>
-                  <p className="text-muted-foreground">
-                    Nossa equipe verificará as informações e categoria adequada
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
-                  3
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Pagamento</h3>
-                  <p className="text-muted-foreground">
-                    O investimento é de apenas <span className="font-bold">R$37/mês,</span> com uma Joia de Inscrição inicial de <span className="font-bold">R$150.</span> No entanto, você ficará isento do pagamento da Joia se associar-se até o dia <span className="font-bold">30/06/2025.</span>
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
-                  4
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Boas-vindas</h3>
-                  <p className="text-muted-foreground">
-                    Receba suas boas-vindas e comece a aproveitar os benefícios
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Lembre-se</h3>
-                  <p className="text-muted-foreground">
-                    Quanto mais famílias numerosas se unirem a nós, mais forte será nossa voz e maiores serão nossos resultados.
-                  </p>
-                </div>
-              </div>
+        {/* Contact Form Section */}
+        <div className="py-20 px-4 bg-white" id="contact">
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Candidate-se à Associação</h2>
+          <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
+            Deixe seu número de telefone e nossa equipe entrará em contato para avaliar sua candidatura
+          </p>
+          
+          {submitted ? (
+            <div className="bg-green-50 p-6 rounded-lg">
+              <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-green-800 mb-2">
+                Recebemos sua solicitação!
+              </h3>
+              <p className="text-green-700">
+                Em breve, nossa equipe entrará em contato para dar continuidade ao processo.
+              </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <Toaster position="top-right" reverseOrder={false} />
-      {/* Registration Form */}
-      <Card id="cadastro" className="mt-12 mx-auto max-w-3xl">
-        <CardHeader>
-          <CardTitle>Formulário de Pré-cadastro</CardTitle>
-          <CardDescription>
-            Preencha seus dados para iniciar o processo de associação
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form className="space-y-6" onSubmit={sendEmail}>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium">
-                  Nome Completo
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="w-full p-2 border rounded-md"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
-                  E-mail
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full p-2 border rounded-md"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="phone" className="text-sm font-medium">
-                  Telefone
-                </label>
+          ) : (
+            <form onSubmit={sendEmail} className="space-y-6">
+              <div className="flex items-center bg-gray-50 rounded-lg p-2">
+                <Phone className="w-6 h-6 text-gray-400 ml-2" />
                 <input
                   type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full p-2 border rounded-md"
+                  name="phone"  
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  placeholder="Seu número de telefone"
+                  className="flex-1 p-2 bg-transparent outline-none text-lg"
                   required
                 />
               </div>
-              <div className="space-y-2">
-                <label htmlFor="children" className="text-sm font-medium">
-                  Quantidade de Filhos
-                </label>
-                <input
-                  type="number"
-                  id="children"
-                  name="children"
-                  min="0"
-                  className="w-full p-2 border rounded-md"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="relatives" className="text-sm font-medium">
-                  Parentes que Coabitam
-                </label>
-                <input
-                  type="number"
-                  id="relatives"
-                  name="relatives"
-                  min="0"
-                  className="w-full p-2 border rounded-md"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="membership" className="text-sm font-medium">
-                  Categoria de Associação
-                </label>
-                <select
-                  id="membership"
-                  name="membership"
-                  className="w-full p-2 border rounded-md"
-                  value={selectedType}
-                  onChange={(e) => setSelectedType(e.target.value)}
-                  required
-                >
-                  <option value="">Selecione uma categoria</option>
-                  {membershipTypes.map((type) => (
-                    <option key={type.title} value={type.title}>
-                      {type.title}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium">
-                Mensagem (opcional)
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                className="w-full p-2 border rounded-md"
-                placeholder="Compartilhe mais informações sobre sua família ou dúvidas que possua"
-              ></textarea>
-            </div>
-
-            <Button type="submit" className="w-full">
-              Enviar Pré-cadastro
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
+              <button
+                type="submit"
+                className="w-full bg-primary text-white py-4 px-8 rounded-lg text-lg font-semibold hover:bg-accent transition duration-300"
+              >
+                Enviar Solicitação
+              </button>
+            </form>
+          )}
+        </div>
+      </div>
+    
 
     </main>
   );

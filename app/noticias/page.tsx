@@ -58,7 +58,7 @@ export default function NoticiasPage() {
     "Informativos",
     "Parcerias",
     "Legislação",
-    "IBGE",
+    "Dados",
     "Gráficos",
     "Vagas de emprego",
     "Vida em família",
@@ -76,7 +76,7 @@ export default function NoticiasPage() {
       <section className="relative h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80"
+            src="/noticia.svg"
             alt="Notícias e Atualizações"
             fill
             className="object-cover brightness-50"

@@ -140,35 +140,35 @@ export default function Home() {
   return (
     <main className="bg-white ">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-primary">
 
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="grid md:grid-cols-2 mx-12 gap-12 items-center">
-            <div>
-              <h1 className="text-6xl md:text-4xl sm:text-3xl xs:text-2xl sm:mt-32 lg:mt-0  font-bold mb-6 xs:mb-2 text-white">
+      <section className="relative min-h-screen flex items-center bg-primary px-4">
+        <div className="relative z-10 container mx-auto">
+          <div className="grid md:grid-cols-2 sm:mt-20 sm:flex sm:flex-col sm:items-center sm: gap-8 items-center mx-auto max-w-5xl">
+            <div className="text-center sm:text-left">
+              <h1 className="text-4xl md:text-3xl sm:text-2xl font-bold mb-1 text-white break-words xs:mt-32 xs:whitespace-normal">
                 Vamos nos unir à ABFN e fortalecer a vida das famílias numerosas
               </h1>
-              <p className="text-xl mb-8 sm:mb-2 text-white/90">
+              <p className="text-lg sm:text-base mb-6 text-white/90">
                 Junte-se a uma comunidade que entende e valoriza as famílias numerosas.
               </p>
-              <div className="flex flex-wrap gap-4 mb-8 sm:mb-[-10px]">
+              <div className="flex flex-wrap sm:flex-col xs:flex-col sm:items-center gap-4 mb-6">
                 <Link href="/associe-se">
-                  <Button size="lg" className="bg-secondary hover:bg-secondary/50 text-white px-8 py-6 rounded-full text-lg font-semibold">
+                  <Button className="bg-secondary hover:bg-secondary/50 text-white px-6 py-4 rounded-full text-lg font-semibold w-full sm:w-auto">
                     Associe-se Agora
                   </Button>
                 </Link>
                 <Link href="/sobre">
-                  <Button size="lg" variant="outline" className="bg-accent hover:bg-accent/50 text-white  px-8 py-6 rounded-full text-lg font-semibold">
+                  <Button variant="outline" className="bg-accent hover:bg-accent/50 text-white px-6 py-4 rounded-full text-lg font-semibold w-full sm:w-auto">
                     Saber mais
                   </Button>
                 </Link>
               </div>
             </div>
-            <div className="bg-accent p-8 mb-2 rounded-2xl">
-              <h2 className="text-2xl font-bold text-white mb-4">
+            <div className="bg-accent p-6 rounded-2xl w-full sm:w-auto xs:mb-8">
+              <h2 className="text-xl font-bold text-white mb-4 text-center sm:text-left">
                 Quer saber mais?
               </h2>
-              <p className="text-white/90 mb-6">
+              <p className="text-white/90 mb-4 text-center sm:text-left">
                 Deixe seu telefone e entraremos em contato para apresentar todos os benefícios.
               </p>
               {!submitted ? (
@@ -176,22 +176,22 @@ export default function Home() {
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/60 h-5 w-5" />
                     <input
-                       type="tel"
-                       name="phone"  
+                      type="tel"
+                      name="phone"
                       value={phoneNumber}
                       onChange={handlePhoneChange}
                       placeholder="(00) 00000-0000"
-                      className="w-full bg-white/20 border border-white/30 rounded-lg px-12 py-4 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary"
+                      className="w-full bg-white/20 border border-white/30 rounded-lg px-12 py-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary"
                     />
                   </div>
-                  <Button type="submit" className="w-full bg-secondary hover:bg-primary/90 py-6 text-lg font-semibold">
+                  <Button type="submit" className="w-full bg-secondary hover:bg-primary/90 py-4 text-lg font-semibold">
                     Quero Conhecer a ABFN
                   </Button>
                 </form>
               ) : (
                 <div className="text-center p-6 bg-primary/20 rounded-lg">
                   <Check className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-white mb-2">Obrigado!</h3>
+                  <h3 className="text-lg font-semibold text-white mb-2">Obrigado!</h3>
                   <p className="text-white/90">
                     Em breve entraremos em contato com você.
                   </p>
@@ -203,6 +203,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/50 to-transparent" />
       </section>
 
+
       {/* Membership Categories */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -213,7 +214,7 @@ export default function Home() {
             Escolha a categoria que melhor se adapta à sua família e comece a desfrutar dos benefícios da ABFN.
           </p>
 
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1   mx-10">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 sm:gap-4 xs:gap-2 xs:mx-2  mx-10">
             {membershipTypes.map((type, index) => (
               <div
                 key={type.title}
@@ -266,10 +267,10 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <h3 className="text-2xl font-bold text-white mb-2 hidden md:hidden lg:block sm:block">
+                  <h3 className="text-2xl font-bold text-white mb-2 hidden md:hidden lg:block sm:block xs:block">
                     {feature.title}
                   </h3>
-                  <p className="text-white/90 hidden md:hidden lg:block sm:block">
+                  <p className="text-white/90 hidden md:hidden lg:block sm:block xs:block">
                     {feature.description}
                   </p>
                 </div>
@@ -387,7 +388,7 @@ export default function Home() {
               <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 h-5 w-5" />
               <input
                 type="tel"
-                name="phone"  
+                name="phone"
                 value={phoneNumber}
                 onChange={handlePhoneChange}
                 placeholder="(00) 00000-0000"

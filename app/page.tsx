@@ -249,7 +249,7 @@ export default function Home() {
                </p>
      
              <Link href="/associe-se">
-             <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mx-10">
+             <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 ">
                  {membershipTypes.map((type, index) => (
                    <div
                      key={type.title}

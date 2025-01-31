@@ -14,7 +14,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary mt-20 text-white py-12">
+    <footer className="bg-gradient-to-r from-primary to-orange-500 mt-20 text-white py-12">
       <div id="contato" className="container mx-auto px-6">
         {/* Seção de Contato */}
         <div className="flex flex-wrap items-center justify-between mb-12">

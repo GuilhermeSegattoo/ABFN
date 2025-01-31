@@ -93,9 +93,8 @@ export default function Home() {
       benefits: ["Reconhecimento especial", "Participação em eventos", "Networking"],
       icon: HandshakeIcon,
     },
-
-
   ];
+
 
   const benefits = [
     {
@@ -139,113 +138,33 @@ export default function Home() {
 
   return (
     <main className="bg-white ">
+
       {/* Hero Section */}
-
-      <section className="relative min-h-screen flex items-center bg-primary px-4">
-        <div className="relative z-10 container mx-auto">
-          <div className="grid md:grid-cols-2 sm:mt-20 sm:flex sm:flex-col sm:items-center sm: gap-8 items-center mx-auto max-w-5xl">
-            <div className="text-center sm:text-left">
-              <h1 className="text-4xl md:text-3xl sm:text-2xl font-bold mb-1 text-white break-words xs:mt-32 xs:whitespace-normal">
-                Vamos nos unir à ABFN e fortalecer a vida das famílias numerosas
-              </h1>
-              <p className="text-lg sm:text-base mb-6 text-white/90">
-                Junte-se a uma comunidade que entende e valoriza as famílias numerosas.
-              </p>
-              <div className="flex flex-wrap sm:flex-col xs:flex-col sm:items-center gap-4 mb-6">
-                <Link href="/associe-se">
-                  <Button className="bg-secondary hover:bg-secondary/50 text-white px-6 py-4 rounded-full text-lg font-semibold w-full sm:w-auto">
-                    Associe-se Agora
-                  </Button>
-                </Link>
-                <Link href="/sobre">
-                  <Button variant="outline" className="bg-accent hover:bg-accent/50 text-white px-6 py-4 rounded-full text-lg font-semibold w-full sm:w-auto">
-                    Saber mais
-                  </Button>
-                </Link>
-              </div>
-            </div>
-            <div className="bg-accent p-6 rounded-2xl w-full sm:w-auto xs:mb-8">
-              <h2 className="text-xl font-bold text-white mb-4 text-center sm:text-left">
-                Quer saber mais?
-              </h2>
-              <p className="text-white/90 mb-4 text-center sm:text-left">
-                Deixe seu telefone e entraremos em contato para apresentar todos os benefícios.
-              </p>
-              {!submitted ? (
-                <form onSubmit={sendEmail} className="space-y-4 ">
-                  <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/60 h-5 w-5" />
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={phoneNumber}
-                      onChange={handlePhoneChange}
-                      placeholder="(00) 00000-0000"
-                      className="w-full bg-white/20 border border-white/30 rounded-lg px-12 py-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
-                  </div>
-                  <Button type="submit" className="w-full bg-secondary hover:bg-primary/90 py-4 text-lg font-semibold">
-                    Quero Conhecer a ABFN
-                  </Button>
-                </form>
-              ) : (
-                <div className="text-center p-6 bg-primary/20 rounded-lg">
-                  <Check className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-white mb-2">Obrigado!</h3>
-                  <p className="text-white/90">
-                    Em breve entraremos em contato com você.
-                  </p>
-                </div>
-              )}
+      <section className="relative bg-gradient-to-r from-primary to-orange-500 text-white">
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="container mx-auto px-4 py-12 md:py-24 relative">
+          <div className="max-w-4xl mx-auto mt-12 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 md:mb-6">
+              Bem-vindo à Associação Brasileira de Famílias Numerosas
+            </h1>
+            <p className="text-xl md:text-2xl mb-6 md:mb-8 text-orange-100">
+              Juntos construímos um futuro melhor e fortalecemos as famílias numerosas no Brasil
+            </p>
+            <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+              <Link href="/associe-se"
+                className="bg-white text-orange-600 px-6 md:px-8 py-3 rounded-full font-semibold hover:bg-orange-100 transition-colors duration-300 flex items-center justify-center space-x-2">
+                <span>Comece Agora</span>
+                <ChevronRight className="w-5 h-5" />
+              </Link>
+              <Link href="/sobre"
+                className="bg-transparent border-2 border-white px-6 md:px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-300 text-center">
+                Saber Mais
+              </Link>
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/50 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-orange-50 to-transparent"></div>
       </section>
-
-
-      {/* Membership Categories */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4  tracking-wide">
-            Seja um Associado
-          </h2>
-          <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
-            Escolha a categoria que melhor se adapta à sua família e comece a desfrutar dos benefícios da ABFN.
-          </p>
-
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 sm:gap-4 xs:gap-2 xs:mx-2  mx-10">
-            {membershipTypes.map((type, index) => (
-              <div
-                key={type.title}
-                className={`relative overflow-hidden transition-transform duration-300 transform hover:scale-105 shadow-lg p-8 ${getCardColor(index)}`}
-              >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-black opacity-10 transform rotate-45 translate-x-8 -translate-y-8"></div>
-
-                {/* Ícone */}
-                <type.icon className="w-14 h-14 text-white mb-6" />
-
-                {/* Título do Plano */}
-                <h3 className="text-2xl font-extrabold text-white mb-3 uppercase">{type.title}</h3>
-
-                {/* Descrição */}
-                <p className="text-white font-medium mb-6">{type.description}</p>
-
-                {/* Benefícios */}
-                <ul className="space-y-3 text-white">
-                  {type.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-center gap-2">
-                      <Check className="w-6 h-6 text-white" />
-                      <span className="text-lg font-semibold">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
 
       {/* Features benefits Grid */}
       <section className="py-20 ">
@@ -318,91 +237,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Process Section */}
+
+      {/* Membership Categories */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+             <div className="container mx-auto px-4">
+               <h2 className="text-4xl font-bold text-center mb-4  tracking-wide">
+                 Seja um Associado
+               </h2>
+               <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
+                 Escolha a categoria que melhor se adapta à sua família e comece a desfrutar dos benefícios da ABFN.
+               </p>
+     
+             <Link href="/associe-se">
+             <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mx-10">
+                 {membershipTypes.map((type, index) => (
+                   <div
+                     key={type.title}
+                     className={`relative overflow-hidden transition-transform duration-300 transform hover:scale-105 shadow-lg p-8 ${getCardColor(index)}`}
+                   >
+                     <div className="absolute top-0 right-0 w-24 h-24 bg-black opacity-10 transform rotate-45 translate-x-8 -translate-y-8"></div>
+     
+                     {/* Ícone */}
+                     <type.icon className="w-14 h-14 text-white mb-6" />
+     
+                     {/* Título do Plano */}
+                     <h3 className="text-2xl font-extrabold text-white mb-3 uppercase">{type.title}</h3>
+     
+                     {/* Descrição */}
+                     <p className="text-white font-medium mb-6">{type.description}</p>
+     
+                     {/* Benefícios */}
+                     <ul className="space-y-3 text-white">
+                       {type.benefits.map((benefit) => (
+                         <li key={benefit} className="flex items-center gap-2">
+                           <Check className="w-6 h-6 text-white" />
+                           <span className="text-lg font-semibold">{benefit}</span>
+                         </li>
+                       ))}
+                     </ul>
+                   </div>
+                 ))}
+               </div>
+             </Link>
+             </div>
+           </section>
+
+  
 
 
-          {/* Passo a Passo */}
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-center mt-4">Dê o Primeiro Passo</h2>
-              <div className="flex gap-4">
+      
 
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
-                  1
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Cadastro</h3>
-                  <p className="text-muted-foreground">
-                    Preencha o campo abaixo com seu número e envie para iniciar o processo.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center">
-                  2
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Contato da Equipe</h3>
-                  <p className="text-muted-foreground">
-                    Nossa equipe entrará em contato para verificar suas informações e avaliar sua elegibilidade.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center">
-                  3
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Análise</h3>
-                  <p className="text-muted-foreground">
-                    Após a verificação, você receberá as orientações para os próximos passos.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
-                  4
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Bem-vindo!</h3>
-                  <p className="text-muted-foreground">
-                    Se aprovado, você será orientado sobre o processo final e poderá começar a aproveitar os benefícios e acesso a nossa futura plataforma.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <h3 className="text-2xl font-semibold text-center mt-8 max-w-4xl mx-auto mb-4">
-            Informe seu número de telefone para que nossa equipe entre em contato e analise sua qualificação.
-          </h3>
-
-          {/* Formulário para número de telefone */}
-          <form onSubmit={sendEmail} className="space-y-4 flex flex-col items-center max-w-md mx-auto">
-            <div className="relative w-full">
-              <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 h-5 w-5" />
-              <input
-                type="tel"
-                name="phone"
-                value={phoneNumber}
-                onChange={handlePhoneChange}
-                placeholder="(00) 00000-0000"
-                className="w-full bg-white border border-gray-300 rounded-lg pl-12 pr-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-primary text-white py-3 rounded-lg text-lg font-semibold hover:bg-primary-dark transition duration-300"
-            >
-              Enviar
-            </button>
-          </form>
-
+      {/* Final CTA */}
+      <section className="py-20 bg-gradient-to-r from-primary to-orange-500 text-white mb-[-80px]">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">
+            Pronto para fortalecer sua família?
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+            Junte-se a nós e faça parte de uma comunidade que entende e valoriza as famílias numerosas.
+          </p>
+          <Link href="/associe-se">
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-6 rounded-full text-lg font-semibold">
+              Começar Agora <ArrowRight className="ml-2" />
+            </Button>
+          </Link>
         </div>
       </section>
 

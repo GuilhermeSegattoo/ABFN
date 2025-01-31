@@ -67,7 +67,7 @@ export default function SobrePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl text-white font-bold mt-8 mb-6">Sobre a ABFN</h1>
-            <p className="text-lg text-white text-muted-foreground mb-12">
+            <p className="text-center text-lg font-medium text-white text-muted-foreground mb-12">
               A Associação Brasileira de Famílias Numerosas é uma organização dedicada
               a fortalecer e apoiar famílias numerosas em todo o Brasil.
             </p>
@@ -75,23 +75,23 @@ export default function SobrePage() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl  mx-auto">
             <div className="text-center p-6 bg-secondary shadow-lg rounded-lg">
-              <h2 className="text-xl text-white font-semibold mb-3">Missão</h2>
-              <p className="text-muted-foreground text-white">
+              <h2 className="text-2xl text-white font-semibold mb-3">Missão</h2>
+              <p className="text-muted-foreground text-white text-lg ">
               Defender os interesses das famílias numerosas, promovendo políticas e ações que valorizem sua dignidade,
               assegurando seus direitos e fortaleçendo sua contribuição como pilar essencial da sociedade, com base no 
               respeito a vida e a pessoa humana.
               </p>
             </div>
             <div className="text-center p-6 bg-primary shadow-2xl rounded-lg">
-              <h2 className="text-xl text-white font-semibold mb-3">Visão</h2>
-              <p className="text-muted-foreground text-white">
+              <h2 className="text-2xl text-white font-semibold mb-3">Visão</h2>
+              <p className="text-muted-foreground text-white text-lg">
               Ser reconhecida como a principal representante e parceira das famílias numerosas no Brasil, 
               promovendo uma cultura que valorize a vida, a solidariedade e o papel fundamental da família no desenvolvimento da sociedade.
               </p>
             </div>
             <div className="text-center p-6 bg-secondary shadow-lg rounded-lg">
-              <h2 className="text-xl text-white font-semibold mb-3">Valores</h2>
-              <p className="text-muted-foreground text-white">
+              <h2 className="text-2xl text-white font-semibold ">Valores</h2>
+              <p className="text-muted-foreground text-white text-lg">
                Respeitar a vida, dignificar a pessoa, 
                fortalecer a família e promover a solidariedade e cidadania ativa para um bem-estar social duradouro.
               </p>
@@ -101,22 +101,48 @@ export default function SobrePage() {
       </section>
 
       {/* History Section */}
-      <section className="py-20 bg-accent">
+      <section className="py-20 bg-accent mt-[-100px]">
         <div className="container mx-auto px-4 text-center flex flex-col items-center">
-          <h2 className="text-3xl font-bold mb-6 text-white">Nossa História</h2>
-          <p className="text-lg text-white max-w-3xl mb-4">
-            A ABFN nasceu com o propósito de valorizar e defender a vida em todas as suas etapas, desde a concepção até a morte natural, promovendo o pleno respeito à dignidade humana no âmbito das famílias numerosas. Acreditamos que a família é o pilar essencial para a estruturação e o progresso da sociedade, sendo espaço de união entre gerações, solidariedade e partilha de responsabilidades. Nosso compromisso está em criar condições para o bem-estar social e o crescimento das famílias, sempre respeitando os valores fundamentais.
-          </p>
-          <p className="text-lg text-white max-w-3xl mb-6">
-            Defendemos o direito inalienável dos pais na educação dos filhos, além de incentivar a participação cívica ativa das famílias numerosas na sociedade. Com esses princípios, buscamos fortalecer a cidadania e a liberdade de educação, promovendo uma convivência harmoniosa que respeite as diferenças e garanta um futuro mais solidário e justo para todos.
-          </p>
-          <Image
+        <Image
             src="/organogramanv.svg"
             alt="Organograma ABFN"
-            width={400}
-            height={400}
-            className="w-full max-w-md h-auto object-cover rounded-lg"
+            width={600}
+            height={600}
+            className="w-full max-w-3xl h-auto object-cover rounded-lg mb-10"
           />
+          <h2 className="text-3xl font-bold mb-6 text-white">Na ABFN</h2>
+          <p className="text-lg text-white max-w-3xl mb-4">
+          Acreditamos que a força da família numerosa vai além do número de membros: 
+          ela representa um vínculo de união, amor e comprometimento que transcende gerações. 
+          Se a sua família é composta por pelo menos seis membros, incluindo pais, filhos e 
+          outros parentes que coabitam sob o mesmo teto, você já faz parte do que entendemos 
+          como uma verdadeira <span className="font-semibold">família numerosa</span>.
+          </p>
+          <p className="text-lg text-white max-w-3xl mb-6">
+          Ao se associar à ABFN, você entra para uma rede que compartilha os mesmos valores de
+          solidariedade, cuidado mútuo e responsabilidade. Você e sua família terão acesso a 
+          uma série de vantagens e benefícios e, mais importante ainda, a um espaço de apoio e 
+          acolhimento que visa fortalecer cada membro de sua família e garantir que seus direito
+          s sejam respeitados.
+          </p>
+
+          <p className="text-xl font-semibold text-white max-w-3xl mb-6">
+          Como Funciona a Associação?
+          </p> 
+
+          <p className="text-lg text-white max-w-3xl mb-6"> 
+          A adesão à ABFN é por indicação, o que significa que uma família já associada poderá 
+          apresentar sua família numerosa ao nosso movimento. Isso fortalece nossa rede e garante 
+          que cada novo membro chegue com a certeza de que faz parte de uma comunidade de confiança, 
+          unida pela causa da valorização da vida e da família.
+          </p>
+
+          <p className="text-lg text-white max-w-3xl mb-6">
+          Também pensamos em você que de forma espontânea nos procurou, criamos a categoria de associado afiliado.
+
+          </p>
+          
+        
         </div>
       </section>
 
@@ -145,7 +171,7 @@ export default function SobrePage() {
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             Conheça as famílias que iniciaram este movimento e construíram as bases da ABFN
           </p>
-          <div className="grid  md:grid-cols-2 mx-20 gap-8">
+          <div className="grid grid-cols-2 gap-3">
             {founders.map((founder) => (
               <Card key={founder.name} className="overflow-hidden">
                 <div className="relative h-48">
@@ -167,7 +193,7 @@ export default function SobrePage() {
       </section>
       
        {/* Final CTA */}
-       <section className="py-20 bg-primary text-white mb-[-80px]">
+       <section className="py-20 bg-gradient-to-r from-primary to-orange-500 text-white mb-[-80px]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">
             Pronto para fortalecer sua família?

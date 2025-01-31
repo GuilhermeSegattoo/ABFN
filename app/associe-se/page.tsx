@@ -52,36 +52,36 @@ export default function AssociePage() {
   };
 
   const membershipTypes = [
-
     {
       title: "Efetivos",
-      description: "Famílias com minimo de 6 filhos e se comprometem com o pagamento de uma joia e da quota anual",
+      description: "Famílias com mínimo de 6 filhos e se comprometem com o pagamento de uma joia e da quota anual.",
       benefits: ["Apenas por indicação", "Descontos exclusivos", "Rede de apoio", "Participação em eventos"],
       highlighted: true,
       icon: Users,
     },
     {
       title: "Aspirantes",
-      description: "Famílias com minimo de 4 filhos e se comprometem com o pagamento de uma joia e da quota anual",
+      description: "Famílias com mínimo de 4 filhos e se comprometem com o pagamento de uma joia e da quota anual.",
       benefits: ["Apenas por indicação", "Acesso à rede de apoio", "Participação em eventos", "Descontos selecionados"],
       icon: Heart,
     },
     {
       title: "Afiliados",
       description: "São as famílias numerosas que atingiram o número mínimo de seis membros, que de forma espontânea solicitam sua associação.",
-      benefits: ["Acesso à rede de apoio", "não possuem direito de votar ou ser votados", "Descontos selecionados"],
+      benefits: ["Acesso à rede de apoio", "Não possuem direito de votar ou ser votados", "Descontos selecionados"],
       icon: Target,
+      buttonText: "Se Afiliar",
+      buttonLink: "/login",
     },
     {
       title: "Beneméritos",
-      description: "Assoam-se reconhecidos como associados beneméritos aquelas pessoas ou instituições que prestarem serviços ou realizarem contribuições significativas para a ABFN, como doações ou ações de relevância social. O reconhecimento será feito pelo Conselho de Administração da ABFN.",
+      description: "Associa-se como beneméritos aquelas pessoas ou instituições que prestam serviços ou realizam contribuições significativas para a ABFN.",
       benefits: ["Reconhecimento especial", "Participação em eventos", "Networking"],
       icon: HandshakeIcon,
+      buttonText: "Fazer uma Doação",
+      buttonLink: "/doar",
     },
-
-
   ];
-
 
 
   const benefits = [
@@ -126,7 +126,7 @@ export default function AssociePage() {
             </p>
             <a 
               href="#contact"
-              className="bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-secondary transition duration-300"
+              className="bg-secondary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary transition duration-300"
             >
               Candidate-se Agora
             </a>
@@ -138,22 +138,29 @@ export default function AssociePage() {
       <section className="bg-gray-100 py-12 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-             Na <strong>ABFN</strong>, 
+          Junte-se à ABFN - Seu Papel é <strong>Fundamental!</strong>
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            Acreditamos que a força da família numerosa vai além do número de membros: ela representa um vínculo de união, amor e comprometimento que transcende gerações. Se a sua família é composta por pelo menos seis membros, incluindo pais, filhos e outros parentes que coabitam sob o mesmo teto, você já faz parte do que entendemos como uma verdadeira família numerosa.
+          Na <strong>ABFN</strong>, acreditamos que cada família tem algo único a oferecer e um papel 
+          essencial a desempenhar na construção de uma sociedade mais justa e solidária. 
+          Ao se associar, você não apenas recebe apoio, mas também se torna parte de uma 
+          rede que cresce e se fortalece com a ajuda de cada um.
           </p>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            Ao se associar à <strong>ABFN</strong>, você entra para uma rede que compartilha os mesmos valores de solidariedade, cuidado mútuo e responsabilidade. Você e sua família terão acesso a uma série de vantagens e benefícios e, mais importante ainda, a um espaço de apoio e acolhimento que visa fortalecer cada membro de sua família e garantir que seus direitos sejam respeitados.
+          O processo de associação é por <strong>indicação</strong>, e, por isso, acreditamos que as 
+          famílias que se identificam com a nossa missão podem ser verdadeiros <strong>pontos focais da 
+          ABFN em seus estados e municípios</strong>. Você pode se tornar um elo importante, ajudando outras 
+          famílias a conhecer a ABFN e contribuindo para o nosso movimento localmente.
+
           </p>
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
-            Como Funciona a Associação?
-          </h3>
+          
           <p className="text-lg text-gray-700 leading-relaxed mb-4">
-            A adesão à <strong>ABFN</strong> é por indicação, o que significa que uma família já associada poderá apresentar sua família numerosa ao nosso movimento. Isso fortalece nossa rede e garante que cada novo membro chegue com a certeza de que faz parte de uma comunidade de confiança, unida pela causa da valorização da vida e da família.
+          Nosso objetivo é criar uma comunidade de apoio e solidariedade em todo o Brasil, 
+          e sua participação é o que torna isso possível. Ao se unir à nossa causa, você estará construindo o futuro 
+          da família numerosa, promovendo um atendimento memorável e acolhedor para todos.
           </p>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            Também pensamos em você que de forma espontânea nos procurou, criamos a categoria de associado afiliado.
+          <p className="text-lg text-gray-700 font-bold leading-relaxed">
+          Seja a mudança que você deseja ver no mundo. Ajude-nos a espalhar a força da família numerosa!
           </p>
         </div>
       </section>
@@ -169,7 +176,7 @@ export default function AssociePage() {
             {benefits.map((benefit) => (
               <div
                 key={benefit.title}
-                className="text-center p-6 rounded-lg bg-primary/5"
+                className="text-center p-6 rounded-lg bg-secondary/5"
               >
                 <benefit.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
                 <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
@@ -181,47 +188,56 @@ export default function AssociePage() {
       </section>
 
      {/* Membership Categories */}
-           <section className="py-20 bg-white">
-             <div className="container mx-auto px-4">
-               <h2 className="text-4xl font-bold text-center mb-4  tracking-wide">
-                 Seja um Associado
-               </h2>
-               <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
-                 Escolha a categoria que melhor se adapta à sua família e comece a desfrutar dos benefícios da ABFN.
-               </p>
-     
-               <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mx-10">
-                 {membershipTypes.map((type, index) => (
-                   <div
-                     key={type.title}
-                     className={`relative overflow-hidden transition-transform duration-300 transform hover:scale-105 shadow-lg p-8 ${getCardColor(index)}`}
-                   >
-                     <div className="absolute top-0 right-0 w-24 h-24 bg-black opacity-10 transform rotate-45 translate-x-8 -translate-y-8"></div>
-     
-                     {/* Ícone */}
-                     <type.icon className="w-14 h-14 text-white mb-6" />
-     
-                     {/* Título do Plano */}
-                     <h3 className="text-2xl font-extrabold text-white mb-3 uppercase">{type.title}</h3>
-     
-                     {/* Descrição */}
-                     <p className="text-white font-medium mb-6">{type.description}</p>
-     
-                     {/* Benefícios */}
-                     <ul className="space-y-3 text-white">
-                       {type.benefits.map((benefit) => (
-                         <li key={benefit} className="flex items-center gap-2">
-                           <Check className="w-6 h-6 text-white" />
-                           <span className="text-lg font-semibold">{benefit}</span>
-                         </li>
-                       ))}
-                     </ul>
-                   </div>
-                 ))}
-               </div>
-             </div>
-           </section>
+     <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-4 tracking-wide">
+          Seja um Associado
+        </h2>
+        <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
+          Escolha a categoria que melhor se adapta à sua família e comece a desfrutar dos benefícios da ABFN.
+        </p>
 
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 sm:gap-4 xs:gap-2 xs:mx-2 mx-10">
+          {membershipTypes.map((type, index) => (
+            <div
+              key={type.title}
+              className={`relative overflow-hidden transition-transform duration-300 transform hover:scale-105 shadow-lg p-8 flex flex-col items-center justify-between ${getCardColor(index)}`}
+            >
+              <div className="absolute top-0 right-0 w-24 h-24 bg-black opacity-10 transform rotate-45 translate-x-8 -translate-y-8"></div>
+
+              {/* Ícone */}
+              <type.icon className="w-14 h-14 text-white mb-6" />
+
+              {/* Título do Plano */}
+              <h3 className="text-2xl font-extrabold text-white mb-3 uppercase text-center">{type.title}</h3>
+
+              {/* Descrição */}
+              <p className="text-white font-medium mb-6 text-center">{type.description}</p>
+
+              {/* Benefícios */}
+              <ul className="space-y-3 text-white mb-6">
+                {type.benefits.map((benefit) => (
+                  <li key={benefit} className="flex items-center gap-2">
+                    <Check className="w-6 h-6 text-white" />
+                    <span className="text-lg font-semibold">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Botão para Afiliados e Beneméritos */}
+              {type.buttonText && type.buttonLink && (
+                <a
+                  href={type.buttonLink}
+                  className="mt-4 inline-block bg-white text-black font-semibold py-2 px-6  transition hover:bg-gray-500 active:bg-primary text-center"
+                >
+                  {type.buttonText}
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
     
 

@@ -22,17 +22,15 @@ export default function Navbar() {
       <div className="container mx-auto px-6 lg:px-10 flex justify-between items-center">
         {/* Logo e Nome */}
         <div className="flex items-center gap-4">
-          <Link href="/" className="flex flex-col items-start">
+          <Link href="/" className="flex flex-row items-start">
             <Image
-              src="/logofamilia.png"
+              src="/ABFNLOGO.png"
               alt="Logo ABFN"
-              width={200}
+              width={100}
               height={60}
-              className="w-28 h-auto"
+              className="w-25 h-auto"
             />
-            <span className="text-white text-xl font-semibold">
-              ABFN
-            </span>
+          
           </Link>
         </div>
 
@@ -48,7 +46,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/associado"
+            href="/login"
             className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors"
           >
             Área do Associado

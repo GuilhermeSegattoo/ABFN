@@ -1,6 +1,8 @@
 "use client";
 import React from 'react';
 import {  Heart,  Award, Shield,  CreditCard, Wallet, DollarSign } from 'lucide-react';
+import toast from 'react-hot-toast';
+
 
 
 export default function Doar() {
@@ -12,7 +14,7 @@ export default function Doar() {
   const handleDonationSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Aqui você implementaria a lógica de processamento da doação
-    alert('Obrigado pela sua doação!');
+    toast('Doação ainda não disponível');
   };
 
   return ( 

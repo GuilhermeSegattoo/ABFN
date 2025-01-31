@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { Button } from "./button";
 
 const Footer = () => {
 
@@ -23,12 +25,11 @@ const Footer = () => {
             <h2 className="text-3xl font-bold mb-4">
               Seja o primeiro a saber das novidades!
             </h2>
-            <Link
-              href="/noticias"
-              className="inline-block bg-white text-orange-500 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-100 transition-all mt-4"
-            >
-              ABFN NEWS →
-            </Link>
+            <Link href="/noticias">
+            <Button size="lg" className="bg-accent text-white hover:bg-white/90 hover:text-primary px-8 py-6 rounded-full text-lg font-semibold">
+              ABFN NEWS <ArrowRight className="ml-2" />
+            </Button>
+          </Link>
           </div>
           {/* Logo */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-6 lg:mt-0">

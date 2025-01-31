@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/card";
 import { useState } from "react";
 import emailjs from 'emailjs-com';
-import { Toaster } from 'react-hot-toast';
 import toast from 'react-hot-toast';
 
 const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -58,12 +57,16 @@ export default function AssociePage() {
       benefits: ["Apenas por indicação", "Descontos exclusivos", "Rede de apoio", "Participação em eventos"],
       highlighted: true,
       icon: Users,
+      buttonText: "Sou indicado(a)",
+      buttonLink: "/login",
     },
     {
       title: "Aspirantes",
       description: "Famílias com mínimo de 4 filhos e se comprometem com o pagamento de uma joia e da quota anual.",
       benefits: ["Apenas por indicação", "Acesso à rede de apoio", "Participação em eventos", "Descontos selecionados"],
       icon: Heart,
+      buttonText: "Sou indicado(a)",
+      buttonLink: "/login",
     },
     {
       title: "Afiliados",

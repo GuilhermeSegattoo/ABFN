@@ -96,10 +96,10 @@ export default function ParceriasPage() {
         </div>
         <div className="relative z-10 container mx-auto px-4 text-white">
           <h1 className="text-5xl font-bold mb-6">
-            Seja um Parceiro ABFN
+          Conectando Famílias e Negócios para um futuro melhor!
           </h1>
           <p className="text-xl mb-8 max-w-2xl">
-            Junte-se a nós na missão de fortalecer as famílias numerosas do Brasil
+            Junte-se a nós na missão de fortalecer as oportunidades para as famílias numerosas do Brasil
             e amplie seu alcance com um público engajado e fiel
           </p>
           <Link href="#registroParceiro">
@@ -114,11 +114,10 @@ export default function ParceriasPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-4">
-            Por que ser um Parceiro?
+          Você sabia que existe um público muito especial que está sempre em busca de produtos e serviços de qualidade? 
           </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Descubra as vantagens de fazer parte da nossa rede de parceiros e
-            conecte-se com milhares de famílias em todo o Brasil
+          <p className="text-center text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+          São as famílias numerosas do Brasil, que formam uma comunidade forte e unida através da <strong>Associação Brasileira de Famílias Numerosas</strong> (ABFN)
           </p>
           <div className="grid md:grid-cols-4 gap-8">
             {benefits.map((benefit) => (
@@ -141,9 +140,10 @@ export default function ParceriasPage() {
       {/* Partners Showcase */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Nossos Parceiros por Categoria
+          <h2 className="text-3xl font-normal text-center mb-12">
+          Estamos convidando empresas como a sua a se tornar<span className="text-primary font-bold"> parceira da ABFN</span>
           </h2>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {partners.map((partner) => (
               <Card key={partner.category} className="overflow-hidden">
@@ -171,11 +171,14 @@ export default function ParceriasPage() {
               </Card>
             ))}
           </div>
+          <p className="text-center text-2xl text-muted-foreground mt-6 max-w-2xl mx-auto">
+          Você terá a chance de se conectar com milhares de famílias que buscam sempre boas oportunidades de consumo!
+          </p>
         </div>
       </section>
 
       {/* Partnership Process */}
-      <section className="py-20 bg-white">
+      <section id="registroParceiro" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
             Como se Tornar um Parceiro

@@ -107,6 +107,52 @@ export default function BeneficiosPage() {
         </div>
       </section>
 
+      {/* Sustainability Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Programa de Sustentabilidade</h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Nossa plataforma de trocas e doações permite que as famílias compartilhem
+                itens em bom estado, promovendo a sustentabilidade e a economia circular.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-secondary" />
+                  <span>Roupas e calçados infantis</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-secondary" />
+                  <span>Material escolar</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-secondary" />
+                  <span>Brinquedos e livros</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-secondary" />
+                  <span>Móveis e equipamentos infantis</span>
+                </li>
+              </ul>
+             <Link href="/associe-se" className="mt-6 inline-block">
+             <Button size="lg" className="  bg-secondary text-white hover:bg-accent/90 hover:text-white px-8 py-6 rounded-full text-lg font-semibold">
+              Saiba mais <ArrowRight className="ml-2" />
+            </Button>
+             </Link>
+            </div>
+            <div className="relative h-[400px]">
+              <Image
+                src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80"
+                alt="Sustentabilidade"
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
        {/* Benefits Section */}
        <div className="py-20 px-4 bg-white" id="benefits">
         <div className="max-w-7xl mx-auto">
@@ -166,51 +212,7 @@ export default function BeneficiosPage() {
 
       
 
-      {/* Sustainability Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Programa de Sustentabilidade</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Nossa plataforma de trocas e doações permite que as famílias compartilhem
-                itens em bom estado, promovendo a sustentabilidade e a economia circular.
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-secondary" />
-                  <span>Roupas e calçados infantis</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-secondary" />
-                  <span>Material escolar</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-secondary" />
-                  <span>Brinquedos e livros</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-secondary" />
-                  <span>Móveis e equipamentos infantis</span>
-                </li>
-              </ul>
-             <Link href="/associe-se" className="mt-6 inline-block">
-             <Button size="lg" className="  bg-secondary text-white hover:bg-accent/90 hover:text-white px-8 py-6 rounded-full text-lg font-semibold">
-              Saiba mais <ArrowRight className="ml-2" />
-            </Button>
-             </Link>
-            </div>
-            <div className="relative h-[400px]">
-              <Image
-                src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80"
-                alt="Sustentabilidade"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </main>
   );
 }

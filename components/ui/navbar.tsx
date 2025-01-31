@@ -5,17 +5,20 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
+const menuItems = [
+  { label: "Início", href: "/" },
+  { label: "Sobre", href: "/sobre" },
+  { label: "Benefícios", href: "/beneficios" },
+  { label: "Associado", href: "associe-se" },
+  { label: "Parcerias", href: "/parcerias" },
+  { label: "Notícias", href: "/noticias" },
+];
+
 export default function Navbar() {
+  const [activeItem, setActiveItem] = useState(menuItems[0].href);
   const [isOpen, setIsOpen] = useState(false);
 
-  const menuItems = [
-    { label: "Início", href: "/" },
-    { label: "Sobre", href: "/sobre" },
-    { label: "Benefícios", href: "/beneficios" },
-    { label: "Associado", href: "associe-se" },
-    { label: "Parcerias", href: "/parcerias" },
-    { label: "Notícias", href: "/noticias" },
-  ];
+
 
   return (
     <nav className="bg-blue-500 shadow-lg fixed w-full z-50 py-4">
@@ -36,18 +39,21 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6">
-          {menuItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-white font-semibold hover:text-orange-400 transition-colors"
-            >
-              {item.label}
-            </Link>
-          ))}
+        {menuItems.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            onClick={() => setActiveItem(item.href)}
+            className={`text-white font-semibold hover:text-orange-400 transition-colors pb-2 ${
+              activeItem === item.href ? "border-b-4 border-orange-500" : ""
+            }`}
+          >
+            {item.label}
+          </Link>
+        ))}
           <Link
             href="/login"
-            className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors"
+            className="bg-primary text-white hover:bg-white/90 hover:text-primary px-3 py-3 rounded-full text-lg font-semibold transition-colors"
           >
             Área do Associado
           </Link>

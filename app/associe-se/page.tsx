@@ -231,7 +231,7 @@ export default function AssociePage() {
               {type.buttonText && type.buttonLink && (
                 <a
                   href={type.buttonLink}
-                  className="mt-4 inline-block bg-white text-black font-semibold py-2 px-6  transition hover:bg-gray-500 active:bg-primary text-center"
+                  className="mt-4 inline-block bg-green-500 text-white hover:bg-white/90 hover:text-primary px-8 py-3 rounded-full text-lg font-semibold"
                 >
                   {type.buttonText}
                 </a>
@@ -279,7 +279,7 @@ export default function AssociePage() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary text-white py-4 px-8 rounded-lg text-lg font-semibold hover:bg-accent transition duration-300"
+                className="w-full bg-accent text-white hover:bg-white/90 hover:text-primary px-8 py-6 rounded-full text-lg font-semibold transition duration-300"
               >
                 Enviar Solicitação
               </button>

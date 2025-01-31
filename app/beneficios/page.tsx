@@ -1,6 +1,6 @@
 "use client";
 
-import { ShoppingBag, Users, Recycle, Shield, Building, Gift,  CheckCircle,  GraduationCap, Heart, UtensilsCrossed, Shirt } from "lucide-react";
+import { ShoppingBag, Users, Recycle, Shield, Building, Gift,  CheckCircle,  GraduationCap, Heart, UtensilsCrossed, Shirt, ArrowRight } from "lucide-react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -80,7 +80,7 @@ export default function BeneficiosPage() {
       icon: <Shirt className="w-16 h-16 text-primary" />,
       description: 'Programa de doação e trocas',
       details: ['Rede de trocas solidárias', 'Bazar beneficente', 'Pontos por doações'],
-      bgColor: 'bg-accent/50'
+      bgColor: 'bg-accent/10'
     }
   ];
 
@@ -194,10 +194,10 @@ export default function BeneficiosPage() {
                   <span>Móveis e equipamentos infantis</span>
                 </li>
               </ul>
-             <Link href="/associe-se">
-             <Button className="mt-8 bg-secondary hover:bg-secondary/90">
-                Saiba Mais
-              </Button>
+             <Link href="/associe-se" className="mt-6 inline-block">
+             <Button size="lg" className="  bg-secondary text-white hover:bg-accent/90 hover:text-white px-8 py-6 rounded-full text-lg font-semibold">
+              Saiba mais <ArrowRight className="ml-2" />
+            </Button>
              </Link>
             </div>
             <div className="relative h-[400px]">

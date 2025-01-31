@@ -103,7 +103,7 @@ export default function ParceriasPage() {
             e amplie seu alcance com um público engajado e fiel
           </p>
           <Link href="#registroParceiro">
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
+          <Button size="lg" className="bg-accent text-white hover:bg-white/90 hover:text-primary px-8 py-6 rounded-full text-lg font-semibold">
             Torne-se Parceiro
           </Button>
           </Link>
@@ -271,7 +271,7 @@ export default function ParceriasPage() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary text-white py-4 px-8 rounded-lg text-lg font-semibold hover:bg-accent transition duration-300"
+                className="w-full bg-accent text-white hover:bg-white/90 hover:text-primary px-8 py-6 rounded-full text-lg font-semibold transition duration-300"
               >
                 Enviar Solicitação
               </button>

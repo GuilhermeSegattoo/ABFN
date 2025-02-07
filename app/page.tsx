@@ -6,31 +6,11 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
-
-import emailjs from 'emailjs-com';
-import { Toaster } from 'react-hot-toast';
 import toast from 'react-hot-toast';
-
-const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-
-  emailjs.sendForm('service_pjr1ols', 'template_524tjbo', e.target as HTMLFormElement, 'vd1F3fnBN3iSnypux')
-    .then(
-      (result) => {
-        toast.success('Número de telefone enviado com sucesso!'); // Toast de sucesso
-        console.log('Número de telefone enviado:', result.text);
-      },
-      (error) => {
-        toast.error('Erro ao enviar o Número de telefone. Tente novamente.'); // Toast de erro
-        console.error('Erro ao enviar Número de telefone:', error.text);
-      }
-    );
-};
 
 
 export default function Home() {
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+
 
 
   const getCardColor = (index: number): string => {
@@ -106,19 +86,6 @@ export default function Home() {
   ];
 
 
-  const formatPhoneNumber = (value: string) => {
-    const numbers = value.replace(/\D/g, "");
-    if (numbers.length <= 2) return numbers;
-    if (numbers.length <= 7) return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
-    return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7, 11)}`;
-  };
-
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const formatted = formatPhoneNumber(e.target.value);
-    if (formatted.length <= 15) {
-      setPhoneNumber(formatted);
-    }
-  };
 
 
 
@@ -138,7 +105,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
               <Link href="/sobre"
-                className="bg-white text-orange-600 px-6 md:px-8 py-3 rounded-full font-semibold hover:bg-orange-100 transition-colors duration-300 flex items-center justify-center space-x-2">
+                className="bg-white/90 text-primary hover:bg-white/90 hover:text-secondary px-6 md:px-8 py-3 rounded-full font-semibold  transition-colors duration-300 flex items-center justify-center space-x-2">
                 <span>Saber Mais</span>
                 <ChevronRight className="w-5 h-5" />
               </Link>
@@ -213,54 +180,57 @@ export default function Home() {
             Escolha a categoria que melhor se adapta à sua família e comece a desfrutar dos benefícios da ABFN.
           </p>
 
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 sm:gap-4 xs:gap-2 xs:mx-2 mx-10">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6">
             {membershipTypes.map((type, index) => (
-              <div
-                key={type.title}
-                className={`relative overflow-hidden transition-transform duration-300 transform hover:scale-105 shadow-lg p-8 flex flex-col items-center justify-between ${getCardColor(index)}`}
-              >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-black opacity-10 transform rotate-45 translate-x-8 -translate-y-8"></div>
+              <div key={type.title} className="flex flex-col items-center">
+                {/* Card Principal */}
+                <div
+                  className={`relative overflow-hidden transition-transform duration-300 transform hover:scale-105 shadow-lg p-8 flex flex-col items-center justify-between ${getCardColor(index)}`}
+                >
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-black opacity-10 transform rotate-45 translate-x-8 -translate-y-8"></div>
 
-                {/* Ícone */}
-                <type.icon className="w-14 h-14 text-white mb-6" />
+                  {/* Ícone */}
+                  <type.icon className="w-14 h-14 text-white mb-6" />
 
-                {/* Título do Plano */}
-                <h3 className="text-2xl font-extrabold text-white mb-3 uppercase text-center">{type.title}</h3>
+                  {/* Título do Plano */}
+                  <h3 className="text-2xl font-extrabold text-white mb-3 uppercase text-center">{type.title}</h3>
 
-                {/* Descrição */}
-                <p className="text-white font-medium mb-6 text-center">{type.description}</p>
+                  {/* Descrição */}
+                  <p className="text-white font-medium mb-6 text-center">{type.description}</p>
 
-                {/* Benefícios */}
-                <ul className="space-y-3 text-white mb-6">
-                  {type.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-center gap-2">
-                      <Check className="w-6 h-6 text-white" />
-                      <span className="text-lg font-semibold">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
+                  {/* Benefícios */}
+                  <ul className="space-y-3 text-white mb-6">
+                    {type.benefits.map((benefit) => (
+                      <li key={benefit} className="flex items-center gap-2">
+                        <Check className="w-6 h-6 text-white" />
+                        <span className="text-lg font-semibold">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                {/* Nota sobre a categoria */}
+                  {/* Botão para Afiliados e Beneméritos */}
+                  {type.buttonText && type.buttonLink && (
+                    <a
+                      href={type.buttonLink}
+                      className="mt-4 inline-block bg-white/90 text-primary hover:bg-white/90 hover:text-secondary px-8 py-3 rounded-full text-lg font-semibold"
+                    >
+                      {type.buttonText}
+                    </a>
+                  )}
+                </div>
+
+                {/* Nota sobre a categoria (Separada do Card) */}
                 {type.note && (
-                  <p className="text-sm text-white bg-white/20 p-3 rounded-lg italic text-center mb-4">
+                  <div className="w-full mt-4 p-4 bg-white text-black text-sm font-light text-center italic rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
                     {type.note}
-                  </p>
-                )}
-
-                {/* Botão para Afiliados e Beneméritos */}
-                {type.buttonText && type.buttonLink && (
-                  <a
-                    href={type.buttonLink}
-                    className="mt-4 inline-block bg-white/90 text-primary hover:bg-white/90 hover:text-secondary px-8 py-3 rounded-full text-lg font-semibold"
-                  >
-                    {type.buttonText}
-                  </a>
+                  </div>
                 )}
               </div>
             ))}
           </div>
         </div>
       </section>
+
 
 
       {/* Final CTA */}

@@ -50,18 +50,16 @@ export default function NoticiasPage() {
         "https://images.unsplash.com/photo-1529251333259-d36cccaf22ea?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       category: "Informativos",
     },
-   
+
   ];
 
   const categories = [
     "Todos",
     "Informativos",
+    "Vida em família",
     "Parcerias",
     "Legislação",
-    "Dados",
-    "Gráficos",
-    "Vagas de emprego",
-    "Vida em família",
+    "Dados", 
     "Classificados",
   ];
 
@@ -92,6 +90,25 @@ export default function NoticiasPage() {
         </div>
       </section>
 
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          {/* Container do Vídeo */}
+          <div className="relative w-full max-w-3xl mx-auto  overflow-hidden">
+            <iframe
+              width="100%"
+              height="400"
+              src="https://www.youtube.com/embed/q4O82Wo7t9I?si=uRfUhLsEAgpRy860"
+              title="Vídeo Institucional ABFN"
+              className="w-[99%] h-[430px]"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+
+
       {/* Categories */}
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -101,8 +118,8 @@ export default function NoticiasPage() {
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full ${selectedCategory === category
-                    ? "bg-primary text-white"
-                    : "bg-white border border-primary text-primary"
+                  ? "bg-primary text-white"
+                  : "bg-white border border-primary text-primary"
                   } hover:bg-primary hover:text-white transition-colors whitespace-nowrap`}
               >
                 {category}

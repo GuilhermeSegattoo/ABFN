@@ -135,18 +135,71 @@ export default function SobrePage() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center h-screen container mx-auto px-4 py-20 mt-[-100px] mb-[-300px]">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4 text-center">Organograma da ABFN</h1>
-          <Image
-            src="/organogramanv.svg"
-            alt="Organograma ABFN"
-            width={600}
-            height={600}
-            className="w-full max-w-3xl h-auto object-cover rounded-lg "
-          />
-        </div>
-
       </section>
+
+
+      <section className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center justify-center">
+  {/* Anúncio para telas menores - Fica acima do organograma */}
+  <aside className="md:hidden w-full bg-gray-100 p-4 text-center shadow-lg mb-6">
+    <h2 className="text-xl font-bold text-gray-800">Anuncie Aqui!</h2>
+    <p className="text-gray-600 mt-2">Sua marca pode aparecer neste espaço.</p>
+    <Link href="/parcerias">
+      <button className="mt-4 px-6 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-secondary transition">
+        Saiba Mais
+      </button>
+      </Link>
+  </aside>
+
+  {/* Coluna Esquerda - Anúncio (somente para md para cima) */}
+  <aside className="hidden md:flex md:w-1/5 lg:w-1/4 xl:w-1/5 h-[50vh] sticky top-0 items-center justify-center bg-gray-100 p-4 shadow-lg">
+    <div className="text-center">
+      <h2 className="text-xl font-bold text-gray-800">Anuncie Aqui!</h2>
+      <p className="text-gray-600 mt-2">Sua marca pode aparecer neste espaço.</p>
+      <Link href="/parcerias">
+      <button className="mt-4 px-6 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-secondary transition">
+        Saiba Mais
+      </button>
+      </Link>
+    </div>
+  </aside>
+
+  {/* Conteúdo Principal - Organograma (Aumentado para telas maiores) */}
+  <main className="w-full md:w-4/5 lg:w-3/5 xl:w-3/5 p-6 mx-auto">
+    <h1 className="text-4xl font-bold text-gray-900 mb-4 text-center">Organograma da ABFN</h1>
+    <Image
+      src="/organogramanv.svg"
+      alt="Organograma ABFN"
+      width={800}
+      height={800}
+      className="w-full max-w-4xl h-auto object-cover rounded-lg"
+    />
+  </main>
+
+  {/* Coluna Direita - Anúncio (somente para md para cima) */}
+  <aside className="hidden md:flex md:w-1/5 lg:w-1/4 xl:w-1/5 h-[50vh] sticky top-0 items-center justify-center bg-gray-100 p-4 shadow-lg">
+    <div className="text-center">
+      <h2 className="text-xl font-bold text-gray-800">Anuncie Aqui!</h2>
+      <p className="text-gray-600 mt-2">Alcance mais clientes com este espaço exclusivo.</p>
+      <Link href="/parcerias">
+      <button className="mt-4 px-6 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-secondary transition">
+        Saiba Mais
+      </button>
+      </Link>
+    </div>
+  </aside>
+
+  {/* Anúncio para telas menores - Fica abaixo do organograma */}
+  <aside className="md:hidden w-full bg-gray-100 p-4 text-center shadow-lg mt-6">
+    <h2 className="text-xl font-bold text-gray-800">Anuncie Aqui!</h2>
+    <p className="text-gray-600 mt-2">Alcance mais clientes com este espaço exclusivo.</p>
+    <Link href="/parcerias">
+      <button className="mt-4 px-6 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-secondary transition">
+        Saiba Mais
+      </button>
+    </Link>
+  </aside>
+</section>
+
 
 
 
@@ -175,10 +228,10 @@ export default function SobrePage() {
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             Conheça as famílias que iniciaram este movimento e construíram as bases da ABFN
           </p>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 gap-3">
             {founders.map((founder) => (
-              <Card key={founder.name} className="overflow-hidden">
-                <div className="relative h-48">
+              <Card key={founder.name} className="overflow-hidden bg-primary ">
+                <div className="relative h-72 w-full">
                   <Image
                     src={founder.image}
                     alt={founder.name}
@@ -187,8 +240,8 @@ export default function SobrePage() {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="text-xl">{founder.name}</CardTitle>
-                  <CardDescription>{founder.description}</CardDescription>
+                  <CardTitle className="text-xl text-white">{founder.name}</CardTitle>
+                  <CardDescription className="text-muted-foreground text-neutral-300">{founder.description}</CardDescription>
                 </CardHeader>
               </Card>
             ))}

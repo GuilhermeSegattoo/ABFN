@@ -15,7 +15,7 @@ const features = [
   {
     title: "Descontos exclusivos",
     description: "Acordos negociados com empresas para obter descontos vantajosos. Nossa rede de parceiros oferece condições especiais para garantir mais economia no dia a dia da sua família.",
-    image: "https://plus.unsplash.com/premium_photo-1672082518029-8619a2c1e9dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGRlc2NvbnRvc3xlbnwwfHwwfHx8MA%3D%3D",
+    image: "https://images.unsplash.com/photo-1634733988138-bf2c3a2a13fa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: Percent,
   },
   {
@@ -27,7 +27,7 @@ const features = [
   {
     title: "Sustentabilidade",
     description: "Espaço 'trocas & doações' para reutilização de bens... Através de campanhas de doação e troca de produtos em bom estado, ajudamos a reduzir o impacto ambiental e proporcionamos apoio a famílias que necessitam. Pequenas ações podem fazer uma grande diferença para o planeta e para a sociedade.",
-    image: "https://media.istockphoto.com/id/1435661954/pt/foto/children-holding-a-planet-outdoors.webp?a=1&b=1&s=612x612&w=0&k=20&c=akt_7b5MIw4JrR6ZBDVwbM1RySanzYn8yggbfPiWPZ4=",
+    image: "https://media.istockphoto.com/id/1300556059/pt/vetorial/world-map-globe-recycle-symbol-illustration.jpg?s=612x612&w=0&k=20&c=Rm2F-m_5uKscaBn4UkucaDAWYIiz194IVI7qi7vXRvI=",
     icon: Leaf,
   },
   {
@@ -45,7 +45,7 @@ const features = [
   {
     title: "Programas Exclusivos",
     description: "Participar da nossa rede significa ter acesso a eventos e programas exclusivos desenvolvidos para fortalecer laços familiares e proporcionar momentos inesquecíveis. Desde palestras educativas e workshops até atividades recreativas para todas as idades, sempre buscamos formas de enriquecer a experiência dos nossos associados.",
-    image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1552664688-cf412ec27db2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: Gift,
   },
 ];
@@ -74,6 +74,8 @@ export default function BeneficiosPage() {
           </p>
         </div>
       </section>
+
+      
 
       {/* Seções Dinâmicas */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -117,10 +119,10 @@ export default function BeneficiosPage() {
      <section className="py-20 bg-gradient-to-r from-primary to-orange-500 text-white mb-[-80px]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">
-            Pronto para fortalecer sua família?
+          Junte-se a nós hoje mesmo e faça a diferença! 
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Junte-se a nós e faça parte de uma comunidade que entende e valoriza as famílias numerosas.
+          Acreditamos que, juntos, podemos transformar nossas comunidades e construir um futuro mais justo e solidário para todas as famílias.
           </p>
           <Link href="/associe-se">
             <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-6 rounded-full text-lg font-semibold">

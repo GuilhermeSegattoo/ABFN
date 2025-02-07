@@ -11,31 +11,43 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import emailjs from 'emailjs-com';
-import { Toaster } from 'react-hot-toast';
 import toast from 'react-hot-toast';
 import { useState } from "react";
-const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-
-  emailjs.sendForm('service_pjr1ols', 'template_h9syqx6', e.target as HTMLFormElement, 'vd1F3fnBN3iSnypux')
-  .then(
-    (result) => {
-      toast.success('Número enviado com sucesso!'); // Toast de sucesso
-      console.log('Número enviado:', result.text);
-    },
-    (error) => {
-      toast.error('Erro ao enviar o Número. Tente novamente.'); // Toast de erro
-      console.error('Erro ao enviar Número:', error.text);
-    }
-  );
-};
+import Marquee from "react-fast-marquee";
+import emailjs from "emailjs-com";
 
 export default function ParceriasPage() {
+  
+  const [submitted, setSubmitted] = useState(false);
 
-   const [phoneNumber, setPhoneNumber] = useState('');
-   const [submitted, setSubmitted] = useState(false);
+  const [email, setEmail] = useState("");
 
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const templateParams = {
+      email: email, // Envia o email do usuário para o EmailJS
+    };
+
+    emailjs
+      .send(
+        "service_pjr1ols", // Substitua pelo seu Service ID do EmailJS
+        "template_h9syqx6", // Substitua pelo seu Template ID do EmailJS
+        templateParams,
+        "vd1F3fnBN3iSnypux" // Substitua pela sua Public Key do EmailJS
+      )
+      .then(
+        (result) => {
+          toast.success("E-mail enviado com sucesso!");
+          console.log("Sucesso:", result.text);
+          setEmail("");
+        },
+        (error) => {
+          toast.error("Erro ao enviar e-mail. Tente novamente.");
+          console.error("Erro:", error);
+        }
+      );
+  };
   const benefits = [
     {
       icon: Users2,
@@ -111,6 +123,39 @@ export default function ParceriasPage() {
         </div>
       </section>
 
+      <section className="py-16 bg-white">
+      <div className="container mx-auto ">
+        <h2 className="text-4xl font-bold text-center mb-8">Nossos Parceiros</h2>
+
+        {/* Primeira linha - Rolando para a esquerda */}
+        <Marquee speed={50} className="mb-4">
+          {[...Array(8)].map((_, i) => (
+            <div key={i} className="mx-8 p-4 bg-secondary shadow-lg rounded-lg text-center text-2xl font-bold text-white">
+              Sua Marca Aqui
+            </div>
+          ))}
+        </Marquee>
+
+        {/* Segunda linha - Rolando para a direita */}
+        <Marquee speed={40} direction="right" className="mb-4">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="mx-8 p-4 bg-accent shadow-lg rounded-lg text-center text-2xl font-bold text-white">
+              Sua Marca Aqui
+            </div>
+          ))}
+        </Marquee>
+
+        {/* Terceira linha - Rolando para a esquerda */}
+        <Marquee speed={60}>
+          {[...Array(10)].map((_, i) => (
+            <div key={i} className="mx-8 p-4 bg-primary shadow-lg rounded-lg text-center text-2xl font-bold text-white">
+              Sua Marca Aqui
+            </div>
+          ))}
+        </Marquee>
+      </div>
+    </section>
+
       {/* Benefits Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -121,7 +166,7 @@ export default function ParceriasPage() {
           <p className="text-center text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto">
           Juntos por um Mundo de Oportunidades para as Famílias!
           </p>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit) => (
               <Card key={benefit.title} className="hover:shadow-lg bg-primary transition-shadow">
                 <CardHeader>
@@ -172,106 +217,103 @@ export default function ParceriasPage() {
         </div>
       </section>
 
-      {/* Partnership Process */}
       <section id="registroParceiro" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-          O que oferecemos a você?
+  <div className="container mx-auto px-4 flex flex-col md:flex-row gap-8">
+    {/* Anúncio Esquerdo (Desktop) */}
+    <div className="hidden md:flex flex-col justify-center items-center w-1/4 bg-gray-100 p-6 shadow-lg rounded-lg">
+      <h3 className="text-xl font-bold text-gray-800 mb-4">Anuncie Aqui!</h3>
+      <p className="text-gray-600 text-center">Sua marca pode aparecer neste espaço exclusivo.</p>
+      <Link href="#contact">
+      <button className="mt-4 px-6 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-secondary transition">
+        Saiba Mais
+      </button>
+      </Link>
+    </div>
 
-          </h2>
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-8">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center">
-                  1
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Divulgação em nossas plataformas</h3>
-                  <p className="text-muted-foreground">
-                  Atingindo um grande número de famílias em todo o Brasil.
-                  </p>
-                </div>
+    {/* Conteúdo Central */}
+    <div className="flex-1">
+      <h2 className="text-3xl font-bold text-center mb-12">O que oferecemos a você?</h2>
+      
+      <div className="max-w-3xl mx-auto">
+        <div className="space-y-8">
+          {[
+            {
+              title: "Divulgação em nossas plataformas",
+              description: "Atingindo um grande número de famílias em todo o Brasil."
+            },
+            {
+              title: "A chance de estar associado a uma marca respeitada",
+              description: "Que preza pela união e pelo bem-estar da família."
+            },
+            {
+              title: "Acesso a um mercado",
+              description: "Com grande demanda e diversas oportunidades de negócios."
+            },
+            {
+              title: "Se você acredita que a sua empresa pode oferecer algo especial",
+              description: "Para as famílias numerosas, entre em contato com a gente e vamos conversar sobre como podemos trabalhar juntos!"
+            }
+          ].map((item, index) => (
+            <div key={index} className="flex gap-4 items-center">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg font-bold">
+                {index + 1}
               </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center">
-                  2
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">A chance de estar associado a uma marca respeitada</h3>
-                  <p className="text-muted-foreground">
-                  Que preza pela união e pelo bem-estar da família.
-
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center">
-                  3
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Acesso a um mercado</h3>
-                  <p className="text-muted-foreground">
-                   Com grande demanda e diversas oportunidades de negócios.
-
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center">
-                  4
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Se você acredita que a sua empresa pode oferecer algo especial</h3>
-                  <p className="text-muted-foreground">
-                   Para as famílias numerosas, entre em contato com a gente e vamos conversar sobre como podemos trabalhar juntos!
-
-                  </p>
-                </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-muted-foreground">{item.description}</p>
               </div>
             </div>
-
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+    </div>
 
-      <Toaster position="top-right" reverseOrder={false} />
+    {/* Anúncio Direito (Desktop) */}
+    <div className="hidden md:flex flex-col justify-center items-center w-1/4 bg-gray-100 p-6 shadow-lg rounded-lg">
+      <h3 className="text-xl font-bold text-gray-800 mb-4">Anuncie Aqui!</h3>
+      <p className="text-gray-600 text-center">Alcance mais clientes com este espaço exclusivo.</p>
+      <Link href="#contact">
+      <button className="mt-4 px-6 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-secondary transition">
+        Saiba Mais
+      </button>
+      </Link>
+    </div>
+  </div>
+</section>
+
+      
      
-        {/* Contact Form Section */}
-        <div className="py-20 px-4 bg-white" id="contact">
+         {/* Seção de Contato */}
+      <div className="py-20 px-4 bg-white" id="contact">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Fale com a ABFN e torne-se nosso parceiro!
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Fale com a ABFN e torne-se nosso parceiro!</h2>
           <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
-            Deixe seu Email e nossa equipe entrará em contato para avaliar sua candidatura!
+            Deixe seu email e nossa equipe entrará em contato para avaliar sua candidatura!
           </p>
-          
+
           {submitted ? (
-            <div className="bg-green-50 p-6 rounded-lg">
+            <div className="bg-green-50 p-6 rounded-lg shadow-lg">
               <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-green-800 mb-2">
-                Recebemos sua solicitação!
-              </h3>
-              <p className="text-green-700">
-                Em breve, nossa equipe entrará em contato para dar continuidade ao processo.
-              </p>
+              <h3 className="text-xl font-semibold text-green-800 mb-2">Recebemos sua solicitação!</h3>
+              <p className="text-green-700">Em breve, nossa equipe entrará em contato para dar continuidade ao processo.</p>
             </div>
           ) : (
             <form onSubmit={sendEmail} className="space-y-6">
-              <div className="flex items-center bg-gray-50 rounded-lg p-2">
-                
+              <div className="flex items-center bg-gray-100 rounded-lg p-3 shadow-md">
+                <Phone className="text-gray-500 w-6 h-6 mx-2" />
                 <input
                   type="email"
-                  name="email"  
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  placeholder="Seu email"
-                  className="flex-1 p-2 bg-transparent outline-none text-lg"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Digite seu e-mail"
+                  className="flex-1 bg-transparent outline-none text-lg p-2"
                   required
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-accent text-white hover:bg-white/90 hover:text-primary px-8 py-6 rounded-full text-lg font-semibold transition duration-300"
+                className="w-full bg-accent text-white hover:bg-white/90 hover:text-primary px-8 py-4 rounded-full text-lg font-semibold transition duration-300"
               >
                 Enviar Solicitação
               </button>
@@ -279,6 +321,9 @@ export default function ParceriasPage() {
           )}
         </div>
       </div>
+
+  
+    
     
 
     </main>

@@ -1,44 +1,13 @@
 "use client";
 
-import { Shield, Users, Gift, HeartHandshake, Target, Heart, HandshakeIcon, Check,  CheckCircle, Phone } from "lucide-react";
-import Image from "next/image";
+import { Users, Target, Heart, HandshakeIcon, Check, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { useState } from "react";
-import emailjs from 'emailjs-com';
-import toast from 'react-hot-toast';
 
-const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
 
-  emailjs.sendForm('service_pjr1ols', 'template_524tjbo', e.target as HTMLFormElement, 'vd1F3fnBN3iSnypux')
-    .then(
-      (result) => {
-        toast.success('Número de telefone enviado com sucesso!'); // Toast de sucesso
-        console.log('Número de telefone enviado:', result.text);
-      },
-      (error) => {
-        toast.error('Erro ao enviar o Número de telefone. Tente novamente.'); // Toast de erro
-        console.error('Erro ao enviar Número de telefone:', error.text);
-      }
-    );
-};
 
 export default function AssociePage() {
   
-
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
- 
-
 
   const getCardColor = (index: number): string => {
     const colors = [
@@ -110,7 +79,7 @@ export default function AssociePage() {
             </p>
             <a 
               href="#categories"
-              className="bg-secondary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary transition duration-300"
+              className="inline-block bg-white/90 text-primary hover:bg-white/90 hover:text-accent px-8 py-3 rounded-full text-lg font-semibold shadow-md  transition duration-300"
             >
               Candidate-se Agora
             </a>
@@ -152,8 +121,8 @@ export default function AssociePage() {
 
      
 
-     {/* Membership Categories */}
-     <section id="categories" className="py-20 bg-white">
+      {/* Membership Categories */}
+      <section id="categories" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4 tracking-wide">
             Categorias de Associado
@@ -162,48 +131,50 @@ export default function AssociePage() {
             Escolha a categoria que melhor se adapta à sua família e comece a desfrutar dos benefícios da ABFN.
           </p>
 
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 sm:gap-4 xs:gap-2 xs:mx-2 mx-10">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6">
             {membershipTypes.map((type, index) => (
-              <div
-                key={type.title}
-                className={`relative overflow-hidden transition-transform duration-300 transform hover:scale-105 shadow-lg p-8 flex flex-col items-center justify-between ${getCardColor(index)}`}
-              >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-black opacity-10 transform rotate-45 translate-x-8 -translate-y-8"></div>
+              <div key={type.title} className="flex flex-col items-center">
+                {/* Card Principal */}
+                <div
+                  className={`relative overflow-hidden transition-transform duration-300 transform hover:scale-105 shadow-lg p-8 flex flex-col items-center justify-between ${getCardColor(index)}`}
+                >
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-black opacity-10 transform rotate-45 translate-x-8 -translate-y-8"></div>
 
-                {/* Ícone */}
-                <type.icon className="w-14 h-14 text-white mb-6" />
+                  {/* Ícone */}
+                  <type.icon className="w-14 h-14 text-white mb-6" />
 
-                {/* Título do Plano */}
-                <h3 className="text-2xl font-extrabold text-white mb-3 uppercase text-center">{type.title}</h3>
+                  {/* Título do Plano */}
+                  <h3 className="text-2xl font-extrabold text-white mb-3 uppercase text-center">{type.title}</h3>
 
-                {/* Descrição */}
-                <p className="text-white font-medium mb-6 text-center">{type.description}</p>
+                  {/* Descrição */}
+                  <p className="text-white font-medium mb-6 text-center">{type.description}</p>
 
-                {/* Benefícios */}
-                <ul className="space-y-3 text-white mb-6">
-                  {type.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-center gap-2">
-                      <Check className="w-6 h-6 text-white" />
-                      <span className="text-lg font-semibold">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
+                  {/* Benefícios */}
+                  <ul className="space-y-3 text-white mb-6">
+                    {type.benefits.map((benefit) => (
+                      <li key={benefit} className="flex items-center gap-2">
+                        <Check className="w-6 h-6 text-white" />
+                        <span className="text-lg font-semibold">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                {/* Nota sobre a categoria */}
+                  {/* Botão para Afiliados e Beneméritos */}
+                  {type.buttonText && type.buttonLink && (
+                    <a
+                      href={type.buttonLink}
+                      className="mt-4 inline-block bg-white/90 text-primary hover:bg-white/90 hover:text-secondary px-8 py-3 rounded-full text-lg font-semibold"
+                    >
+                      {type.buttonText}
+                    </a>
+                  )}
+                </div>
+
+                {/* Nota sobre a categoria (Separada do Card) */}
                 {type.note && (
-                  <p className="text-sm text-white bg-white/20 p-3 rounded-lg italic text-center mb-4">
+                  <div className="w-full mt-4 p-4 bg-white text-black text-sm font-light text-center italic rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
                     {type.note}
-                  </p>
-                )}
-
-                {/* Botão para Afiliados e Beneméritos */}
-                {type.buttonText && type.buttonLink && (
-                  <a
-                    href={type.buttonLink}
-                    className="mt-4 inline-block bg-white/90 text-primary hover:bg-white/90 hover:text-secondary px-8 py-3 rounded-full text-lg font-semibold"
-                  >
-                    {type.buttonText}
-                  </a>
+                  </div>
                 )}
               </div>
             ))}
@@ -211,53 +182,22 @@ export default function AssociePage() {
         </div>
       </section>
 
-    
-
-      {/* Process Section */}
-        {/* Contact Form Section */}
-        <div className="py-20 px-4 bg-white" id="contact">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Candidate-se à Associação</h2>
-          <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
-            Deixe seu número de telefone e nossa equipe entrará em contato para avaliar sua candidatura
+       {/* Final CTA */}
+     <section className="py-20 bg-gradient-to-r from-primary to-orange-500 text-white mb-[-80px]">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">
+          Para se tornar um associado, o investimento é de apenas <strong>R$37/mês </strong>
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Joia de Inscrição inicial de R$150. No entanto, você ficará isento do pagamento da Joia se associar-se até o dia <strong>30/06/2025</strong>. 
           </p>
-          
-          {submitted ? (
-            <div className="bg-green-50 p-6 rounded-lg">
-              <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-green-800 mb-2">
-                Recebemos sua solicitação!
-              </h3>
-              <p className="text-green-700">
-                Em breve, nossa equipe entrará em contato para dar continuidade ao processo.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={sendEmail} className="space-y-6">
-              <div className="flex items-center bg-gray-50 rounded-lg p-2">
-                <Phone className="w-6 h-6 text-gray-400 ml-2" />
-                <input
-                  type="tel"
-                  name="phone"  
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  placeholder="Seu número de telefone"
-                  className="flex-1 p-2 bg-transparent outline-none text-lg"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-accent text-white hover:bg-white/90 hover:text-primary px-8 py-6 rounded-full text-lg font-semibold transition duration-300"
-              >
-                Enviar Solicitação
-              </button>
-            </form>
-          )}
+          <Link href="#categories">
+            <Button size="lg" className="bg-white/90 text-primary hover:bg-white/90 hover:text-secondary px-8 py-6 rounded-full text-lg font-semibold">
+              Associa-se <ArrowRight className="ml-2" />
+            </Button>
+          </Link>
         </div>
-      </div>
-    
-
+      </section>
     </main>
   );
 }

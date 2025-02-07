@@ -22,16 +22,16 @@ export default function Navbar() {
 
   return (
     <nav className="bg-blue-500 shadow-lg fixed w-full z-50 py-4">
-      <div className="container mx-auto px-6 lg:px-10 flex justify-between items-center">
+      <div className="container mx-auto px-6 lg:px-10 flex justify-between items-center gap-6">
         {/* Logo e Nome */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center">
           <Link href="/" className="flex flex-row items-start">
             <Image
               src="/ABFNLOGO.png"
               alt="Logo ABFN"
               width={100}
               height={60}
-              className="w-25 h-auto"
+              className="w-25 h-auto md:block"
             />
           
           </Link>
@@ -53,20 +53,24 @@ export default function Navbar() {
         ))}
           <Link
             href="/login"
-            className="bg-primary text-white hover:bg-white/90 hover:text-primary px-3 py-3 rounded-full text-lg font-semibold transition-colors"
+            className="bg-primary text-white hover:bg-white/90 hover:text-primary md:text-sm md:px-5 md:py-2 px-3 py-3 rounded-full text-lg font-semibold transition-colors"
           >
             Área do Associado
           </Link>
           <div className="flex space-x-4 ml-4">
-            <a href="#">
+            <Link href="#">
               <Image src="/face-icon.svg" alt="Facebook" width={30} height={30} className="w-6 h-6" />
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="#">
               <Image src="/insta-icon.svg" alt="Instagram" width={30} height={30} className="w-6 h-6" />
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="#">
               <Image src="/wpp-icon.svg" alt="WhatsApp" width={30} height={30} className="w-6 h-6" />
-            </a>
+            </Link>
+            <Link href="#">
+              <Image src="/youtube.svg" alt="Twitter" width={30} height={30} className="w-6 h-6" />
+            </Link>
+
           </div>
         </div>
 
@@ -100,15 +104,19 @@ export default function Navbar() {
             Área do Associado
           </Link>
           <div className="flex justify-center space-x-4 mt-4">
-            <a href="#">
+          <Link href="#">
               <Image src="/face-icon.svg" alt="Facebook" width={30} height={30} className="w-6 h-6" />
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="#">
               <Image src="/insta-icon.svg" alt="Instagram" width={30} height={30} className="w-6 h-6" />
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="#">
               <Image src="/wpp-icon.svg" alt="WhatsApp" width={30} height={30} className="w-6 h-6" />
-            </a>
+            </Link>
+            <Link href="#">
+              <Image src="/youtube.svg" alt="Twitter" width={30} height={30} className="w-6 h-6" />
+            </Link>
+
           </div>
         </div>
       )}

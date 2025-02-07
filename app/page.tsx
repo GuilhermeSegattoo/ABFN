@@ -35,8 +35,8 @@ export default function Home() {
 
   const getCardColor = (index: number): string => {
     const colors = [
-      "bg-blue-600",
-      "bg-green-600",
+      "bg-accent",
+      "bg-secondary",
       "bg-primary",
       "bg-accent",
     ];
@@ -71,6 +71,7 @@ export default function Home() {
       title: "Efetivos",
       description: "Famílias com mínimo de 6 filhos e se comprometem com o pagamento de uma joia e da quota anual.",
       benefits: ["Apenas por indicação", "Descontos exclusivos", "Rede de apoio", "Participação em eventos"],
+      note: "O candidato a associado seja para a categoria efetivo ou aspirante, deve ser indicado por um associado fundador ou efetivo em pleno gozo dos direitos e será admitido na ABFN mediante aceitação expressa do que preceitua o Estatuto e aprovação do Conselho de Administração.",
       highlighted: true,
       icon: Users,
       buttonText: "Sou indicado(a)",
@@ -80,6 +81,7 @@ export default function Home() {
       title: "Aspirantes",
       description: "Famílias com mínimo de 4 filhos e se comprometem com o pagamento de uma joia e da quota anual.",
       benefits: ["Apenas por indicação", "Acesso à rede de apoio", "Participação em eventos", "Descontos selecionados"],
+      note: "O candidato a associado seja para a categoria efetivo ou aspirante, deve ser indicado por um associado fundador ou efetivo em pleno gozo dos direitos e será admitido na ABFN mediante aceitação expressa do que preceitua o Estatuto e aprovação do Conselho de Administração.",
       icon: Heart,
       buttonText: "Sou indicado(a)",
       buttonLink: "/login",
@@ -88,6 +90,7 @@ export default function Home() {
       title: "Afiliados",
       description: "São as famílias numerosas que atingiram o número mínimo de seis membros, que de forma espontânea solicitam sua associação.",
       benefits: ["Acesso à rede de apoio", "Não possuem direito de votar ou ser votados", "Descontos selecionados"],
+      note: "O candidato a associado afiliado, cuja admissão haja sido espontânea mediante cadastramento, pagamento de joia e anuidade regular, será admitido na ABFN mediante aceitação expressa do que preceitua o Estatuto e aprovação do Conselho de Administração.",
       icon: Target,
       buttonText: "Se Afiliar",
       buttonLink: "/login",
@@ -134,15 +137,12 @@ export default function Home() {
               Juntos construímos um futuro melhor e fortalecemos as famílias numerosas no Brasil
             </p>
             <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-              <Link href="/associe-se"
+              <Link href="/sobre"
                 className="bg-white text-orange-600 px-6 md:px-8 py-3 rounded-full font-semibold hover:bg-orange-100 transition-colors duration-300 flex items-center justify-center space-x-2">
-                <span>Comece Agora</span>
+                <span>Saber Mais</span>
                 <ChevronRight className="w-5 h-5" />
               </Link>
-              <Link href="/sobre"
-                className="bg-transparent border-2 border-white px-6 md:px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-orange-600 transition-colors duration-300 text-center">
-                Saber Mais
-              </Link>
+
             </div>
           </div>
         </div>
@@ -152,17 +152,20 @@ export default function Home() {
       {/* Features benefits Grid */}
       <section className="py-20 ">
 
-        
+
         <div className="container mx-auto px-4">
-        <div className="mt-16 grid md:grid-cols-4 mb-10 gap-8">
+          <h2 className="text-4xl font-bold text-center mt-16 mb-16">
+            Por que escolher a ABFN?
+          </h2>
+          <div className="mt-16 grid md:grid-cols-4 mb-10 gap-8">
             <div className="text-center">
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Bem-estar e Saúde</h3>
               <p className="text-muted-foreground text-xl">
-              Cuidado com a saúde das famílias, com iniciativas que vão 
-              além do cuidado físico, abrangendo também o bem-estar emocional e social
+                Cuidado com a saúde das famílias, com iniciativas que vão
+                além do cuidado físico, abrangendo também o bem-estar emocional e social
               </p>
             </div>
             <div className="text-center">
@@ -171,7 +174,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Serviços e Produtos</h3>
               <p className="text-muted-foreground text-xl">
-              Conectamos famílias numerosas a soluções acessíveis e exclusivas, garantindo suporte prático para o dia a dia
+                Conectamos famílias numerosas a soluções acessíveis e exclusivas, garantindo suporte prático para o dia a dia
               </p>
             </div>
             <div className="text-center">
@@ -180,7 +183,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Educação e Desenvolvimento</h3>
               <p className="text-muted-foreground text-xl">
-              Oferecemos oportunidades educacionais e de formação, investindo no crescimento das famílias e no futuro de seus filhos
+                Oferecemos oportunidades educacionais e de formação, investindo no crescimento das famílias e no futuro de seus filhos
               </p>
             </div>
             <div className="text-center">
@@ -189,93 +192,75 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Alimentação</h3>
               <p className="text-muted-foreground text-xl">
-              Apoiamos a segurança alimentar com ações que promovem nutrição adequada e acessível para quem mais precisa
+                Apoiamos a segurança alimentar com ações que promovem nutrição adequada e acessível para quem mais precisa
               </p>
             </div>
           </div>
-          <h2 className="text-4xl font-bold text-center mt-16 mb-16">
-            Por que escolher a ABFN?
-          </h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={feature.title}
-                className="group relative overflow-hidden rounded-2xl aspect-square"
-              >
-                <Image
-                  src={feature.image}
-                  alt={feature.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <h3 className="text-2xl font-bold text-white mb-2 hidden md:hidden lg:block sm:block xs:block">
-                    {feature.title}
-                  </h3>
-                  <p className="text-white/90 hidden md:hidden lg:block sm:block xs:block">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          
+
+
+
         </div>
       </section>
 
 
       {/* Membership Categories */}
-     <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4 tracking-wide">
-          Seja um Associado
-        </h2>
-        <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
-          Escolha a categoria que melhor se adapta à sua família e comece a desfrutar dos benefícios da ABFN.
-        </p>
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-4 tracking-wide">
+            Categorias de Associado
+          </h2>
+          <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
+            Escolha a categoria que melhor se adapta à sua família e comece a desfrutar dos benefícios da ABFN.
+          </p>
 
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 sm:gap-4 xs:gap-2 xs:mx-2 mx-10">
-          {membershipTypes.map((type, index) => (
-            <div
-              key={type.title}
-              className={`relative overflow-hidden transition-transform duration-300 transform hover:scale-105 shadow-lg p-8 flex flex-col items-center justify-between ${getCardColor(index)}`}
-            >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-black opacity-10 transform rotate-45 translate-x-8 -translate-y-8"></div>
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 sm:gap-4 xs:gap-2 xs:mx-2 mx-10">
+            {membershipTypes.map((type, index) => (
+              <div
+                key={type.title}
+                className={`relative overflow-hidden transition-transform duration-300 transform hover:scale-105 shadow-lg p-8 flex flex-col items-center justify-between ${getCardColor(index)}`}
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-black opacity-10 transform rotate-45 translate-x-8 -translate-y-8"></div>
 
-              {/* Ícone */}
-              <type.icon className="w-14 h-14 text-white mb-6" />
+                {/* Ícone */}
+                <type.icon className="w-14 h-14 text-white mb-6" />
 
-              {/* Título do Plano */}
-              <h3 className="text-2xl font-extrabold text-white mb-3 uppercase text-center">{type.title}</h3>
+                {/* Título do Plano */}
+                <h3 className="text-2xl font-extrabold text-white mb-3 uppercase text-center">{type.title}</h3>
 
-              {/* Descrição */}
-              <p className="text-white font-medium mb-6 text-center">{type.description}</p>
+                {/* Descrição */}
+                <p className="text-white font-medium mb-6 text-center">{type.description}</p>
 
-              {/* Benefícios */}
-              <ul className="space-y-3 text-white mb-6">
-                {type.benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-center gap-2">
-                    <Check className="w-6 h-6 text-white" />
-                    <span className="text-lg font-semibold">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
+                {/* Benefícios */}
+                <ul className="space-y-3 text-white mb-6">
+                  {type.benefits.map((benefit) => (
+                    <li key={benefit} className="flex items-center gap-2">
+                      <Check className="w-6 h-6 text-white" />
+                      <span className="text-lg font-semibold">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
 
-              {/* Botão para Afiliados e Beneméritos */}
-              {type.buttonText && type.buttonLink && (
-                <a
-                  href={type.buttonLink}
-                  className="mt-4 inline-block bg-green-500 text-white hover:bg-white/90 hover:text-primary px-8 py-3 rounded-full text-lg font-semibold"
-                >
-                  {type.buttonText}
-                </a>
-              )}
-            </div>
-          ))}
+                {/* Nota sobre a categoria */}
+                {type.note && (
+                  <p className="text-sm text-white bg-white/20 p-3 rounded-lg italic text-center mb-4">
+                    {type.note}
+                  </p>
+                )}
+
+                {/* Botão para Afiliados e Beneméritos */}
+                {type.buttonText && type.buttonLink && (
+                  <a
+                    href={type.buttonLink}
+                    className="mt-4 inline-block bg-white/90 text-primary hover:bg-white/90 hover:text-secondary px-8 py-3 rounded-full text-lg font-semibold"
+                  >
+                    {type.buttonText}
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
 
       {/* Final CTA */}

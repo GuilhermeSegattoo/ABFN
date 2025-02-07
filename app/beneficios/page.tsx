@@ -1,89 +1,58 @@
 "use client";
 
-import { ShoppingBag, Users, Recycle, Shield, Building, Gift,  CheckCircle,  GraduationCap, Heart, UtensilsCrossed, Shirt, ArrowRight } from "lucide-react";
-
+import { Shield, Percent, Share2, Leaf, Building, Gift, GraduationCap, Heart, UtensilsCrossed, Shirt, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+
+const features = [
+  {
+    title: "Defesa dos direitos familiares",
+    description: "Garantia de maior equidade no tratamento social, fiscal e de consumo, onde famílias com os mesmos valores e desafios se conectam para compartilhar experiências, soluções e recursos. Nossa comunidade está sempre pronta para auxiliar em momentos de necessidade, promovendo segurança e acolhimento.",
+    image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80",
+    icon: Shield,
+  },
+  {
+    title: "Descontos exclusivos",
+    description: "Acordos negociados com empresas para obter descontos vantajosos. Nossa rede de parceiros oferece condições especiais para garantir mais economia no dia a dia da sua família.",
+    image: "https://plus.unsplash.com/premium_photo-1672082518029-8619a2c1e9dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGRlc2NvbnRvc3xlbnwwfHwwfHx8MA%3D%3D",
+    icon: Percent,
+  },
+  {
+    title: "Rede de compartilhamento",
+    description: "Plataforma online 'Ambiente restrito' para apoio mútuo e troca de informações úteis entre famílias numerosas. Juntos, criamos uma rede colaborativa que fortalece a comunidade e reduz o desperdício.",
+    image: "https://media.istockphoto.com/id/1167647136/pt/vetorial/brazil-map-outline-with-stars-and-lines-abstract-framework.jpg?s=612x612&w=0&k=20&c=A7h7IV78tlOJ8zIOjohCPxzG1rwptkJBbqtouPVVBLM=",
+    icon: Share2,
+  },
+  {
+    title: "Sustentabilidade",
+    description: "Espaço 'trocas & doações' para reutilização de bens... Através de campanhas de doação e troca de produtos em bom estado, ajudamos a reduzir o impacto ambiental e proporcionamos apoio a famílias que necessitam. Pequenas ações podem fazer uma grande diferença para o planeta e para a sociedade.",
+    image: "https://media.istockphoto.com/id/1435661954/pt/foto/children-holding-a-planet-outdoors.webp?a=1&b=1&s=612x612&w=0&k=20&c=akt_7b5MIw4JrR6ZBDVwbM1RySanzYn8yggbfPiWPZ4=",
+    icon: Leaf,
+  },
+  {
+    title: "Apoio Jurídico",
+    description: "Entendemos que questões legais podem ser desafiadoras para muitas famílias. Por isso, oferecemos suporte jurídico especializado para ajudar em situações essenciais para a segurança e o bem-estar da sua família.",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80",
+    icon: Shield,
+  },
+  {
+    title: "Parcerias Corporativas",
+    description: "Através de nossas parcerias estratégicas com empresas de diversos setores, garantimos benefícios exclusivos aos associados. Desde descontos em serviços essenciais até vantagens em programas de fidelidade, nosso objetivo é proporcionar ainda mais valor e oportunidades para cada membro da comunidade.",
+    image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80",
+    icon: Building,
+  },
+  {
+    title: "Programas Exclusivos",
+    description: "Participar da nossa rede significa ter acesso a eventos e programas exclusivos desenvolvidos para fortalecer laços familiares e proporcionar momentos inesquecíveis. Desde palestras educativas e workshops até atividades recreativas para todas as idades, sempre buscamos formas de enriquecer a experiência dos nossos associados.",
+    image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80",
+    icon: Gift,
+  },
+];
+
+
 
 export default function BeneficiosPage() {
-  const benefits = [
-    {
-      icon: ShoppingBag,
-      title: "Descontos Exclusivos",
-      description: "Economize em compras com nossa rede de parceiros em todo o Brasil",
-      color: "text-primary",
-    },
-    {
-      icon: Users,
-      title: "Rede de Compartilhamento",
-      description: "Conecte-se com outras famílias para trocar experiências e apoio",
-      color: "text-secondary",
-    },
-    {
-      icon: Recycle,
-      title: "Trocas & Doações",
-      description: "Participe do nosso programa de sustentabilidade e economia circular",
-      color: "text-accent",
-    },
-    {
-      icon: Shield,
-      title: "Apoio Jurídico",
-      description: "Suporte especializado em questões legais para famílias numerosas",
-      color: "text-primary",
-    },
-    {
-      icon: Building,
-      title: "Parcerias Corporativas",
-      description: "Acesso a benefícios especiais com empresas parceiras",
-      color: "text-secondary",
-    },
-    {
-      icon: Gift,
-      title: "Programas Exclusivos",
-      description: "Participe de eventos e programas especiais para associados",
-      color: "text-accent",
-    },
-  ];
-
-  const benefitsPlus = [
-    {
-      title: 'Educação',
-      icon: <GraduationCap className="w-16 h-16 text-blue-600" />,
-      description: 'Descontos exclusivos em escolas parceiras',
-      details: ['Até 30% em mensalidades escolares', 'Material didático com preço reduzido', 'Cursos extracurriculares'],
-      bgColor: 'bg-blue-50'
-    },
-    {
-      title: 'Saúde',
-      icon: <Heart className="w-16 h-16 text-red-600" />,
-      description: 'Benefícios em serviços de saúde',
-      details: ['Desconto em consultas médicas', 'Preços especiais em exames', 'Convênios odontológicos'],
-      bgColor: 'bg-green-50'
-    },
-    {
-      title: 'Alimentação',
-      icon: <UtensilsCrossed className="w-16 h-16 text-green-600" />,
-      description: 'Vantagens em estabelecimentos parceiros',
-      details: ['Descontos em restaurantes', 'Cashback em supermercados', 'Clube de benefícios alimentares'],
-      bgColor: 'bg-orange-50'
-    },
-    {
-      title: 'Doação de Roupas',
-      icon: <Shirt className="w-16 h-16 text-primary" />,
-      description: 'Programa de doação e trocas',
-      details: ['Rede de trocas solidárias', 'Bazar beneficente', 'Pontos por doações'],
-      bgColor: 'bg-accent/10'
-    }
-  ];
-
   return (
     <main className="pt-16">
       {/* Hero Section */}
@@ -103,116 +72,64 @@ export default function BeneficiosPage() {
           <p className="text-xl mb-8 max-w-2xl">
             Descubra todas as vantagens de fazer parte da maior rede de apoio a famílias numerosas do Brasil
           </p>
-          
         </div>
       </section>
 
-      {/* Sustainability Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Programa de Sustentabilidade</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Nossa plataforma de trocas e doações permite que as famílias compartilhem
-                itens em bom estado, promovendo a sustentabilidade e a economia circular.
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-secondary" />
-                  <span>Roupas e calçados infantis</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-secondary" />
-                  <span>Material escolar</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-secondary" />
-                  <span>Brinquedos e livros</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-secondary" />
-                  <span>Móveis e equipamentos infantis</span>
-                </li>
-              </ul>
-             <Link href="/associe-se" className="mt-6 inline-block">
-             <Button size="lg" className="  bg-secondary text-white hover:bg-accent/90 hover:text-white px-8 py-6 rounded-full text-lg font-semibold">
-              Saiba mais <ArrowRight className="ml-2" />
-            </Button>
-             </Link>
-            </div>
-            <div className="relative h-[400px]">
-              <Image
-                src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80"
-                alt="Sustentabilidade"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-       {/* Benefits Section */}
-       <div className="py-20 px-4 bg-white" id="benefits">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Benefícios Exclusivos</h2>
-          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
-            Desfrute de uma ampla rede de vantagens e descontos especiais em diversos setores
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefitsPlus.map((benefit) => (
-
-              <div 
-                key={benefit.title}
-                className={`${benefit.bgColor} rounded-2xl p-8 transform hover:scale-105 transition duration-300`}
-              >
-                <div className="flex flex-col items-center text-center">
-                  <div className="mb-6">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3">{benefit.title}</h3>
-                  <p className="text-gray-700 mb-6">{benefit.description}</p>
-                  <ul className="space-y-3 text-left w-full">
-                    {benefit.details.map((detail, index) => (
-                      <li key={index} className="flex items-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
-                        <span className="text-gray-700">{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* Seções Dinâmicas */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="text-center mb-16">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">Fazer parte da ABFN é um compromisso com o fortalecimento de sua família e a criação de um futuro melhor para todos. </h1>
+        <p className="text-xl text-gray-600">Ao se associar, você terá acesso a uma série de benefícios incríveis, projetados para apoiar e melhorar a vida da sua família. Veja o que você ganha:</p>
       </div>
 
-      {/* Main Benefits */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Vantagens para Nossos Associados
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((benefit) => (
-              <Card key={benefit.title} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <benefit.icon className={`w-12 h-12 ${benefit.color}`} />
-                  <CardTitle className="mt-4">{benefit.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{benefit.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+      <div className="space-y-24">
+        {features.map((feature, index) => (
+          <div
+            key={feature.title}
+            className={`flex flex-col ${
+              index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+            } items-center gap-8 md:gap-16`}
+          >
+            <div className="flex-1 space-y-4">
+              <div className="flex items-center gap-4">
+                <feature.icon className="h-8 w-8 text-blue-600" />
+                <h2 className="text-3xl font-bold text-gray-900">{feature.title}</h2>
+              </div>
+              <p className="text-xl text-gray-600">{feature.description}</p>
+            </div>
+            <div className="flex-1">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  width={500}
+                  height={500}
+                  className="relative rounded-lg shadow-2xl w-full h-[300px] object-cover"
+                />
+              </div>
+            </div>
           </div>
+        ))}
+      </div>
+    </div>
+     {/* Final CTA */}
+     <section className="py-20 bg-gradient-to-r from-primary to-orange-500 text-white mb-[-80px]">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">
+            Pronto para fortalecer sua família?
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+            Junte-se a nós e faça parte de uma comunidade que entende e valoriza as famílias numerosas.
+          </p>
+          <Link href="/associe-se">
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-6 rounded-full text-lg font-semibold">
+              Começar Agora <ArrowRight className="ml-2" />
+            </Button>
+          </Link>
         </div>
       </section>
 
-      
-
-      
     </main>
   );
 }

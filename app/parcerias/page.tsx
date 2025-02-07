@@ -39,13 +39,14 @@ export default function ParceriasPage() {
   const benefits = [
     {
       icon: Users2,
-      title: "Alcance Qualificado",
-      description: "Acesso direto a um público familiar engajado e com alto potencial de consumo",
+      title: "Crescimento",
+      description: "Ser parceiro da ABFN significa estar ao lado de uma causa que realmente faz a diferença na vida das pessoas",
+
     },
     {
       icon: Building,
       title: "Visibilidade",
-      description: "Exposição da marca em nossos canais de comunicação e eventos",
+      description: "Sua marca vai ser vista por um público altamente engajado e com um grande poder de compra",
     },
     {
       icon: Target,
@@ -55,14 +56,14 @@ export default function ParceriasPage() {
     {
       icon: BadgePercent,
       title: "Fidelização",
-      description: "Criação de relacionamento duradouro com famílias numerosas",
+      description: "Ao oferecer condições especiais, você conquista a lealdade de famílias que sempre precisam de produtos para diferentes necessidades",
     },
   ];
 
   const partners = [
     {
       category: "Educação",
-      companies: ["Escola Crescer", "Instituto Educar", "Colégio Futuro"],
+      
       image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80",
     },
     {
@@ -114,22 +115,23 @@ export default function ParceriasPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-4">
-          Você sabia que existe um público muito especial que está sempre em busca de produtos e serviços de qualidade? 
+          Por que se tornar nosso parceiro?
+
           </h2>
           <p className="text-center text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-          São as famílias numerosas do Brasil, que formam uma comunidade forte e unida através da <strong>Associação Brasileira de Famílias Numerosas</strong> (ABFN)
+          Juntos por um Mundo de Oportunidades para as Famílias!
           </p>
           <div className="grid md:grid-cols-4 gap-8">
             {benefits.map((benefit) => (
-              <Card key={benefit.title} className="hover:shadow-lg transition-shadow">
+              <Card key={benefit.title} className="hover:shadow-lg bg-primary transition-shadow">
                 <CardHeader>
                   <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <benefit.icon className="h-6 w-6 text-primary" />
+                    <benefit.icon className="h-10 w-10 text-white" />
                   </div>
-                  <CardTitle className="text-xl">{benefit.title}</CardTitle>
+                  <CardTitle className="text-2xl text-white">{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription>{benefit.description}</CardDescription>
+                  <CardDescription className="text-white text-lg">{benefit.description}</CardDescription>
                 </CardContent>
               </Card>
             ))}
@@ -140,13 +142,18 @@ export default function ParceriasPage() {
       {/* Partners Showcase */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-normal text-center mb-12">
-          Estamos convidando empresas como a sua a se tornar<span className="text-primary font-bold"> parceira da ABFN</span>
+          <h1 className="text-3xl font-bold text-center max-w-6xl mx-auto mb-4">Você sabia que existe um público muito especial que está sempre em busca de produtos e serviços de qualidade? </h1>
+          <h2 className="text-2xl font-normal text-center max-w-4xl mx-auto  mb-2">
+          São as <strong>famílias numerosas</strong> do Brasil, que formam uma comunidade forte e unida através da <strong>Associação Brasileira de Famílias Numerosas (ABFN)</strong>.
           </h2>
+          <p className="text-center text-2xl text-muted-foreground mt-6 max-w-4xl mx-auto mb-6">
+          Estamos convidando empresas como a sua a se tornar parceira da ABFN, oferecendo descontos e vantagens para nossas famílias. Ao fazer isso, você terá a chance de se conectar com milhares de famílias que buscam sempre boas oportunidades de consumo!
+
+          </p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {partners.map((partner) => (
-              <Card key={partner.category} className="overflow-hidden">
+              <Card key={partner.category} className="overflow-hidden bg-primary">
                 <div className="relative h-48">
                   <Image
                     src={partner.image}
@@ -156,24 +163,12 @@ export default function ParceriasPage() {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle>{partner.category}</CardTitle>
+                  <CardTitle className="text-2xl text-white text-center">{partner.category}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {partner.companies.map((company) => (
-                      <li key={company} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                        <span className="text-sm text-muted-foreground">{company}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
               </Card>
             ))}
           </div>
-          <p className="text-center text-2xl text-muted-foreground mt-6 max-w-2xl mx-auto">
-          Você terá a chance de se conectar com milhares de famílias que buscam sempre boas oportunidades de consumo!
-          </p>
+         
         </div>
       </section>
 
@@ -181,51 +176,55 @@ export default function ParceriasPage() {
       <section id="registroParceiro" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Como se Tornar um Parceiro
+          O que oferecemos a você?
+
           </h2>
           <div className="max-w-3xl mx-auto">
             <div className="space-y-8">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center">
                   1
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Contato Inicial</h3>
+                  <h3 className="text-xl font-semibold mb-2">Divulgação em nossas plataformas</h3>
                   <p className="text-muted-foreground">
-                    Preencha o seu número de telefone para nossa equipe entrar em contato
+                  Atingindo um grande número de famílias em todo o Brasil.
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center">
                   2
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Contato da Equipe</h3>
+                  <h3 className="text-xl font-semibold mb-2">A chance de estar associado a uma marca respeitada</h3>
                   <p className="text-muted-foreground">
-                  Nossa equipe entrará em contato para verificar suas informações e avaliar sua proposta
+                  Que preza pela união e pelo bem-estar da família.
+
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center">
                   3
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Acordo</h3>
+                  <h3 className="text-xl font-semibold mb-2">Acesso a um mercado</h3>
                   <p className="text-muted-foreground">
-                    Formalização da parceria e definição dos termos de cooperação
+                   Com grande demanda e diversas oportunidades de negócios.
+
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center">
                   4
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Integração</h3>
+                  <h3 className="text-xl font-semibold mb-2">Se você acredita que a sua empresa pode oferecer algo especial</h3>
                   <p className="text-muted-foreground">
-                  Se aprovado, você será orientado sobre o processo final e poderá começar a aproveitar os benefícios e o início da divulgação e disponibilização dos benefícios aos associados 
+                   Para as famílias numerosas, entre em contato com a gente e vamos conversar sobre como podemos trabalhar juntos!
+
                   </p>
                 </div>
               </div>
@@ -240,9 +239,10 @@ export default function ParceriasPage() {
         {/* Contact Form Section */}
         <div className="py-20 px-4 bg-white" id="contact">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Candidate-se à ser um Parceiro</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Fale com a ABFN e torne-se nosso parceiro!
+          </h2>
           <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
-            Deixe seu número de telefone e nossa equipe entrará em contato para avaliar sua candidatura
+            Deixe seu Email e nossa equipe entrará em contato para avaliar sua candidatura!
           </p>
           
           {submitted ? (
@@ -258,13 +258,13 @@ export default function ParceriasPage() {
           ) : (
             <form onSubmit={sendEmail} className="space-y-6">
               <div className="flex items-center bg-gray-50 rounded-lg p-2">
-                <Phone className="w-6 h-6 text-gray-400 ml-2" />
+                
                 <input
-                  type="tel"
-                  name="phone"  
+                  type="email"
+                  name="email"  
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
-                  placeholder="Seu número de telefone"
+                  placeholder="Seu email"
                   className="flex-1 p-2 bg-transparent outline-none text-lg"
                   required
                 />

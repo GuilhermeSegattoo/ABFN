@@ -42,8 +42,8 @@ export default function AssociePage() {
 
   const getCardColor = (index: number): string => {
     const colors = [
-      "bg-blue-600",
-      "bg-green-600",
+      "bg-accent",
+      "bg-secondary",
       "bg-primary",
       "bg-accent",
     ];
@@ -55,6 +55,7 @@ export default function AssociePage() {
       title: "Efetivos",
       description: "Famílias com mínimo de 6 filhos e se comprometem com o pagamento de uma joia e da quota anual.",
       benefits: ["Apenas por indicação", "Descontos exclusivos", "Rede de apoio", "Participação em eventos"],
+      note: "O candidato a associado seja para a categoria efetivo ou aspirante, deve ser indicado por um associado fundador ou efetivo em pleno gozo dos direitos e será admitido na ABFN mediante aceitação expressa do que preceitua o Estatuto e aprovação do Conselho de Administração.",
       highlighted: true,
       icon: Users,
       buttonText: "Sou indicado(a)",
@@ -64,6 +65,7 @@ export default function AssociePage() {
       title: "Aspirantes",
       description: "Famílias com mínimo de 4 filhos e se comprometem com o pagamento de uma joia e da quota anual.",
       benefits: ["Apenas por indicação", "Acesso à rede de apoio", "Participação em eventos", "Descontos selecionados"],
+      note: "O candidato a associado seja para a categoria efetivo ou aspirante, deve ser indicado por um associado fundador ou efetivo em pleno gozo dos direitos e será admitido na ABFN mediante aceitação expressa do que preceitua o Estatuto e aprovação do Conselho de Administração.",
       icon: Heart,
       buttonText: "Sou indicado(a)",
       buttonLink: "/login",
@@ -72,6 +74,7 @@ export default function AssociePage() {
       title: "Afiliados",
       description: "São as famílias numerosas que atingiram o número mínimo de seis membros, que de forma espontânea solicitam sua associação.",
       benefits: ["Acesso à rede de apoio", "Não possuem direito de votar ou ser votados", "Descontos selecionados"],
+      note: "O candidato a associado afiliado, cuja admissão haja sido espontânea mediante cadastramento, pagamento de joia e anuidade regular, será admitido na ABFN mediante aceitação expressa do que preceitua o Estatuto e aprovação do Conselho de Administração.",
       icon: Target,
       buttonText: "Se Afiliar",
       buttonLink: "/login",
@@ -86,29 +89,7 @@ export default function AssociePage() {
     },
   ];
 
-
-  const benefits = [
-    {
-      icon: Shield,
-      title: "Defesa de Direitos",
-      description: "Suporte jurídico e representação para famílias numerosas",
-    },
-    {
-      icon: Gift,
-      title: "Benefícios Exclusivos",
-      description: "Descontos especiais em produtos e serviços parceiros",
-    },
-    {
-      icon: Users,
-      title: "Comunidade",
-      description: "Acesso à rede de apoio e compartilhamento de experiências",
-    },
-    {
-      icon: HeartHandshake,
-      title: "Eventos",
-      description: "Participação em encontros, workshops e atividades especiais",
-    },
-  ];
+ 
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
@@ -122,13 +103,13 @@ export default function AssociePage() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Junte-se à Nossa Comunidade <br /> de Famílias Numerosas
+            Junte-se ABFN
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">
             Faça parte de uma rede de apoio que entende e valoriza as famílias numerosas
             </p>
             <a 
-              href="#contact"
+              href="#categories"
               className="bg-secondary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary transition duration-300"
             >
               Candidate-se Agora
@@ -169,78 +150,66 @@ export default function AssociePage() {
       </section>
 
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-white">
+     
+
+     {/* Membership Categories */}
+     <section id="categories" className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Por que se Associar?
+          <h2 className="text-4xl font-bold text-center mb-4 tracking-wide">
+            Categorias de Associado
           </h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {benefits.map((benefit) => (
+          <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
+            Escolha a categoria que melhor se adapta à sua família e comece a desfrutar dos benefícios da ABFN.
+          </p>
+
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 sm:gap-4 xs:gap-2 xs:mx-2 mx-10">
+            {membershipTypes.map((type, index) => (
               <div
-                key={benefit.title}
-                className="text-center p-6 rounded-lg bg-secondary/5"
+                key={type.title}
+                className={`relative overflow-hidden transition-transform duration-300 transform hover:scale-105 shadow-lg p-8 flex flex-col items-center justify-between ${getCardColor(index)}`}
               >
-                <benefit.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
-                <p className="text-muted-foreground">{benefit.description}</p>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-black opacity-10 transform rotate-45 translate-x-8 -translate-y-8"></div>
+
+                {/* Ícone */}
+                <type.icon className="w-14 h-14 text-white mb-6" />
+
+                {/* Título do Plano */}
+                <h3 className="text-2xl font-extrabold text-white mb-3 uppercase text-center">{type.title}</h3>
+
+                {/* Descrição */}
+                <p className="text-white font-medium mb-6 text-center">{type.description}</p>
+
+                {/* Benefícios */}
+                <ul className="space-y-3 text-white mb-6">
+                  {type.benefits.map((benefit) => (
+                    <li key={benefit} className="flex items-center gap-2">
+                      <Check className="w-6 h-6 text-white" />
+                      <span className="text-lg font-semibold">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Nota sobre a categoria */}
+                {type.note && (
+                  <p className="text-sm text-white bg-white/20 p-3 rounded-lg italic text-center mb-4">
+                    {type.note}
+                  </p>
+                )}
+
+                {/* Botão para Afiliados e Beneméritos */}
+                {type.buttonText && type.buttonLink && (
+                  <a
+                    href={type.buttonLink}
+                    className="mt-4 inline-block bg-white/90 text-primary hover:bg-white/90 hover:text-secondary px-8 py-3 rounded-full text-lg font-semibold"
+                  >
+                    {type.buttonText}
+                  </a>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
-
-     {/* Membership Categories */}
-     <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4 tracking-wide">
-          Seja um Associado
-        </h2>
-        <p className="text-center text-lg font-medium text-gray-600 mb-12 max-w-2xl mx-auto">
-          Escolha a categoria que melhor se adapta à sua família e comece a desfrutar dos benefícios da ABFN.
-        </p>
-
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 sm:gap-4 xs:gap-2 xs:mx-2 mx-10">
-          {membershipTypes.map((type, index) => (
-            <div
-              key={type.title}
-              className={`relative overflow-hidden transition-transform duration-300 transform hover:scale-105 shadow-lg p-8 flex flex-col items-center justify-between ${getCardColor(index)}`}
-            >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-black opacity-10 transform rotate-45 translate-x-8 -translate-y-8"></div>
-
-              {/* Ícone */}
-              <type.icon className="w-14 h-14 text-white mb-6" />
-
-              {/* Título do Plano */}
-              <h3 className="text-2xl font-extrabold text-white mb-3 uppercase text-center">{type.title}</h3>
-
-              {/* Descrição */}
-              <p className="text-white font-medium mb-6 text-center">{type.description}</p>
-
-              {/* Benefícios */}
-              <ul className="space-y-3 text-white mb-6">
-                {type.benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-center gap-2">
-                    <Check className="w-6 h-6 text-white" />
-                    <span className="text-lg font-semibold">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Botão para Afiliados e Beneméritos */}
-              {type.buttonText && type.buttonLink && (
-                <a
-                  href={type.buttonLink}
-                  className="mt-4 inline-block bg-green-500 text-white hover:bg-white/90 hover:text-primary px-8 py-3 rounded-full text-lg font-semibold"
-                >
-                  {type.buttonText}
-                </a>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
 
     
 

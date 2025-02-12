@@ -12,11 +12,11 @@ desenvolvido com Next.js e Tailwind CSS. O projeto tem como objetivo fornecer um
 
 ## Funcionalidades
 
-Página inicial com apresentação institucional e categorias de associados.
-Página sobre apresentando a missão, visão e valores da instituição.
-Página Benefícios apresentando as vantagens de fazer parte da associação.
-Página de associados mostrando suas categorias e um CTA.
-Página de parceiros apresentando as vantagens de ser um parceiro e um CTA para envio do email com uma resposta automática feita com o Email.JS.
-Área de notícias filtrando pela notícia e mostrando um vídeo apresentativo da associação.
-Design responsivo, adaptado para dispositivos móveis e desktop.
+- Página inicial com apresentação institucional e categorias de associados.
+- Página sobre apresentando a missão, visão e valores da instituição.
+- Página Benefícios apresentando as vantagens de fazer parte da associação.
+- Página de associados mostrando suas categorias e um CTA.
+- Página de parceiros apresentando as vantagens de ser um parceiro e um CTA para envio do email com uma resposta automática feita com o Email.JS.
+- Área de notícias filtrando pela notícia e mostrando um vídeo apresentativo da associação.
+- Design responsivo, adaptado para dispositivos móveis e desktop.
 
